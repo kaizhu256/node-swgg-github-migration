@@ -55,14 +55,12 @@ this zero-dependency package will provide a swagger-client for github-migrations
 [![apidoc](https://kaizhu256.github.io/node-swgg-github-migrations/build/screenshot.buildCi.browser.%252Ftmp%252Fbuild%252Fapidoc.html.png)](https://kaizhu256.github.io/node-swgg-github-migrations/build..beta..travis-ci.org/apidoc.html)
 
 #### todo
-- npm publish 2018.1.13
-- continue adding extra github-migrations web-apis
 - none
 
-#### changelog for v2018.1.13
-- auto-sync master swagger.json from ../swgg-$npm_package_swggAll/assets.swgg.swagger.json
-- disable heroku test-server
-- ignore env var \$npm_package_swggAll and \$npm_package_swggTags0 if package-name has -all sufix
+#### changelog for v2018.1.23
+- npm publish 2018.1.23
+- add github-migrations-migrations web-apis
+- add github-migrations-source-imports web-apis
 - none
 
 #### this package requires
@@ -336,13 +334,14 @@ instruction
         "build-ci": "utility2 shReadmeTest build_ci.sh",
         "env": "env",
         "heroku-postbuild": "npm uninstall utility2 2>/dev/null; npm install kaizhu256/node-utility2#alpha && utility2 shDeployHeroku",
+        "nameAliasPublish": "",
         "postinstall": "[ ! -f npm_scripts.sh ] || ./npm_scripts.sh postinstall",
         "start": "PORT=${PORT:-8080} utility2 start test.js",
         "test": "PORT=$(utility2 shServerPortRandom) utility2 test test.js"
     },
-    "swggAll": "github-migrations",
+    "swggAll": "github-all",
     "swggTags0": "github-migrations",
-    "version": "2018.1.13"
+    "version": "2018.1.23"
 }
 ```
 
@@ -361,6 +360,7 @@ instruction
 # this shell script will run the build for this package
 
 shBuildCiAfter() {(set -e
+    # shDeployCustom
     shDeployGithub
     # shDeployHeroku
     shReadmeTest example.sh
