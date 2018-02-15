@@ -1,0 +1,15 @@
+<svg height="190" width="720" xmlns="http://www.w3.org/2000/svg">
+<rect height="190" fill="#555" width="720"></rect>
+<text fill="#7f7" font-family="Courier New" font-size="12" xml:space="preserve">
+<tspan x="10" y="26">2018-01-24 17:05:22 +0700</tspan>
+<tspan x="10" y="42">[npm publish] - npm publish 2018.1.23</tspan>
+<tspan x="10" y="58">- add github-migrations-migrations web-apis</tspan>
+<tspan x="10" y="74">- add github-migrations-source-imports web-apis</tspan>
+<tspan x="10" y="90"></tspan>
+<tspan x="10" y="106">2018-01-20 16:35:05 +0700</tspan>
+<tspan x="10" y="122">skeleton app</tspan>
+<tspan x="10" y="138"></tspan>
+<tspan x="10" y="154">2014-03-26 02:31:50 +0700</tspan>
+<tspan x="10" y="170">add blank README.md</tspan>
+</text>
+</svg>
