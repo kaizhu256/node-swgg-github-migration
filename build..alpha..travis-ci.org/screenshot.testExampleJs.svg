@@ -3,7 +3,7 @@
 <text fill="#7f7" font-family="Courier New" font-size="12" xml:space="preserve">
 <tspan x="10" y="26"></tspan>
 
-<tspan x="10" y="42">&gt; swgg-github-migration@2018.2.14 postinstall /tmp/app/node_modules/swgg-github-migration</tspan>
+<tspan x="10" y="42">&gt; swgg-github-migration@2018.2.15 postinstall /tmp/app/node_modules/swgg-github-migration</tspan>
 
 <tspan x="10" y="58">&gt; [ ! -f npm_scripts.sh ] || ./npm_scripts.sh shNpmScriptPostinstall</tspan>
 
@@ -11,8 +11,8 @@
 
 <tspan x="10" y="90">/tmp/app</tspan>
 
-<tspan x="10" y="106">└── swgg-github-migration@2018.2.14  (git://github.com/kaizhu256/node-swgg-github-migration.git#\</tspan>
-<tspan x="10" y="122">f8f181103a557cb1106e9a8ac59f433c83501847)</tspan>
+<tspan x="10" y="106">└── swgg-github-migration@2018.2.15  (git://github.com/kaizhu256/node-swgg-github-migration.git#\</tspan>
+<tspan x="10" y="122">c74c0fbe26e6946519be6be8c1be5ba74aefc70d)</tspan>
 
 <tspan x="10" y="138"></tspan>
 
