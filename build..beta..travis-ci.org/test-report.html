@@ -5,24 +5,11 @@
 .testReportDiv {
     font-family: Arial, Helvetica, sans-serif;
 }
-.testReportDiv .displayNone {
-    display: none;
-}
-.testReportDiv .footer {
-    text-align: center;
-}
 .testReportDiv img {
     border: 1px solid black;
     margin: 5px 0 5px 0;
     max-height: 256px;
     max-width: 512px;
-}
-.testReportDiv .platform {
-    background: #fff;
-    border: 1px solid black;
-    margin-bottom: 20px;
-    padding: 0 10px 10px 10px;
-    text-align: left;
 }
 .testReportDiv pre {
     background: #fdd;
@@ -36,15 +23,28 @@
     display: inline-block;
     width: 120px;
 }
-.testReportDiv .summary {
-    background: #bfb;
-}
 .testReportDiv table {
     border-top: 1px solid black;
     text-align: left;
     width: 100%;
 }
 .testReportDiv table > tbody > tr:nth-child(odd) {
+    background: #bfb;
+}
+.testReportDiv .displayNone {
+    display: none;
+}
+.testReportDiv .footer {
+    text-align: center;
+}
+.testReportDiv .platform {
+    background: #fff;
+    border: 1px solid black;
+    margin-bottom: 20px;
+    padding: 0 10px 10px 10px;
+    text-align: left;
+}
+.testReportDiv .summary {
     background: #bfb;
 }
 .testReportDiv .testFailed {
@@ -57,19 +57,19 @@
 <h1>test-report for
     <a
         
-        href="https://github.com/kaizhu256/node-swgg-github-migrations"
+        href="https://github.com/kaizhu256/node-swgg-github-migration"
         
-    >swgg-github-migrations (v2018.1.23)</a>
+    >swgg-github-migration (v2018.2.14)</a>
 </h1>
 <div class="platform summary">
 <h2>summary</h2>
 <h4>
     <span>version</span>-
-        2018.1.23<br>
-    <span>test date</span>- 2018-01-24T10:31:57.698Z<br>
+        2018.2.14<br>
+    <span>test date</span>- 2018-02-15T06:01:59.445Z<br>
     <span>commit info</span>-
         
-        1a12b4bc671db26fc0963f1542bfaf8cee92dbfa - [npm publish] - npm publish 2018.1.23 - add github-migrations-migrations web-apis - add github-migrations-source-imports web-apis<br>
+        f8f181103a557cb1106e9a8ac59f433c83501847 - [npm publish] - npm publish v2018.2.14 - fix ascii-diagrams in descriptions - rename package swgg-github-migrations -&gt; swgg-github-migration - revamp documentation with markdown<br>
         
 </h4>
 <table>
@@ -82,7 +82,7 @@
     </tr>
 </thead>
 <tbody><tr>
-    <td>208942 ms</td>
+    <td>148171 ms</td>
     <td class="testPassed">0</td>
     <td>33</td>
     <td>0</td>
@@ -92,14 +92,14 @@
 
 <div class="platform">
 <h4>
-    1. buildApidoc - node - linux v6.12.3 - 2018-01-24T10:30:14.549Z<br>
+    1. buildApidoc - node - linux v6.13.0 - 2018-02-15T06:01:05.425Z<br>
     
     <a href="screenshot.buildApidoc.svg">
         <img src="screenshot.buildApidoc.svg">
     </a>
     <br>
     
-    <span>time-elapsed</span>- 120175 ms<br>
+    <span>time-elapsed</span>- 60995 ms<br>
     <span>tests failed</span>- 0<br>
     <span>tests passed</span>- 1<br>
     <span>tests pending</span>- 0<br>
@@ -115,7 +115,7 @@
 
 <tr>
     <td>1</td>
-    <td>5847 ms</td>
+    <td>5722 ms</td>
     <td class="testPassed">passed</td>
     <td>testCase_buildApp_default</td>
 </tr>
@@ -129,14 +129,14 @@
 
 <div class="platform">
 <h4>
-    2. npmTest - browser - /index.default.html - Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Electron/1.6.15 Safari/537.36 - 2018-01-24T10:29:56.422Z<br>
+    2. npmTest - browser - /index.default.html - Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Electron/1.6.15 Safari/537.36 - 2018-02-15T06:00:47.726Z<br>
     
     <a href="screenshot.npmTest.browser.%252F.png">
         <img src="screenshot.npmTest.browser.%252F.png">
     </a>
     <br>
     
-    <span>time-elapsed</span>- 138861 ms<br>
+    <span>time-elapsed</span>- 79147 ms<br>
     <span>tests failed</span>- 0<br>
     <span>tests passed</span>- 8<br>
     <span>tests pending</span>- 0<br>
@@ -180,7 +180,7 @@
 
 <tr>
     <td>6</td>
-    <td>0 ms</td>
+    <td>1 ms</td>
     <td class="testPassed">passed</td>
     <td>testCase_buildReadme_default</td>
 </tr>
@@ -194,14 +194,14 @@
 
 <tr>
     <td>8</td>
-    <td>1 ms</td>
+    <td>0 ms</td>
     <td class="testPassed">passed</td>
     <td>testCase_nop_default</td>
 </tr>
 
 <tr>
     <td>9</td>
-    <td>1 ms</td>
+    <td>5 ms</td>
     <td class="testPassed">passed</td>
     <td>testCase_webpage_default</td>
 </tr>
@@ -215,14 +215,14 @@
 
 <div class="platform">
 <h4>
-    3. npmTest - node - linux v6.12.3 - 2018-01-24T10:29:53.882Z<br>
+    3. npmTest - node - linux v6.13.0 - 2018-02-15T06:00:45.531Z<br>
     
     <a href="screenshot.npmTest.svg">
         <img src="screenshot.npmTest.svg">
     </a>
     <br>
     
-    <span>time-elapsed</span>- 140915 ms<br>
+    <span>time-elapsed</span>- 80917 ms<br>
     <span>tests failed</span>- 0<br>
     <span>tests passed</span>- 8<br>
     <span>tests pending</span>- 0<br>
@@ -238,14 +238,14 @@
 
 <tr>
     <td>10</td>
-    <td>108 ms</td>
+    <td>164 ms</td>
     <td class="testPassed">passed</td>
     <td>testCase_buildApidoc_default</td>
 </tr>
 
 <tr>
     <td>11</td>
-    <td>6140 ms</td>
+    <td>5932 ms</td>
     <td class="testPassed">passed</td>
     <td>testCase_buildApp_default</td>
 </tr>
@@ -259,14 +259,14 @@
 
 <tr>
     <td>13</td>
-    <td>1 ms</td>
+    <td>0 ms</td>
     <td class="testPassed">passed</td>
     <td>testCase_buildLib_default</td>
 </tr>
 
 <tr>
     <td>14</td>
-    <td>8 ms</td>
+    <td>30 ms</td>
     <td class="testPassed">passed</td>
     <td>testCase_buildReadme_default</td>
 </tr>
@@ -287,7 +287,7 @@
 
 <tr>
     <td>17</td>
-    <td>16668 ms</td>
+    <td>16314 ms</td>
     <td class="testPassed">passed</td>
     <td>testCase_webpage_default</td>
 </tr>
@@ -301,14 +301,14 @@
 
 <div class="platform">
 <h4>
-    4. npmTestPublished - browser - /index.default.html - Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Electron/1.6.15 Safari/537.36 - 2018-01-24T10:28:48.694Z<br>
+    4. npmTestPublished - browser - /index.default.html - Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Electron/1.6.15 Safari/537.36 - 2018-02-15T05:59:41.092Z<br>
     
     <a href="screenshot.npmTestPublished.browser.%252F.png">
         <img src="screenshot.npmTestPublished.browser.%252F.png">
     </a>
     <br>
     
-    <span>time-elapsed</span>- 206592 ms<br>
+    <span>time-elapsed</span>- 145784 ms<br>
     <span>tests failed</span>- 0<br>
     <span>tests passed</span>- 8<br>
     <span>tests pending</span>- 0<br>
@@ -373,7 +373,7 @@
 
 <tr>
     <td>25</td>
-    <td>0 ms</td>
+    <td>5 ms</td>
     <td class="testPassed">passed</td>
     <td>testCase_webpage_default</td>
 </tr>
@@ -387,14 +387,14 @@
 
 <div class="platform">
 <h4>
-    5. npmTestPublished - node - linux v6.12.3 - 2018-01-24T10:28:45.800Z<br>
+    5. npmTestPublished - node - linux v6.13.0 - 2018-02-15T05:59:38.182Z<br>
     
     <a href="screenshot.npmTestPublished.svg">
         <img src="screenshot.npmTestPublished.svg">
     </a>
     <br>
     
-    <span>time-elapsed</span>- 208942 ms<br>
+    <span>time-elapsed</span>- 148171 ms<br>
     <span>tests failed</span>- 0<br>
     <span>tests passed</span>- 8<br>
     <span>tests pending</span>- 0<br>
@@ -410,14 +410,14 @@
 
 <tr>
     <td>26</td>
-    <td>140 ms</td>
+    <td>171 ms</td>
     <td class="testPassed">passed</td>
     <td>testCase_buildApidoc_default</td>
 </tr>
 
 <tr>
     <td>27</td>
-    <td>6032 ms</td>
+    <td>6134 ms</td>
     <td class="testPassed">passed</td>
     <td>testCase_buildApp_default</td>
 </tr>
@@ -431,21 +431,21 @@
 
 <tr>
     <td>29</td>
-    <td>0 ms</td>
+    <td>1 ms</td>
     <td class="testPassed">passed</td>
     <td>testCase_buildLib_default</td>
 </tr>
 
 <tr>
     <td>30</td>
-    <td>11 ms</td>
+    <td>45 ms</td>
     <td class="testPassed">passed</td>
     <td>testCase_buildReadme_default</td>
 </tr>
 
 <tr>
     <td>31</td>
-    <td>1 ms</td>
+    <td>0 ms</td>
     <td class="testPassed">passed</td>
     <td>testCase_buildTest_default</td>
 </tr>
@@ -459,7 +459,7 @@
 
 <tr>
     <td>33</td>
-    <td>16963 ms</td>
+    <td>16888 ms</td>
     <td class="testPassed">passed</td>
     <td>testCase_webpage_default</td>
 </tr>

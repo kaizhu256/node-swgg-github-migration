@@ -41,14 +41,14 @@ pre {
     white-space: pre-wrap;
 }
 @keyframes uiAnimateShake {
-    100% {
-        transform: translateX(0);
-    }
-    0%, 20%, 60% {
+    0%, 50% {
         transform: translateX(10px);
     }
-    40%, 80% {
+    25%, 75% {
         transform: translateX(-10px);
+    }
+    100% {
+        transform: translateX(0);
     }
 }
 .uiAnimateShake {
@@ -87,8 +87,8 @@ pre {
     max-width: 100%;
     padding: 0;
 }
-.swggUiContainer .operation > .thead:focus,
 .swggUiContainer pre,
+.swggUiContainer .operation > .thead:focus,
 .swggUiContainer .resource > .thead > .td:focus {
     outline: none;
 }
@@ -113,25 +113,6 @@ pre {
 .swggUiContainer textarea {
     min-height: 1.5rem;
 }
-.swggUiContainer .multilinePlaceholderContainer {
-    min-height: 10rem;
-    position: relative;
-}
-.swggUiContainer .multilinePlaceholderPre {
-    position: absolute;
-    white-space: pre;
-}
-.swggUiContainer .multilinePlaceholderTextarea {
-    position: absolute;
-}
-.swggUiContainer .operation > .thead > .td1 {
-    text-align: center;
-    width: 2rem;
-}
-.swggUiContainer .operation > .thead > .td2 {
-    text-align: center;
-    width: 5rem;
-}
 .swggUiContainer pre,
 .swggUiContainer textarea {
     font-family: Menlo, Monaco, Consolas, Courier New, monospace;
@@ -145,15 +126,44 @@ pre {
     overflow-wrap: break-word;
     white-space: pre-wrap;
 }
+.swggUiContainer .markdown pre {
+    max-height: none;
+}
+
+.swggUiContainer .multilinePlaceholderContainer {
+    min-height: 10rem;
+    position: relative;
+}
+.swggUiContainer .multilinePlaceholderPre {
+    position: absolute;
+    white-space: pre;
+}
+.swggUiContainer .multilinePlaceholderTextarea {
+    position: absolute;
+}
+.swggUiContainer .operation > .thead > .td1 {
+    text-align: left;
+    width: 2rem;
+}
+.swggUiContainer .operation > .thead > .td2 {
+    text-align: center;
+    width: 5rem;
+}
+.swggUiContainer .resourceIi {
+    min-width: 3rem;
+}
+.swggUiContainer .resourceSummary {
+    font-weight: lighter;
+}
 .swggUiContainer .responseBody,
 .swggUiContainer .responseHeaders,
 .swggUiContainer .responseStatusCode {
     font-weight: bold;
 }
 .swggUiContainer .schemaP pre,
-.swggUiContainer .schemaP .multilinePlaceholderContainer,
 .swggUiContainer .schemaP select[multiple],
-.swggUiContainer .schemaP textarea {
+.swggUiContainer .schemaP textarea,
+.swggUiContainer .schemaP .multilinePlaceholderContainer {
     height: 10rem;
 }
 .swggUiContainer .schemaP > .td3 {
@@ -163,16 +173,11 @@ pre {
     overflow: auto;
     word-wrap: break-word;
 }
-.swggUiContainer .td div,
 .swggUiContainer .td input,
 .swggUiContainer .td pre,
 .swggUiContainer .td select,
 .swggUiContainer .td textarea {
     width: 100%;
-}
-.swggUiContainer .thead,
-.swggUiContainer .tr {
-    display: flex;
 }
 .swggUiContainer > .thead > .td1 {
     font-size: x-large;
@@ -186,6 +191,10 @@ pre {
 .swggUiContainer button,
 .swggUiContainer .resourceDescription {
     background: #373;
+}
+.swggUiContainer pre,
+.swggUiContainer .operationDescription {
+    background: #ddd;
 }
 .swggUiContainer .methodDELETE {
     background: #b07;
@@ -214,8 +223,8 @@ pre {
 .swggUiContainer .operation {
     background: #dfd;
 }
-.swggUiContainer pre {
-    background: #ddd;
+.swggUiContainer .resourceDescription pre {
+    background: #777;
 }
 .swggUiContainer > .thead {
     background: #7b5;
@@ -228,7 +237,7 @@ pre {
 .swggUiContainer pre,
 .swggUiContainer select,
 .swggUiContainer textarea {
-    border: 1px solid #bbb;
+    border: 1px solid #999;
 }
 .swggUiContainer .resource:first-child {
     border-top: 1px solid #777;
@@ -251,13 +260,30 @@ pre {
     color: #fff;
 }
 .swggUiContainer .errorMessage {
-    color: #b00;
+    color: #c00;
 }
 .swggUiContainer .multilinePlaceholderPre {
     color: #999;
 }
+.swggUiContainer .resourceDescription a {
+    color: #7d7;
+}
+.swggUiContainer .resourceDescription strong {
+    color: #7f7;
+}
+.swggUiContainer .resourceDescription > code {
+    color: #ddf;
+}
 .swggUiContainer .styleColor777 {
     color: #777;
+}
+/* display */
+.swggUiContainer .onEventResourceDisplayAction {
+    display: inline-block;
+}
+.swggUiContainer .thead,
+.swggUiContainer .tr {
+    display: flex;
 }
 /* flex */
 .swggUiContainer .operation > .thead > .td3 {
@@ -299,21 +325,26 @@ pre {
 }
 .swggUiContainer audio,
 .swggUiContainer img,
-.swggUiContainer .operation .thead,
 .swggUiContainer option,
+.swggUiContainer video,
+.swggUiContainer .operation .thead,
 .swggUiContainer .responseBody,
 .swggUiContainer .responseMedia,
 .swggUiContainer .td,
-.swggUiContainer video {
+.swggUiContainer .td .onEventResourceDisplayAction {
     margin-bottom: 0;
 }
-.swggUiContainer > .info > ul,
+.swggUiContainer ul,
 .swggUiContainer .operation > .thead > .td1,
 .swggUiContainer .td {
     margin-left: 20px;
 }
 .swggUiContainer .label {
     margin-bottom: 1px;
+}
+.swggUiContainer .markdown ol,
+.swggUiContainer .markdown ul {
+    margin-left: 20px;
 }
 .swggUiContainer .onEventOperationAjax,
 .swggUiContainer .schemaP {
@@ -322,6 +353,9 @@ pre {
 .swggUiContainer .operation button {
     margin-bottom: 50px;
     margin-top: 40px;
+}
+.swggUiContainer .operation > .thead > .td4 {
+    margin-right: 20px;
 }
 .swggUiContainer .td:first-child {
     margin-left: 0;
@@ -334,40 +368,46 @@ pre {
 .swggUiContainer input {
     padding: 0 5px;
 }
+.swggUiContainer pre,
+.swggUiContainer textarea {
+    padding: 5px;
+}
 .swggUiContainer .operation > .content {
     padding: 20px;
 }
 .swggUiContainer .operation > .thead > .td {
     padding: 10px 0;
 }
-.swggUiContainer pre,
-.swggUiContainer textarea {
-    padding: 5px;
+.swggUiContainer .operationDescription {
+    padding: 15px 10px 1px 10px;
 }
 .swggUiContainer .resource:first-child {
     padding-top: 10px;
 }
 .swggUiContainer .resourceDescription {
-    padding: 10px 20px;
+    padding: 20px 20px 10px 20px;
 }
 .swggUiContainer > .thead > .td1 {
     padding-left: 40px;
-    padding-top: 5px;
+    padding-top: 6px;
 }
 
 
 
 /* hover */
+.swggUiContainer a:hover,
+.swggUiContainer > .thead > .td1:hover {
+    color: #33d;
+}
 .swggUiContainer button:hover {
     background: #33d;
 }
-.swggUiContainer .operation > .thead:hover {
+.swggUiContainer .operation > .thead:hover,
+.swggUiContainer .resource > .thead > .td:hover {
     background: #bbf;
 }
-.swggUiContainer a:hover,
-.swggUiContainer .resource > .thead > .td:hover,
-.swggUiContainer > .thead > .td1:hover {
-    color: #33d;
+.swggUiContainer .resourceDescription a:hover {
+    color: #7f7;
 }
 
 
@@ -405,11 +445,11 @@ pre {
 
 /* .hasError */
 .swggUiContainer button.hasError {
-    background: #b00;
+    background: #c00;
 }
 .swggUiContainer input.hasError,
 .swggUiContainer select.hasError {
-    border: 5px solid #b00;
+    border: 5px solid #c00;
 }
 .swggUiContainer pre.hasError,
 .swggUiContainer textarea.hasError {
@@ -488,6 +528,11 @@ pre {
         id="swggApiKeyClearButton1"
     >clear api-keys</button>
 </div>
+<div
+    class="errorMessage"
+    id="swggUiReloadErrorDiv1"
+    style="background: none; border: 0;"
+></div>
 <div class="info reset">
     
 </div>
@@ -521,6 +566,9 @@ document.querySelector(".swggUiContainer > .thead > .td2").value =
         "assets.swgg.swagger.json";
 </script>
 <script src="assets.utility2.rollup.js"></script>
-<script>window.swgg.uiEventListenerDict[".onEventUiReload"]({ swggInit: true });</script>
+<script>
+window.local = window.local || window.swgg;
+window.swgg.uiEventListenerDict[".onEventUiReload"]({ swggInit: true });
+</script>
 </body>
 </html>

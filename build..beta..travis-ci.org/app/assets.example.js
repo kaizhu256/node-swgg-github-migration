@@ -98,22 +98,23 @@
 
 
 
+
 /*
 example.js
 
-this script will run a web-demo of swgg-github-migrations
+this script will run a web-demo of swgg-github-migration
 
 instruction
     1. save this script as example.js
     2. run the shell command:
-        $ npm install swgg-github-migrations && PORT=8081 node example.js
+        $ npm install swgg-github-migration && PORT=8081 node example.js
     3. open a browser to http://127.0.0.1:8081 and play with the web-demo
     4. edit this script to suit your needs
 */
 
 
 
-/* istanbul instrument in package swgg_github_migrations */
+/* istanbul instrument in package swgg_github_migration */
 /*jslint
     bitwise: true,
     browser: true,
@@ -154,7 +155,7 @@ instruction
             : global;
         // init utility2_rollup
         local = local.global.utility2_rollup || (local.modeJs === 'browser'
-            ? local.global.utility2_swgg_github_migrations
+            ? local.global.utility2_swgg_github_migration
             : global.utility2_moduleExports);
         // init exports
         local.global.local = local;
@@ -210,9 +211,9 @@ instruction
                 case 'npm_package_description':
                     return 'the greatest app in the world!';
                 case 'npm_package_name':
-                    return 'swgg-github-migrations';
+                    return 'swgg-github-migration';
                 case 'npm_package_nameLib':
-                    return 'swgg_github_migrations';
+                    return 'swgg_github_migration';
                 case 'npm_package_version':
                     return '0.0.1';
                 default:
@@ -228,10 +229,10 @@ instruction
             local.fs.readFileSync(__filename, 'utf8');
         // bug-workaround - long $npm_package_buildCustomOrg
         /* jslint-ignore-begin */
-        local.assetsDict['/assets.swgg_github_migrations.js'] =
-            local.assetsDict['/assets.swgg_github_migrations.js'] ||
+        local.assetsDict['/assets.swgg_github_migration.js'] =
+            local.assetsDict['/assets.swgg_github_migration.js'] ||
             local.fs.readFileSync(
-                local.__dirname + '/lib.swgg_github_migrations.js',
+                local.__dirname + '/lib.swgg_github_migration.js',
                 'utf8'
             ).replace((/^#!/), '//');
         /* jslint-ignore-end */
