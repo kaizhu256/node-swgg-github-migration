@@ -1,29 +1,29 @@
-# swgg-github-migrations
-this zero-dependency package will provide a swagger-client for github-migrations's web-apis, with a working web-demo
+# swgg-github-migration
+this zero-dependency package will provide a swagger-client for github-migration's web-apis, with a working web-demo
 
 # live web demo
-- [https://kaizhu256.github.io/node-swgg-github-migrations/build..beta..travis-ci.org/app](https://kaizhu256.github.io/node-swgg-github-migrations/build..beta..travis-ci.org/app)
+- [https://kaizhu256.github.io/node-swgg-github-migration/build..beta..travis-ci.org/app](https://kaizhu256.github.io/node-swgg-github-migration/build..beta..travis-ci.org/app)
 
-[![screenshot](https://kaizhu256.github.io/node-swgg-github-migrations/build/screenshot.deployGithub.browser.%252Fnode-swgg-github-migrations%252Fbuild%252Fapp.png)](https://kaizhu256.github.io/node-swgg-github-migrations/build..beta..travis-ci.org/app)
+[![screenshot](https://kaizhu256.github.io/node-swgg-github-migration/build/screenshot.deployGithub.browser.%252Fnode-swgg-github-migration%252Fbuild%252Fapp.png)](https://kaizhu256.github.io/node-swgg-github-migration/build..beta..travis-ci.org/app)
 
 
 
-[![travis-ci.org build-status](https://api.travis-ci.org/kaizhu256/node-swgg-github-migrations.svg)](https://travis-ci.org/kaizhu256/node-swgg-github-migrations) [![coverage](https://kaizhu256.github.io/node-swgg-github-migrations/build/coverage.badge.svg)](https://kaizhu256.github.io/node-swgg-github-migrations/build/coverage.html/index.html) [![snyk.io vulnerabilities](https://snyk.io/test/github/kaizhu256/node-swgg-github-migrations/badge.svg)](https://snyk.io/test/github/kaizhu256/node-swgg-github-migrations)
+[![travis-ci.org build-status](https://api.travis-ci.org/kaizhu256/node-swgg-github-migration.svg)](https://travis-ci.org/kaizhu256/node-swgg-github-migration) [![coverage](https://kaizhu256.github.io/node-swgg-github-migration/build/coverage.badge.svg)](https://kaizhu256.github.io/node-swgg-github-migration/build/coverage.html/index.html) [![snyk.io vulnerabilities](https://snyk.io/test/github/kaizhu256/node-swgg-github-migration/badge.svg)](https://snyk.io/test/github/kaizhu256/node-swgg-github-migration)
 
-[![NPM](https://nodei.co/npm/swgg-github-migrations.png?downloads=true)](https://www.npmjs.com/package/swgg-github-migrations)
+[![NPM](https://nodei.co/npm/swgg-github-migration.png?downloads=true)](https://www.npmjs.com/package/swgg-github-migration)
 
-[![build commit status](https://kaizhu256.github.io/node-swgg-github-migrations/build/build.badge.svg)](https://travis-ci.org/kaizhu256/node-swgg-github-migrations)
+[![build commit status](https://kaizhu256.github.io/node-swgg-github-migration/build/build.badge.svg)](https://travis-ci.org/kaizhu256/node-swgg-github-migration)
 
-| git-branch : | [master](https://github.com/kaizhu256/node-swgg-github-migrations/tree/master) | [beta](https://github.com/kaizhu256/node-swgg-github-migrations/tree/beta) | [alpha](https://github.com/kaizhu256/node-swgg-github-migrations/tree/alpha)|
+| git-branch : | [master](https://github.com/kaizhu256/node-swgg-github-migration/tree/master) | [beta](https://github.com/kaizhu256/node-swgg-github-migration/tree/beta) | [alpha](https://github.com/kaizhu256/node-swgg-github-migration/tree/alpha)|
 |--:|:--|:--|:--|
-| test-server-github : | [![github.com test-server](https://kaizhu256.github.io/node-swgg-github-migrations/GitHub-Mark-32px.png)](https://kaizhu256.github.io/node-swgg-github-migrations/build..master..travis-ci.org/app) | [![github.com test-server](https://kaizhu256.github.io/node-swgg-github-migrations/GitHub-Mark-32px.png)](https://kaizhu256.github.io/node-swgg-github-migrations/build..beta..travis-ci.org/app) | [![github.com test-server](https://kaizhu256.github.io/node-swgg-github-migrations/GitHub-Mark-32px.png)](https://kaizhu256.github.io/node-swgg-github-migrations/build..alpha..travis-ci.org/app)|
-| test-report : | [![test-report](https://kaizhu256.github.io/node-swgg-github-migrations/build..master..travis-ci.org/test-report.badge.svg)](https://kaizhu256.github.io/node-swgg-github-migrations/build..master..travis-ci.org/test-report.html) | [![test-report](https://kaizhu256.github.io/node-swgg-github-migrations/build..beta..travis-ci.org/test-report.badge.svg)](https://kaizhu256.github.io/node-swgg-github-migrations/build..beta..travis-ci.org/test-report.html) | [![test-report](https://kaizhu256.github.io/node-swgg-github-migrations/build..alpha..travis-ci.org/test-report.badge.svg)](https://kaizhu256.github.io/node-swgg-github-migrations/build..alpha..travis-ci.org/test-report.html)|
-| coverage : | [![coverage](https://kaizhu256.github.io/node-swgg-github-migrations/build..master..travis-ci.org/coverage.badge.svg)](https://kaizhu256.github.io/node-swgg-github-migrations/build..master..travis-ci.org/coverage.html/index.html) | [![coverage](https://kaizhu256.github.io/node-swgg-github-migrations/build..beta..travis-ci.org/coverage.badge.svg)](https://kaizhu256.github.io/node-swgg-github-migrations/build..beta..travis-ci.org/coverage.html/index.html) | [![coverage](https://kaizhu256.github.io/node-swgg-github-migrations/build..alpha..travis-ci.org/coverage.badge.svg)](https://kaizhu256.github.io/node-swgg-github-migrations/build..alpha..travis-ci.org/coverage.html/index.html)|
-| build-artifacts : | [![build-artifacts](https://kaizhu256.github.io/node-swgg-github-migrations/glyphicons_144_folder_open.png)](https://github.com/kaizhu256/node-swgg-github-migrations/tree/gh-pages/build..master..travis-ci.org) | [![build-artifacts](https://kaizhu256.github.io/node-swgg-github-migrations/glyphicons_144_folder_open.png)](https://github.com/kaizhu256/node-swgg-github-migrations/tree/gh-pages/build..beta..travis-ci.org) | [![build-artifacts](https://kaizhu256.github.io/node-swgg-github-migrations/glyphicons_144_folder_open.png)](https://github.com/kaizhu256/node-swgg-github-migrations/tree/gh-pages/build..alpha..travis-ci.org)|
+| test-server-github : | [![github.com test-server](https://kaizhu256.github.io/node-swgg-github-migration/GitHub-Mark-32px.png)](https://kaizhu256.github.io/node-swgg-github-migration/build..master..travis-ci.org/app) | [![github.com test-server](https://kaizhu256.github.io/node-swgg-github-migration/GitHub-Mark-32px.png)](https://kaizhu256.github.io/node-swgg-github-migration/build..beta..travis-ci.org/app) | [![github.com test-server](https://kaizhu256.github.io/node-swgg-github-migration/GitHub-Mark-32px.png)](https://kaizhu256.github.io/node-swgg-github-migration/build..alpha..travis-ci.org/app)|
+| test-report : | [![test-report](https://kaizhu256.github.io/node-swgg-github-migration/build..master..travis-ci.org/test-report.badge.svg)](https://kaizhu256.github.io/node-swgg-github-migration/build..master..travis-ci.org/test-report.html) | [![test-report](https://kaizhu256.github.io/node-swgg-github-migration/build..beta..travis-ci.org/test-report.badge.svg)](https://kaizhu256.github.io/node-swgg-github-migration/build..beta..travis-ci.org/test-report.html) | [![test-report](https://kaizhu256.github.io/node-swgg-github-migration/build..alpha..travis-ci.org/test-report.badge.svg)](https://kaizhu256.github.io/node-swgg-github-migration/build..alpha..travis-ci.org/test-report.html)|
+| coverage : | [![coverage](https://kaizhu256.github.io/node-swgg-github-migration/build..master..travis-ci.org/coverage.badge.svg)](https://kaizhu256.github.io/node-swgg-github-migration/build..master..travis-ci.org/coverage.html/index.html) | [![coverage](https://kaizhu256.github.io/node-swgg-github-migration/build..beta..travis-ci.org/coverage.badge.svg)](https://kaizhu256.github.io/node-swgg-github-migration/build..beta..travis-ci.org/coverage.html/index.html) | [![coverage](https://kaizhu256.github.io/node-swgg-github-migration/build..alpha..travis-ci.org/coverage.badge.svg)](https://kaizhu256.github.io/node-swgg-github-migration/build..alpha..travis-ci.org/coverage.html/index.html)|
+| build-artifacts : | [![build-artifacts](https://kaizhu256.github.io/node-swgg-github-migration/glyphicons_144_folder_open.png)](https://github.com/kaizhu256/node-swgg-github-migration/tree/gh-pages/build..master..travis-ci.org) | [![build-artifacts](https://kaizhu256.github.io/node-swgg-github-migration/glyphicons_144_folder_open.png)](https://github.com/kaizhu256/node-swgg-github-migration/tree/gh-pages/build..beta..travis-ci.org) | [![build-artifacts](https://kaizhu256.github.io/node-swgg-github-migration/glyphicons_144_folder_open.png)](https://github.com/kaizhu256/node-swgg-github-migration/tree/gh-pages/build..alpha..travis-ci.org)|
 
-[![npmPackageListing](https://kaizhu256.github.io/node-swgg-github-migrations/build/screenshot.npmPackageListing.svg)](https://github.com/kaizhu256/node-swgg-github-migrations)
+[![npmPackageListing](https://kaizhu256.github.io/node-swgg-github-migration/build/screenshot.npmPackageListing.svg)](https://github.com/kaizhu256/node-swgg-github-migration)
 
-![npmPackageDependencyTree](https://kaizhu256.github.io/node-swgg-github-migrations/build/screenshot.npmPackageDependencyTree.svg)
+![npmPackageDependencyTree](https://kaizhu256.github.io/node-swgg-github-migration/build/screenshot.npmPackageDependencyTree.svg)
 
 
 
@@ -41,26 +41,27 @@ this zero-dependency package will provide a swagger-client for github-migrations
 
 
 # cdn download
-- [https://kaizhu256.github.io/node-swgg-github-migrations/build..beta..travis-ci.org/app/assets.swgg.swagger.json](https://kaizhu256.github.io/node-swgg-github-migrations/build..beta..travis-ci.org/app/assets.swgg.swagger.json)
+- [https://kaizhu256.github.io/node-swgg-github-migration/build..beta..travis-ci.org/app/assets.swgg.swagger.json](https://kaizhu256.github.io/node-swgg-github-migration/build..beta..travis-ci.org/app/assets.swgg.swagger.json)
 
 
 
 # documentation
 #### cli help
-![screenshot](https://kaizhu256.github.io/node-swgg-github-migrations/build/screenshot.npmPackageCliHelp.svg)
+![screenshot](https://kaizhu256.github.io/node-swgg-github-migration/build/screenshot.npmPackageCliHelp.svg)
 
 #### api doc
-- [https://kaizhu256.github.io/node-swgg-github-migrations/build..beta..travis-ci.org/apidoc.html](https://kaizhu256.github.io/node-swgg-github-migrations/build..beta..travis-ci.org/apidoc.html)
+- [https://kaizhu256.github.io/node-swgg-github-migration/build..beta..travis-ci.org/apidoc.html](https://kaizhu256.github.io/node-swgg-github-migration/build..beta..travis-ci.org/apidoc.html)
 
-[![apidoc](https://kaizhu256.github.io/node-swgg-github-migrations/build/screenshot.buildCi.browser.%252Ftmp%252Fbuild%252Fapidoc.html.png)](https://kaizhu256.github.io/node-swgg-github-migrations/build..beta..travis-ci.org/apidoc.html)
+[![apidoc](https://kaizhu256.github.io/node-swgg-github-migration/build/screenshot.buildCi.browser.%252Ftmp%252Fbuild%252Fapidoc.html.png)](https://kaizhu256.github.io/node-swgg-github-migration/build..beta..travis-ci.org/apidoc.html)
 
 #### todo
 - none
 
-#### changelog for v2018.1.23
-- npm publish 2018.1.23
-- add github-migrations-migrations web-apis
-- add github-migrations-source-imports web-apis
+#### changelog for v2018.2.14
+- npm publish v2018.2.14
+- fix ascii-diagrams in descriptions
+- rename package swgg-github-migrations -> swgg-github-migration
+- revamp documentation with markdown
 - none
 
 #### this package requires
@@ -70,14 +71,14 @@ this zero-dependency package will provide a swagger-client for github-migrations
 
 # quickstart standalone app
 #### to run this example, follow the instruction in the script below
-- [assets.app.js](https://kaizhu256.github.io/node-swgg-github-migrations/build..beta..travis-ci.org/app/assets.app.js)
+- [assets.app.js](https://kaizhu256.github.io/node-swgg-github-migration/build..beta..travis-ci.org/app/assets.app.js)
 ```shell
 # example.sh
 
-# this shell script will download and run a web-demo of swgg-github-migrations as a standalone app
+# this shell script will download and run a web-demo of swgg-github-migration as a standalone app
 
 # 1. download standalone app
-curl -O https://kaizhu256.github.io/node-swgg-github-migrations/build..beta..travis-ci.org/app/assets.app.js
+curl -O https://kaizhu256.github.io/node-swgg-github-migration/build..beta..travis-ci.org/app/assets.app.js
 # 2. run standalone app
 PORT=8081 node ./assets.app.js
 # 3. open a browser to http://127.0.0.1:8081 and play with the web-demo
@@ -85,35 +86,35 @@ PORT=8081 node ./assets.app.js
 ```
 
 #### output from browser
-[![screenshot](https://kaizhu256.github.io/node-swgg-github-migrations/build/screenshot.testExampleSh.browser.%252F.png)](https://kaizhu256.github.io/node-swgg-github-migrations/build/app/assets.example.html)
+[![screenshot](https://kaizhu256.github.io/node-swgg-github-migration/build/screenshot.testExampleSh.browser.%252F.png)](https://kaizhu256.github.io/node-swgg-github-migration/build/app/assets.example.html)
 
 #### output from shell
-![screenshot](https://kaizhu256.github.io/node-swgg-github-migrations/build/screenshot.testExampleSh.svg)
+![screenshot](https://kaizhu256.github.io/node-swgg-github-migration/build/screenshot.testExampleSh.svg)
 
 
 
 # quickstart example.js
-[![screenshot](https://kaizhu256.github.io/node-swgg-github-migrations/build/screenshot.testExampleJs.browser.%252F.png)](https://kaizhu256.github.io/node-swgg-github-migrations/build/app/assets.example.html)
+[![screenshot](https://kaizhu256.github.io/node-swgg-github-migration/build/screenshot.testExampleJs.browser.%252F.png)](https://kaizhu256.github.io/node-swgg-github-migration/build/app/assets.example.html)
 
 #### to run this example, follow the instruction in the script below
-- [example.js](https://kaizhu256.github.io/node-swgg-github-migrations/build..beta..travis-ci.org/example.js)
+- [example.js](https://kaizhu256.github.io/node-swgg-github-migration/build..beta..travis-ci.org/example.js)
 ```javascript
 /*
 example.js
 
-this script will run a web-demo of swgg-github-migrations
+this script will run a web-demo of swgg-github-migration
 
 instruction
     1. save this script as example.js
     2. run the shell command:
-        $ npm install swgg-github-migrations && PORT=8081 node example.js
+        $ npm install swgg-github-migration && PORT=8081 node example.js
     3. open a browser to http://127.0.0.1:8081 and play with the web-demo
     4. edit this script to suit your needs
 */
 
 
 
-/* istanbul instrument in package swgg_github_migrations */
+/* istanbul instrument in package swgg_github_migration */
 /*jslint
     bitwise: true,
     browser: true,
@@ -154,8 +155,8 @@ instruction
             : global;
         // init utility2_rollup
         local = local.global.utility2_rollup || (local.modeJs === 'browser'
-            ? local.global.utility2_swgg_github_migrations
-            : require('swgg-github-migrations'));
+            ? local.global.utility2_swgg_github_migration
+            : require('swgg-github-migration'));
         // init exports
         local.global.local = local;
         // init assets
@@ -210,9 +211,9 @@ instruction
                 case 'npm_package_description':
                     return 'the greatest app in the world!';
                 case 'npm_package_name':
-                    return 'swgg-github-migrations';
+                    return 'swgg-github-migration';
                 case 'npm_package_nameLib':
-                    return 'swgg_github_migrations';
+                    return 'swgg_github_migration';
                 case 'npm_package_version':
                     return '0.0.1';
                 default:
@@ -228,10 +229,10 @@ instruction
             local.fs.readFileSync(__filename, 'utf8');
         // bug-workaround - long $npm_package_buildCustomOrg
         /* jslint-ignore-begin */
-        local.assetsDict['/assets.swgg_github_migrations.js'] =
-            local.assetsDict['/assets.swgg_github_migrations.js'] ||
+        local.assetsDict['/assets.swgg_github_migration.js'] =
+            local.assetsDict['/assets.swgg_github_migration.js'] ||
             local.fs.readFileSync(
-                local.__dirname + '/lib.swgg_github_migrations.js',
+                local.__dirname + '/lib.swgg_github_migration.js',
                 'utf8'
             ).replace((/^#!/), '//');
         /* jslint-ignore-end */
@@ -262,40 +263,40 @@ instruction
 ```
 
 #### output from browser
-[![screenshot](https://kaizhu256.github.io/node-swgg-github-migrations/build/screenshot.testExampleJs.browser.%252F.png)](https://kaizhu256.github.io/node-swgg-github-migrations/build/app/assets.example.html)
+[![screenshot](https://kaizhu256.github.io/node-swgg-github-migration/build/screenshot.testExampleJs.browser.%252F.png)](https://kaizhu256.github.io/node-swgg-github-migration/build/app/assets.example.html)
 
 #### output from shell
-![screenshot](https://kaizhu256.github.io/node-swgg-github-migrations/build/screenshot.testExampleJs.svg)
+![screenshot](https://kaizhu256.github.io/node-swgg-github-migration/build/screenshot.testExampleJs.svg)
 
 
 
 # extra screenshots
-1. [https://kaizhu256.github.io/node-swgg-github-migrations/build/screenshot.buildCi.browser.%252Ftmp%252Fbuild%252Fapidoc.html.png](https://kaizhu256.github.io/node-swgg-github-migrations/build/screenshot.buildCi.browser.%252Ftmp%252Fbuild%252Fapidoc.html.png)
-[![screenshot](https://kaizhu256.github.io/node-swgg-github-migrations/build/screenshot.buildCi.browser.%252Ftmp%252Fbuild%252Fapidoc.html.png)](https://kaizhu256.github.io/node-swgg-github-migrations/build/screenshot.buildCi.browser.%252Ftmp%252Fbuild%252Fapidoc.html.png)
+1. [https://kaizhu256.github.io/node-swgg-github-migration/build/screenshot.buildCi.browser.%252Ftmp%252Fbuild%252Fapidoc.html.png](https://kaizhu256.github.io/node-swgg-github-migration/build/screenshot.buildCi.browser.%252Ftmp%252Fbuild%252Fapidoc.html.png)
+[![screenshot](https://kaizhu256.github.io/node-swgg-github-migration/build/screenshot.buildCi.browser.%252Ftmp%252Fbuild%252Fapidoc.html.png)](https://kaizhu256.github.io/node-swgg-github-migration/build/screenshot.buildCi.browser.%252Ftmp%252Fbuild%252Fapidoc.html.png)
 
-1. [https://kaizhu256.github.io/node-swgg-github-migrations/build/screenshot.buildCi.browser.%252Ftmp%252Fbuild%252Fcoverage.lib.html.png](https://kaizhu256.github.io/node-swgg-github-migrations/build/screenshot.buildCi.browser.%252Ftmp%252Fbuild%252Fcoverage.lib.html.png)
-[![screenshot](https://kaizhu256.github.io/node-swgg-github-migrations/build/screenshot.buildCi.browser.%252Ftmp%252Fbuild%252Fcoverage.lib.html.png)](https://kaizhu256.github.io/node-swgg-github-migrations/build/screenshot.buildCi.browser.%252Ftmp%252Fbuild%252Fcoverage.lib.html.png)
+1. [https://kaizhu256.github.io/node-swgg-github-migration/build/screenshot.buildCi.browser.%252Ftmp%252Fbuild%252Fcoverage.lib.html.png](https://kaizhu256.github.io/node-swgg-github-migration/build/screenshot.buildCi.browser.%252Ftmp%252Fbuild%252Fcoverage.lib.html.png)
+[![screenshot](https://kaizhu256.github.io/node-swgg-github-migration/build/screenshot.buildCi.browser.%252Ftmp%252Fbuild%252Fcoverage.lib.html.png)](https://kaizhu256.github.io/node-swgg-github-migration/build/screenshot.buildCi.browser.%252Ftmp%252Fbuild%252Fcoverage.lib.html.png)
 
-1. [https://kaizhu256.github.io/node-swgg-github-migrations/build/screenshot.buildCi.browser.%252Ftmp%252Fbuild%252Ftest-report.html.png](https://kaizhu256.github.io/node-swgg-github-migrations/build/screenshot.buildCi.browser.%252Ftmp%252Fbuild%252Ftest-report.html.png)
-[![screenshot](https://kaizhu256.github.io/node-swgg-github-migrations/build/screenshot.buildCi.browser.%252Ftmp%252Fbuild%252Ftest-report.html.png)](https://kaizhu256.github.io/node-swgg-github-migrations/build/screenshot.buildCi.browser.%252Ftmp%252Fbuild%252Ftest-report.html.png)
+1. [https://kaizhu256.github.io/node-swgg-github-migration/build/screenshot.buildCi.browser.%252Ftmp%252Fbuild%252Ftest-report.html.png](https://kaizhu256.github.io/node-swgg-github-migration/build/screenshot.buildCi.browser.%252Ftmp%252Fbuild%252Ftest-report.html.png)
+[![screenshot](https://kaizhu256.github.io/node-swgg-github-migration/build/screenshot.buildCi.browser.%252Ftmp%252Fbuild%252Ftest-report.html.png)](https://kaizhu256.github.io/node-swgg-github-migration/build/screenshot.buildCi.browser.%252Ftmp%252Fbuild%252Ftest-report.html.png)
 
-1. [https://kaizhu256.github.io/node-swgg-github-migrations/build/screenshot.deployGithub.browser.%252Fnode-swgg-github-migrations%252Fbuild%252Fapp%252Fassets.swgg.html.png](https://kaizhu256.github.io/node-swgg-github-migrations/build/screenshot.deployGithub.browser.%252Fnode-swgg-github-migrations%252Fbuild%252Fapp%252Fassets.swgg.html.png)
-[![screenshot](https://kaizhu256.github.io/node-swgg-github-migrations/build/screenshot.deployGithub.browser.%252Fnode-swgg-github-migrations%252Fbuild%252Fapp%252Fassets.swgg.html.png)](https://kaizhu256.github.io/node-swgg-github-migrations/build/screenshot.deployGithub.browser.%252Fnode-swgg-github-migrations%252Fbuild%252Fapp%252Fassets.swgg.html.png)
+1. [https://kaizhu256.github.io/node-swgg-github-migration/build/screenshot.deployGithub.browser.%252Fnode-swgg-github-migration%252Fbuild%252Fapp%252Fassets.swgg.html.png](https://kaizhu256.github.io/node-swgg-github-migration/build/screenshot.deployGithub.browser.%252Fnode-swgg-github-migration%252Fbuild%252Fapp%252Fassets.swgg.html.png)
+[![screenshot](https://kaizhu256.github.io/node-swgg-github-migration/build/screenshot.deployGithub.browser.%252Fnode-swgg-github-migration%252Fbuild%252Fapp%252Fassets.swgg.html.png)](https://kaizhu256.github.io/node-swgg-github-migration/build/screenshot.deployGithub.browser.%252Fnode-swgg-github-migration%252Fbuild%252Fapp%252Fassets.swgg.html.png)
 
-1. [https://kaizhu256.github.io/node-swgg-github-migrations/build/screenshot.deployGithub.browser.%252Fnode-swgg-github-migrations%252Fbuild%252Fapp.png](https://kaizhu256.github.io/node-swgg-github-migrations/build/screenshot.deployGithub.browser.%252Fnode-swgg-github-migrations%252Fbuild%252Fapp.png)
-[![screenshot](https://kaizhu256.github.io/node-swgg-github-migrations/build/screenshot.deployGithub.browser.%252Fnode-swgg-github-migrations%252Fbuild%252Fapp.png)](https://kaizhu256.github.io/node-swgg-github-migrations/build/screenshot.deployGithub.browser.%252Fnode-swgg-github-migrations%252Fbuild%252Fapp.png)
+1. [https://kaizhu256.github.io/node-swgg-github-migration/build/screenshot.deployGithub.browser.%252Fnode-swgg-github-migration%252Fbuild%252Fapp.png](https://kaizhu256.github.io/node-swgg-github-migration/build/screenshot.deployGithub.browser.%252Fnode-swgg-github-migration%252Fbuild%252Fapp.png)
+[![screenshot](https://kaizhu256.github.io/node-swgg-github-migration/build/screenshot.deployGithub.browser.%252Fnode-swgg-github-migration%252Fbuild%252Fapp.png)](https://kaizhu256.github.io/node-swgg-github-migration/build/screenshot.deployGithub.browser.%252Fnode-swgg-github-migration%252Fbuild%252Fapp.png)
 
-1. [https://kaizhu256.github.io/node-swgg-github-migrations/build/screenshot.deployGithubTest.browser.%252Fnode-swgg-github-migrations%252Fbuild%252Fapp.png](https://kaizhu256.github.io/node-swgg-github-migrations/build/screenshot.deployGithubTest.browser.%252Fnode-swgg-github-migrations%252Fbuild%252Fapp.png)
-[![screenshot](https://kaizhu256.github.io/node-swgg-github-migrations/build/screenshot.deployGithubTest.browser.%252Fnode-swgg-github-migrations%252Fbuild%252Fapp.png)](https://kaizhu256.github.io/node-swgg-github-migrations/build/screenshot.deployGithubTest.browser.%252Fnode-swgg-github-migrations%252Fbuild%252Fapp.png)
+1. [https://kaizhu256.github.io/node-swgg-github-migration/build/screenshot.deployGithubTest.browser.%252Fnode-swgg-github-migration%252Fbuild%252Fapp.png](https://kaizhu256.github.io/node-swgg-github-migration/build/screenshot.deployGithubTest.browser.%252Fnode-swgg-github-migration%252Fbuild%252Fapp.png)
+[![screenshot](https://kaizhu256.github.io/node-swgg-github-migration/build/screenshot.deployGithubTest.browser.%252Fnode-swgg-github-migration%252Fbuild%252Fapp.png)](https://kaizhu256.github.io/node-swgg-github-migration/build/screenshot.deployGithubTest.browser.%252Fnode-swgg-github-migration%252Fbuild%252Fapp.png)
 
-1. [https://kaizhu256.github.io/node-swgg-github-migrations/build/screenshot.npmTest.browser.%252F.png](https://kaizhu256.github.io/node-swgg-github-migrations/build/screenshot.npmTest.browser.%252F.png)
-[![screenshot](https://kaizhu256.github.io/node-swgg-github-migrations/build/screenshot.npmTest.browser.%252F.png)](https://kaizhu256.github.io/node-swgg-github-migrations/build/screenshot.npmTest.browser.%252F.png)
+1. [https://kaizhu256.github.io/node-swgg-github-migration/build/screenshot.npmTest.browser.%252F.png](https://kaizhu256.github.io/node-swgg-github-migration/build/screenshot.npmTest.browser.%252F.png)
+[![screenshot](https://kaizhu256.github.io/node-swgg-github-migration/build/screenshot.npmTest.browser.%252F.png)](https://kaizhu256.github.io/node-swgg-github-migration/build/screenshot.npmTest.browser.%252F.png)
 
-1. [https://kaizhu256.github.io/node-swgg-github-migrations/build/screenshot.testExampleJs.browser.%252F.png](https://kaizhu256.github.io/node-swgg-github-migrations/build/screenshot.testExampleJs.browser.%252F.png)
-[![screenshot](https://kaizhu256.github.io/node-swgg-github-migrations/build/screenshot.testExampleJs.browser.%252F.png)](https://kaizhu256.github.io/node-swgg-github-migrations/build/screenshot.testExampleJs.browser.%252F.png)
+1. [https://kaizhu256.github.io/node-swgg-github-migration/build/screenshot.testExampleJs.browser.%252F.png](https://kaizhu256.github.io/node-swgg-github-migration/build/screenshot.testExampleJs.browser.%252F.png)
+[![screenshot](https://kaizhu256.github.io/node-swgg-github-migration/build/screenshot.testExampleJs.browser.%252F.png)](https://kaizhu256.github.io/node-swgg-github-migration/build/screenshot.testExampleJs.browser.%252F.png)
 
-1. [https://kaizhu256.github.io/node-swgg-github-migrations/build/screenshot.testExampleSh.browser.%252F.png](https://kaizhu256.github.io/node-swgg-github-migrations/build/screenshot.testExampleSh.browser.%252F.png)
-[![screenshot](https://kaizhu256.github.io/node-swgg-github-migrations/build/screenshot.testExampleSh.browser.%252F.png)](https://kaizhu256.github.io/node-swgg-github-migrations/build/screenshot.testExampleSh.browser.%252F.png)
+1. [https://kaizhu256.github.io/node-swgg-github-migration/build/screenshot.testExampleSh.browser.%252F.png](https://kaizhu256.github.io/node-swgg-github-migration/build/screenshot.testExampleSh.browser.%252F.png)
+[![screenshot](https://kaizhu256.github.io/node-swgg-github-migration/build/screenshot.testExampleSh.browser.%252F.png)](https://kaizhu256.github.io/node-swgg-github-migration/build/screenshot.testExampleSh.browser.%252F.png)
 
 
 
@@ -303,7 +304,7 @@ instruction
 ```json
 {
     "author": "kai zhu <kaizhu256@gmail.com>",
-    "description": "this zero-dependency package will provide a swagger-client for github-migrations's web-apis, with a working web-demo",
+    "description": "this zero-dependency package will provide a swagger-client for github-migration's web-apis, with a working web-demo",
     "devDependencies": {
         "electron-lite": "kaizhu256/node-electron-lite#alpha",
         "utility2": "kaizhu256/node-utility2#alpha"
@@ -311,44 +312,47 @@ instruction
     "engines": {
         "node": ">=4.0"
     },
-    "githubRepoAlias": "swgg-io/node-swgg-github-migrations",
-    "homepage": "https://github.com/kaizhu256/node-swgg-github-migrations",
+    "githubRepoAlias": "swgg-io/node-swgg-github-migration",
+    "homepage": "https://github.com/kaizhu256/node-swgg-github-migration",
     "keywords": [
-        "github-migrations",
+        "github-migration",
         "swagger-client"
     ],
     "license": "MIT",
-    "main": "lib.swgg_github_migrations.js",
-    "name": "swgg-github-migrations",
-    "nameLib": "swgg_github_migrations",
-    "nameOriginal": "swgg-github-migrations",
+    "main": "lib.swgg_github_migration.js",
+    "name": "swgg-github-migration",
+    "nameAliasPublish": "swgg-github-migrations",
+    "nameLib": "swgg_github_migration",
+    "nameOriginal": "swgg-github-migration",
     "os": [
         "darwin",
         "linux"
     ],
     "repository": {
         "type": "git",
-        "url": "https://github.com/kaizhu256/node-swgg-github-migrations.git"
+        "url": "https://github.com/kaizhu256/node-swgg-github-migration.git"
     },
     "scripts": {
+        "apidocRawCreate": "[ ! -f npm_scripts.sh ] || ./npm_scripts.sh shNpmScriptApidocRawCreate",
+        "apidocRawFetch": "[ ! -f npm_scripts.sh ] || ./npm_scripts.sh shNpmScriptApidocRawFetch",
         "build-ci": "utility2 shReadmeTest build_ci.sh",
         "env": "env",
         "heroku-postbuild": "npm uninstall utility2 2>/dev/null; npm install kaizhu256/node-utility2#alpha && utility2 shDeployHeroku",
         "nameAliasPublish": "",
-        "postinstall": "[ ! -f npm_scripts.sh ] || ./npm_scripts.sh postinstall",
+        "postinstall": "[ ! -f npm_scripts.sh ] || ./npm_scripts.sh shNpmScriptPostinstall",
         "start": "PORT=${PORT:-8080} utility2 start test.js",
         "test": "PORT=$(utility2 shServerPortRandom) utility2 test test.js"
     },
     "swggAll": "github-all",
-    "swggTags0": "github-migrations",
-    "version": "2018.1.23"
+    "swggTags0": "github-migration",
+    "version": "2018.2.14"
 }
 ```
 
 
 
 # changelog of last 50 commits
-[![screenshot](https://kaizhu256.github.io/node-swgg-github-migrations/build/screenshot.gitLog.svg)](https://github.com/kaizhu256/node-swgg-github-migrations/commits)
+[![screenshot](https://kaizhu256.github.io/node-swgg-github-migration/build/screenshot.gitLog.svg)](https://github.com/kaizhu256/node-swgg-github-migration/commits)
 
 
 
