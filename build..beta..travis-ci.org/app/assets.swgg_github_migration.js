@@ -1,4 +1,4 @@
-/* istanbul instrument in package swgg_github_migrations */
+/* istanbul instrument in package swgg_github_migration */
 /*jslint
     bitwise: true,
     browser: true,
@@ -48,7 +48,7 @@
         }
         // init exports
         if (local.modeJs === 'browser') {
-            local.global.utility2_swgg_github_migrations = local;
+            local.global.utility2_swgg_github_migration = local;
         } else {
             // require builtins
             Object.keys(process.binding('natives')).forEach(function (key) {
@@ -60,6 +60,6 @@
             module.exports.__dirname = __dirname;
         }
         // init lib
-        local.local = local.swgg_github_migrations = local;
+        local.local = local.swgg_github_migration = local;
     }());
 }());

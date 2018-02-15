@@ -1,17 +1,27 @@
 <html lang="en" data-scrape="{
     &quot;hrefDict&quot;: {
         &quot;https://github.com/kaizhu256/node-swgg&quot;: &quot;swgg&quot;,
-        &quot;https://github.com/kaizhu256/node-swgg-github-migrations&quot;: &quot;swgg-github-migrations (2018.1.23)&quot;,
-        &quot;https://developer.github.com/v3/migration/&quot;: &quot;https://developer.github.com/v3/migration/&quot;
+        &quot;https://github.com/kaizhu256/node-swgg-github-migration&quot;: &quot;swgg-github-migration (2018.2.14)&quot;,
+        &quot;https://developer.github.com/v3/migration/&quot;: &quot;Migration&quot;,
+        &quot;https://developer.github.com/v3/migration/migrations/&quot;: &quot;Migrations&quot;,
+        &quot;https://developer.github.com/v3/&quot;: &quot;authenticated&quot;,
+        &quot;https://help.github.com/articles/permission-levels-for-an-organization/&quot;: &quot;owners&quot;,
+        &quot;https://developer.github.com/v3/migration/source_imports/&quot;: &quot;Source Imports&quot;,
+        &quot;https://help.github.com/articles/importing-from-other-version-control-systems-to-github/&quot;: &quot;the GitHub Importer&quot;,
+        &quot;https://developer.github.com/v3/index.html&quot;: &quot;https://developer.github.com/v3/index.html#user-agent-required&quot;,
+        &quot;https://developer.github.com/v3/media/&quot;: &quot;https://developer.github.com/v3/media/&quot;,
+        &quot;https://developer.github.com/v3/repos/&quot;: &quot;delete them&quot;,
+        &quot;https://git-lfs.github.com/&quot;: &quot;Git LFS&quot;,
+        &quot;https://help.github.com/articles/versioning-large-files/&quot;: &quot;on our help site&quot;
     },
-    &quot;href&quot;: &quot;http://127.0.0.1:8081/#!swgg_id__2Forgs_2F_7Borg_7D_2Fmigrations_20GET_1&quot;,
+    &quot;href&quot;: &quot;http://127.0.0.1:8081/#!swgg_id__2Forgs_2F_7Borg_7D_2Fmigrations_2F_7Bid_7D_2Farchive_20DELETE_1&quot;,
     &quot;url&quot;: &quot;http://127.0.0.1:8081/&quot;,
-    &quot;bodyTextContent&quot;: &quot;These APIs help you move projects to or from GitHub.Enterprise Migrations. The Enterprise Migrations API (https://developer.github.com/v3/migration/migrations/) lets you move a repository from GitHub to GitHub Enterprise.Source Imports. The Source Imports API (https://developer.github.com/v3/migration/source_imports/) lets you import a source repository to GitHub.\n\n            javascript code\n/*\n * initialize swgg-client\n * 1. download currently-loaded apis to file swagger.json:\n *     $ curl -L \&quot;http://127.0.0.1:8081/assets.swgg.swagger.json\&quot; > swagger.json\n * 2. npm install swgg\n *     $ npm install swgg\n * 3. run code below to initialize swgg-client\n * 4. (optional) edit file swagger.json to suit your needs\n */\nvar swgg;\nswgg = require(\&quot;swgg\&quot;);\nswgg.apiUpdate(require(\&quot;./swagger.json\&quot;));\nconsole.log(\&quot;printing currently loaded apis ...\&quot;);\nconsole.log(JSON.stringify(Object.keys(swgg.apiDict).sort(), null, 4));\nconsole.log(\&quot;initialized swgg-client\&quot;);\n\n            These APIs help you move projects to or from GitHub.Enterprise Migrations. The Enterprise Migrations API (https://developer.github.com/v3/migration/migrations/) lets you move a repository from GitHub to GitHub Enterprise.Source Imports. The Source Imports API (https://developer.github.com/v3/migration/source_imports/) lets you import a source repository to GitHub.https://developer.github.com/v3/migration/\n\n                                                                            try it out!\n    javascript code\n    /*\n * reproduce api-call \&quot;GET /orgs/{}/migrations\&quot;\n * 1. initialize swgg-client from previous step\n * 2. run code below to reproduce api-call\n */\nswgg.apiDict[\&quot;GET /orgs/{}/migrations\&quot;].ajax({\n    \&quot;paramDict\&quot;: {\n        \&quot;user-agent\&quot;: \&quot;swgg\&quot;,\n        \&quot;accept\&quot;: \&quot;application/vnd.github.wyandotte-preview+json\&quot;,\n        \&quot;org\&quot;: \&quot;swgg-io\&quot;\n    }\n}, function (error, data) {\n    if (error) {\n        console.error(error);\n        return;\n    }\n    console.log(data.responseJson || data.responseText);\n});\n\n    curl request\n    curl \\\n--request GET \\\n--header 'user-agent: swgg' \\\n--header 'accept: application/vnd.github.wyandotte-preview+json' \\\n--header 'Content-Type: application/json' \\\n--data-binary '' \\\n\&quot;https://api.github.com/orgs/swgg-io/migrations\&quot;\n    response status code\n\n                                                                            {\n    \&quot;exclude_attachments\&quot;: {\n        \&quot;default\&quot;: false,\n        \&quot;description\&quot;: \&quot;Indicates whether attachments should be excluded from the migration (to reduce migration archive file size). Default: false.\&quot;,\n        \&quot;type\&quot;: \&quot;boolean\&quot;\n    },\n    \&quot;lock_repositories\&quot;: {\n        \&quot;default\&quot;: false,\n        \&quot;description\&quot;: \&quot;Indicates whether repositories should be locked (to prevent manipulation) while migrating data. Default: false.\&quot;,\n        \&quot;type\&quot;: \&quot;boolean\&quot;\n    },\n    \&quot;repositories\&quot;: {\n        \&quot;default\&quot;: [\n            \&quot;octocat/Hello-World\&quot;\n        ],\n        \&quot;description\&quot;: \&quot;A list of arrays indicating which repositories should be migrated.\&quot;,\n        \&quot;items\&quot;: {\n            \&quot;type\&quot;: \&quot;string\&quot;\n        },\n        \&quot;type\&quot;: \&quot;array\&quot;\n    }\n}\n\n                                                                                                                                                                                                                                                                                                                                                        6.\n    DELETE\n    /orgs/{org}/migrations/{migration_id}/repos/{repo_name}/lock\n    Migrations - Unlock a repository. Unlocks a repository that was locked for migration. You should unlock each migrated repository and delete them when the migration is complete and you no longer need the source data.\n\n    description\n    Migrations - Unlock a repository. Unlocks a repository that was locked for migration. You should unlock each migrated repository and delete them when the migration is complete and you no longer need the source data.https://developer.github.com/v3/migration/migrations/#unlock-a-repository\n\n                                                                                                                                                                                                                                                                                                                9.\n    PATCH\n    /repos/{owner}/{repo}/import\n    Source Imports - Update existing import. An import can be updated with credentials or a project choice by passing in the appropriate parameters in this API request. If no parameters are provided, the import will be restarted.\n\n    description\n    Source Imports - Update existing import. An import can be updated with credentials or a project choice by passing in the appropriate parameters in this API request. If no parameters are provided, the import will be restarted.https://developer.github.com/v3/migration/source_imports/#update-existing-import\n\n                                                                    {\n    \&quot;vcs_password\&quot;: {\n        \&quot;default\&quot;: \&quot;secret\&quot;,\n        \&quot;description\&quot;: \&quot;If authentication is required, the password to provide to vcs_url.\&quot;,\n        \&quot;type\&quot;: \&quot;string\&quot;\n    },\n    \&quot;vcs_username\&quot;: {\n        \&quot;default\&quot;: \&quot;octocat\&quot;,\n        \&quot;description\&quot;: \&quot;If authentication is required, the username to provide to vcs_url.\&quot;,\n        \&quot;type\&quot;: \&quot;string\&quot;\n    }\n}\n\n                                                                                                                    {\n    \&quot;tfvc_project\&quot;: {\n        \&quot;description\&quot;: \&quot;For a tfvc import, the name of the project that is being imported.\&quot;,\n        \&quot;type\&quot;: \&quot;string\&quot;\n    },\n    \&quot;vcs\&quot;: {\n        \&quot;description\&quot;: \&quot;The originating VCS type. Can be one of subversion, git, mercurial, or tfvc. Please be aware that without this parameter, the import job will take additional time to detect the VCS type before beginning the import. This detection step will be reflected in the response.\&quot;,\n        \&quot;enum\&quot;: [\n            \&quot;subversion\&quot;,\n            \&quot;git\&quot;,\n            \&quot;mercurial\&quot;,\n            \&quot;tfvc\&quot;\n        ],\n        \&quot;type\&quot;: \&quot;string\&quot;\n    },\n    \&quot;vcs_password\&quot;: {\n        \&quot;default\&quot;: \&quot;secret\&quot;,\n        \&quot;description\&quot;: \&quot;If authentication is required, the password to provide to vcs_url.\&quot;,\n        \&quot;type\&quot;: \&quot;string\&quot;\n    },\n    \&quot;vcs_url\&quot;: {\n        \&quot;default\&quot;: \&quot;http://svn.mycompany.com/svn/myproject\&quot;,\n        \&quot;description\&quot;: \&quot;The URL of the originating repository.\&quot;,\n        \&quot;type\&quot;: \&quot;string\&quot;\n    },\n    \&quot;vcs_username\&quot;: {\n        \&quot;default\&quot;: \&quot;octocat\&quot;,\n        \&quot;description\&quot;: \&quot;If authentication is required, the username to provide to vcs_url.\&quot;,\n        \&quot;type\&quot;: \&quot;string\&quot;\n    }\n}\n\n                                            11.\n    GET\n    /repos/{owner}/{repo}/import/authors\n    Source Imports - Get commit authors. Each type of source control system represents authors in a different way. For example, a Git commit author has a display name and an email address, but a Subversion commit author just has a username. The GitHub Importer will make the author information valid, but the author might not be correct. For example, it will change the bare Subversion username hubot into something like hubot <hubot@12341234-abab-fefe-8787-fedcba987654>. This API method and the \&quot;Map a commit author\&quot; method allow you to provide correct Git author information.\n\n    description\n    Source Imports - Get commit authors. Each type of source control system represents authors in a different way. For example, a Git commit author has a display name and an email address, but a Subversion commit author just has a username. The GitHub Importer will make the author information valid, but the author might not be correct. For example, it will change the bare Subversion username hubot into something like hubot <hubot@12341234-abab-fefe-8787-fedcba987654>. This API method and the \&quot;Map a commit author\&quot; method allow you to provide correct Git author information.https://developer.github.com/v3/migration/source_imports/#get-commit-authors\n\n                                                                                                            description\n    Source Imports - Map a commit author. Update an author's identity for the import. Your application can continue updating authors any time before you push new commits to the repository.https://developer.github.com/v3/migration/source_imports/#map-a-commit-author\n\n                                                                            {\n    \&quot;email\&quot;: {\n        \&quot;default\&quot;: \&quot;hubot@github.com\&quot;,\n        \&quot;format\&quot;: \&quot;email\&quot;,\n        \&quot;in\&quot;: \&quot;query\&quot;,\n        \&quot;name\&quot;: \&quot;email\&quot;,\n        \&quot;type\&quot;: \&quot;string\&quot;\n    },\n    \&quot;name\&quot;: {\n        \&quot;default\&quot;: \&quot;Hubot the Robot\&quot;,\n        \&quot;in\&quot;: \&quot;query\&quot;,\n        \&quot;name\&quot;: \&quot;name\&quot;,\n        \&quot;type\&quot;: \&quot;string\&quot;\n    }\n}\n\n                                                                                                                                                14.\n    PATCH\n    /repos/{owner}/{repo}/import/lfs\n    Source Imports - Set Git LFS preference. You can import repositories from Subversion, Mercurial, and TFS that include files larger than 100MB. This ability is powered by Git LFS. You can learn more about our LFS feature and working with large files on our help site.\n\n    description\n    Source Imports - Set Git LFS preference. You can import repositories from Subversion, Mercurial, and TFS that include files larger than 100MB. This ability is powered by Git LFS. You can learn more about our LFS feature and working with large files on our help site.https://developer.github.com/v3/migration/source_imports/#set-git-lfs-preference\n\n                                                                    {\n    \&quot;use_lfs\&quot;: {\n        \&quot;description\&quot;: \&quot;Can be one of opt_in (large files will be stored using Git LFS) or opt_out (large files will be removed during the import).\&quot;,\n        \&quot;enum\&quot;: [\n            \&quot;opt_in\&quot;,\n            \&quot;opt_out\&quot;\n        ],\n        \&quot;type\&quot;: \&quot;string\&quot;\n    }\n}&quot;
+    &quot;bodyTextContent&quot;: &quot;javascript code\n/*\n * initialize swgg-client\n * 1. download currently-loaded apis to file swagger.json:\n *     $ curl -L \&quot;http://127.0.0.1:8081/assets.swgg.swagger.json\&quot; > swagger.json\n * 2. npm install swgg\n *     $ npm install swgg\n * 3. run code below to initialize swgg-client\n * 4. (optional) edit file swagger.json to suit your needs\n */\nvar swgg;\nswgg = require(\&quot;swgg\&quot;);\nswgg.apiUpdate(require(\&quot;./swagger.json\&quot;));\nconsole.log(\&quot;printing currently loaded apis ...\&quot;);\nconsole.log(JSON.stringify(Object.keys(swgg.apiDict).sort(), null, 4));\nconsole.log(\&quot;initialized swgg-client\&quot;);\n\n            The source import APIs are currently in public preview. During this period, the APIs may change in a backwards-incompatible way.  To access the API during the preview period, you must provide a custom [media type]() in the ```Accept``` header:\n```\napplication/vnd.github.barred-rock-preview\n```\n\nA typical source import would [start the import]() and then (optionally) [update the authors]() and/or [set the preference]() for using Git LFS if large files exist in the import. A more detailed example can be seen in this diagram:\n```\n+---------+                     +--------+                              +---------------------+\n| Tooling |                     | GitHub |                              | Original Repository |\n+---------+                     +--------+                              +---------------------+\n     |                              |                                              |\n     |  Start import                |                                              |\n     |----------------------------->|                                              |\n     |                              |                                              |\n     |                              |  Download source data                        |\n     |                              |--------------------------------------------->|\n     |                              |                        Begin streaming data  |\n     |                              |<---------------------------------------------|\n     |                              |                                              |\n     |  Get import progress         |                                              |\n     |----------------------------->|                                              |\n     |       \&quot;status\&quot;: \&quot;importing\&quot;  |                                              |\n     |<-----------------------------|                                              |\n     |                              |                                              |\n     |  Get commit authors          |                                              |\n     |----------------------------->|                                              |\n     |                              |                                              |\n     |  Map a commit author         |                                              |\n     |----------------------------->|                                              |\n     |                              |                                              |\n     |                              |                                              |\n     |                              |                       Finish streaming data  |\n     |                              |<---------------------------------------------|\n     |                              |                                              |\n     |                              |  Rewrite commits with mapped authors         |\n     |                              |------+                                       |\n     |                              |      |                                       |\n     |                              |<-----+                                       |\n     |                              |                                              |\n     |                              |  Update repository on GitHub                 |\n     |                              |------+                                       |\n     |                              |      |                                       |\n     |                              |<-----+                                       |\n     |                              |                                              |\n     |  Map a commit author         |                                              |\n     |----------------------------->|                                              |\n     |                              |  Rewrite commits with mapped authors         |\n     |                              |------+                                       |\n     |                              |      |                                       |\n     |                              |<-----+                                       |\n     |                              |                                              |\n     |                              |  Update repository on GitHub                 |\n     |                              |------+                                       |\n     |                              |      |                                       |\n     |                              |<-----+                                       |\n     |                              |                                              |\n     |  Get large files             |                                              |\n     |----------------------------->|                                              |\n     |                              |                                              |\n     |  opt_in to Git LFS           |                                              |\n     |----------------------------->|                                              |\n     |                              |  Rewrite commits for large files             |\n     |                              |------+                                       |\n     |                              |      |                                       |\n     |                              |<-----+                                       |\n     |                              |                                              |\n     |                              |  Update repository on GitHub                 |\n     |                              |------+                                       |\n     |                              |      |                                       |\n     |                              |<-----+                                       |\n     |                              |                                              |\n     |  Get import progress         |                                              |\n     |----------------------------->|                                              |\n     |        \&quot;status\&quot;: \&quot;complete\&quot;  |                                              |\n     |<-----------------------------|                                              |\n     |                              |                                              |\n     |                              |                                              |\n```\n\n        Migration\nThese APIs help you move projects to or from GitHub.\nMigrations\nThe Migrations API is only available to authenticated organization owners.\nTo access the Migrations API, you must provide a custom media type in the Accept header:\napplication/vnd.github.wyandotte-preview+json\nSource Imports\nThe source import APIs are currently in public preview. During this period, the APIs may change in a backwards-incompatible way.  To access the API during the preview period, you must provide a custom media type in the Accept header:\napplication/vnd.github.barred-rock-preview\nThe Source Import API lets you start an import from a Git, Subversion, Mercurial, or Team Foundation Server source repository. This is the same functionality as the GitHub Importer.\nA typical source import would start the import and then (optionally) update the authors and/or set the preference for using Git LFS if large files exist in the import. A more detailed example can be seen in this diagram:\n+---------+                     +--------+                              +---------------------+\n| Tooling |                     | GitHub |                              | Original Repository |\n+---------+                     +--------+                              +---------------------+\n     |                              |                                              |\n     |  Start import                |                                              |\n     |----------------------------->|                                              |\n     |                              |                                              |\n     |                              |  Download source data                        |\n     |                              |--------------------------------------------->|\n     |                              |                        Begin streaming data  |\n     |                              |<---------------------------------------------|\n     |                              |                                              |\n     |  Get import progress         |                                              |\n     |----------------------------->|                                              |\n     |       \&quot;status\&quot;: \&quot;importing\&quot;  |                                              |\n     |<-----------------------------|                                              |\n     |                              |                                              |\n     |  Get commit authors          |                                              |\n     |----------------------------->|                                              |\n     |                              |                                              |\n     |  Map a commit author         |                                              |\n     |----------------------------->|                                              |\n     |                              |                                              |\n     |                              |                                              |\n     |                              |                       Finish streaming data  |\n     |                              |<---------------------------------------------|\n     |                              |                                              |\n     |                              |  Rewrite commits with mapped authors         |\n     |                              |------+                                       |\n     |                              |      |                                       |\n     |                              |<-----+                                       |\n     |                              |                                              |\n     |                              |  Update repository on GitHub                 |\n     |                              |------+                                       |\n     |                              |      |                                       |\n     |                              |<-----+                                       |\n     |                              |                                              |\n     |  Map a commit author         |                                              |\n     |----------------------------->|                                              |\n     |                              |  Rewrite commits with mapped authors         |\n     |                              |------+                                       |\n     |                              |      |                                       |\n     |                              |<-----+                                       |\n     |                              |                                              |\n     |                              |  Update repository on GitHub                 |\n     |                              |------+                                       |\n     |                              |      |                                       |\n     |                              |<-----+                                       |\n     |                              |                                              |\n     |  Get large files             |                                              |\n     |----------------------------->|                                              |\n     |                              |                                              |\n     |  opt_in to Git LFS           |                                              |\n     |----------------------------->|                                              |\n     |                              |  Rewrite commits for large files             |\n     |                              |------+                                       |\n     |                              |      |                                       |\n     |                              |<-----+                                       |\n     |                              |                                              |\n     |                              |  Update repository on GitHub                 |\n     |                              |------+                                       |\n     |                              |      |                                       |\n     |                              |<-----+                                       |\n     |                              |                                              |\n     |  Get import progress         |                                              |\n     |----------------------------->|                                              |\n     |        \&quot;status\&quot;: \&quot;complete\&quot;  |                                              |\n     |<-----------------------------|                                              |\n     |                              |                                              |\n     |                              |                                              |\n\n                                        https://developer.github.com/v3/index.html#user-agent-required\nAll API requests MUST include a valid User-Agent header. Requests with no User-Agent header will be rejected. We request that you use your GitHub username, or the name of your application, for the User-Agent header value. This allows us to contact you if there are problems.\n\n        https://developer.github.com/v3/media/\nCustom media types are used in the API to let consumers choose the format of the data they wish to receive. This is done by adding one or more of the following types to the Accept header when you make a request. Media types are specific to resources, allowing them to change independently and support formats that other resources don't.\n\n                                                        try it out!\n    javascript code\n    /*\n * reproduce api-call \&quot;DELETE /orgs/{}/migrations/{}/archive\&quot;\n * 1. initialize swgg-client from previous step\n * 2. run code below to reproduce api-call\n */\nswgg.apiDict[\&quot;DELETE /orgs/{}/migrations/{}/archive\&quot;].ajax({\n    \&quot;paramDict\&quot;: {\n        \&quot;user-agent\&quot;: \&quot;Awesome-Octocat-App\&quot;,\n        \&quot;accept\&quot;: [\n            \&quot;application/vnd.github.wyandotte-preview+json\&quot;\n        ],\n        \&quot;org\&quot;: \&quot;org\&quot;,\n        \&quot;id\&quot;: \&quot;id\&quot;\n    }\n}, function (error, data) {\n    if (error) {\n        console.error(error);\n        return;\n    }\n    console.log(data.responseJson || data.responseText);\n});\n\n    curl request\n    curl \\\n--request DELETE \\\n--header 'user-agent: Awesome-Octocat-App' \\\n--header 'accept: application/vnd.github.wyandotte-preview+json' \\\n--header 'Content-Type: application/json' \\\n--data-binary '' \\\n\&quot;https://api.github.com/orgs/org/migrations/id/archive\&quot;\n    response status code\n\n                                                https://developer.github.com/v3/index.html#user-agent-required\nAll API requests MUST include a valid User-Agent header. Requests with no User-Agent header will be rejected. We request that you use your GitHub username, or the name of your application, for the User-Agent header value. This allows us to contact you if there are problems.\n\n        https://developer.github.com/v3/media/\nCustom media types are used in the API to let consumers choose the format of the data they wish to receive. This is done by adding one or more of the following types to the Accept header when you make a request. Media types are specific to resources, allowing them to change independently and support formats that other resources don't.\n\n                                                                                                                https://developer.github.com/v3/index.html#user-agent-required\nAll API requests MUST include a valid User-Agent header. Requests with no User-Agent header will be rejected. We request that you use your GitHub username, or the name of your application, for the User-Agent header value. This allows us to contact you if there are problems.\n\n        https://developer.github.com/v3/media/\nCustom media types are used in the API to let consumers choose the format of the data they wish to receive. This is done by adding one or more of the following types to the Accept header when you make a request. Media types are specific to resources, allowing them to change independently and support formats that other resources don't.\n\n                                                                                                        https://developer.github.com/v3/index.html#user-agent-required\nAll API requests MUST include a valid User-Agent header. Requests with no User-Agent header will be rejected. We request that you use your GitHub username, or the name of your application, for the User-Agent header value. This allows us to contact you if there are problems.\n\n        https://developer.github.com/v3/media/\nCustom media types are used in the API to let consumers choose the format of the data they wish to receive. This is done by adding one or more of the following types to the Accept header when you make a request. Media types are specific to resources, allowing them to change independently and support formats that other resources don't.\n\n                                                                                                                https://developer.github.com/v3/index.html#user-agent-required\nAll API requests MUST include a valid User-Agent header. Requests with no User-Agent header will be rejected. We request that you use your GitHub username, or the name of your application, for the User-Agent header value. This allows us to contact you if there are problems.\n\n        https://developer.github.com/v3/media/\nCustom media types are used in the API to let consumers choose the format of the data they wish to receive. This is done by adding one or more of the following types to the Accept header when you make a request. Media types are specific to resources, allowing them to change independently and support formats that other resources don't.\n\n                                            {\n    \&quot;lock_repositories\&quot;: {\n        \&quot;default\&quot;: false,\n        \&quot;description\&quot;: \&quot;Indicates whether repositories should be locked (to prevent manipulation) while migrating data. Default: ```false```.\&quot;,\n        \&quot;type\&quot;: \&quot;boolean\&quot;,\n        \&quot;x-swgg-descriptionLineList\&quot;: [\n            \&quot;Indicates whether repositories should be locked (to prevent manipulation) while migrating data. Default: ```false```.\&quot;\n        ]\n    },\n    \&quot;repositories\&quot;: {\n        \&quot;default\&quot;: [\n            \&quot;octocat/Hello-World\&quot;\n        ],\n        \&quot;description\&quot;: \&quot;no description\&quot;,\n        \&quot;items\&quot;: {\n            \&quot;type\&quot;: \&quot;string\&quot;\n        },\n        \&quot;type\&quot;: \&quot;array\&quot;\n    }\n}\n\n                                                                                https://developer.github.com/v3/index.html#user-agent-required\nAll API requests MUST include a valid User-Agent header. Requests with no User-Agent header will be rejected. We request that you use your GitHub username, or the name of your application, for the User-Agent header value. This allows us to contact you if there are problems.\n\n        https://developer.github.com/v3/media/\nCustom media types are used in the API to let consumers choose the format of the data they wish to receive. This is done by adding one or more of the following types to the Accept header when you make a request. Media types are specific to resources, allowing them to change independently and support formats that other resources don't.\n\n                                                                                                                        https://developer.github.com/v3/index.html#user-agent-required\nAll API requests MUST include a valid User-Agent header. Requests with no User-Agent header will be rejected. We request that you use your GitHub username, or the name of your application, for the User-Agent header value. This allows us to contact you if there are problems.\n\n        https://developer.github.com/v3/media/\nCustom media types are used in the API to let consumers choose the format of the data they wish to receive. This is done by adding one or more of the following types to the Accept header when you make a request. Media types are specific to resources, allowing them to change independently and support formats that other resources don't.\n\n                                                                            Each type of source control system represents authors in a different way. For example, a Git commit author has a display name and an email address, but a Subversion commit author just has a username. The GitHub Importer will make the author information valid, but the author might not be correct. For example, it will change the bare Subversion username ```hubot``` into something like ```hubot <hubot@12341234-abab-fefe-8787-fedcba987654>```.\n\n        Source Imports - Get commit authors\nEach type of source control system represents authors in a different way. For example, a Git commit author has a display name and an email address, but a Subversion commit author just has a username. The GitHub Importer will make the author information valid, but the author might not be correct. For example, it will change the bare Subversion username hubot into something like hubot <hubot@12341234-abab-fefe-8787-fedcba987654>.\nThis API method and the \&quot;Map a commit author\&quot; method allow you to provide correct Git author information.\n\n                            https://developer.github.com/v3/index.html#user-agent-required\nAll API requests MUST include a valid User-Agent header. Requests with no User-Agent header will be rejected. We request that you use your GitHub username, or the name of your application, for the User-Agent header value. This allows us to contact you if there are problems.\n\n        https://developer.github.com/v3/media/\nCustom media types are used in the API to let consumers choose the format of the data they wish to receive. This is done by adding one or more of the following types to the Accept header when you make a request. Media types are specific to resources, allowing them to change independently and support formats that other resources don't.\n\n                                                                                                                        https://developer.github.com/v3/index.html#user-agent-required\nAll API requests MUST include a valid User-Agent header. Requests with no User-Agent header will be rejected. We request that you use your GitHub username, or the name of your application, for the User-Agent header value. This allows us to contact you if there are problems.\n\n        https://developer.github.com/v3/media/\nCustom media types are used in the API to let consumers choose the format of the data they wish to receive. This is done by adding one or more of the following types to the Accept header when you make a request. Media types are specific to resources, allowing them to change independently and support formats that other resources don't.\n\n                                                                                                                https://developer.github.com/v3/index.html#user-agent-required\nAll API requests MUST include a valid User-Agent header. Requests with no User-Agent header will be rejected. We request that you use your GitHub username, or the name of your application, for the User-Agent header value. This allows us to contact you if there are problems.\n\n        https://developer.github.com/v3/media/\nCustom media types are used in the API to let consumers choose the format of the data they wish to receive. This is done by adding one or more of the following types to the Accept header when you make a request. Media types are specific to resources, allowing them to change independently and support formats that other resources don't.\n\n                                                                                                                https://developer.github.com/v3/index.html#user-agent-required\nAll API requests MUST include a valid User-Agent header. Requests with no User-Agent header will be rejected. We request that you use your GitHub username, or the name of your application, for the User-Agent header value. This allows us to contact you if there are problems.\n\n        https://developer.github.com/v3/media/\nCustom media types are used in the API to let consumers choose the format of the data they wish to receive. This is done by adding one or more of the following types to the Accept header when you make a request. Media types are specific to resources, allowing them to change independently and support formats that other resources don't.\n\n                                                            {\n    \&quot;email\&quot;: {\n        \&quot;default\&quot;: \&quot;hubot@github.com\&quot;,\n        \&quot;description\&quot;: \&quot;The new Git author email.\&quot;,\n        \&quot;type\&quot;: \&quot;string\&quot;,\n        \&quot;x-swgg-descriptionLineList\&quot;: [\n            \&quot;The new Git author email.\&quot;\n        ]\n    },\n    \&quot;name\&quot;: {\n        \&quot;default\&quot;: \&quot;Hubot the Robot\&quot;,\n        \&quot;description\&quot;: \&quot;The new Git author name.\&quot;,\n        \&quot;type\&quot;: \&quot;string\&quot;,\n        \&quot;x-swgg-descriptionLineList\&quot;: [\n            \&quot;The new Git author name.\&quot;\n        ]\n    }\n}\n\n                                                    Source Imports - Set Git LFS preference\nYou can import repositories from Subversion, Mercurial, and TFS that include files larger than 100MB. This ability is powered by Git LFS. You can learn more about our LFS feature and working with large files on our help site.\n\n                            https://developer.github.com/v3/index.html#user-agent-required\nAll API requests MUST include a valid User-Agent header. Requests with no User-Agent header will be rejected. We request that you use your GitHub username, or the name of your application, for the User-Agent header value. This allows us to contact you if there are problems.\n\n        https://developer.github.com/v3/media/\nCustom media types are used in the API to let consumers choose the format of the data they wish to receive. This is done by adding one or more of the following types to the Accept header when you make a request. Media types are specific to resources, allowing them to change independently and support formats that other resources don't.\n\n                                                    {\n    \&quot;use_lfs\&quot;: {\n        \&quot;default\&quot;: \&quot;opt_in\&quot;,\n        \&quot;description\&quot;: \&quot;**Required** Can be one of ```opt_in``` (large files will be stored using Git LFS) or ```opt_out``` (large files will be removed during the import).\&quot;,\n        \&quot;enum\&quot;: [\n            \&quot;opt_in\&quot;,\n            \&quot;opt_out\&quot;\n        ],\n        \&quot;type\&quot;: \&quot;string\&quot;,\n        \&quot;x-swgg-descriptionLineList\&quot;: [\n            \&quot;**Required** Can be one of ```opt_in``` (large files will be stored using Git LFS) or ```opt_out``` (large files will be removed during the import).\&quot;\n        ]\n    }\n}\n\n                                                                                https://developer.github.com/v3/index.html#user-agent-required\nAll API requests MUST include a valid User-Agent header. Requests with no User-Agent header will be rejected. We request that you use your GitHub username, or the name of your application, for the User-Agent header value. This allows us to contact you if there are problems.\n\n        https://developer.github.com/v3/media/\nCustom media types are used in the API to let consumers choose the format of the data they wish to receive. This is done by adding one or more of the following types to the Accept header when you make a request. Media types are specific to resources, allowing them to change independently and support formats that other resources don't.\n\n                                                    {\n    \&quot;vcs\&quot;: {\n        \&quot;default\&quot;: \&quot;subversion\&quot;,\n        \&quot;description\&quot;: \&quot;The originating VCS type. Can be one of ```subversion```, ```git```, ```mercurial```, or ```tfvc```. Please be aware that without this parameter, the import job will take additional time to detect the VCS type before beginning the import. This detection step will be reflected in the response.\&quot;,\n        \&quot;enum\&quot;: [\n            \&quot;subversion\&quot;,\n            \&quot;git\&quot;,\n            \&quot;mercurial\&quot;,\n            \&quot;tfvc\&quot;\n        ],\n        \&quot;type\&quot;: \&quot;string\&quot;,\n        \&quot;x-swgg-descriptionLineList\&quot;: [\n            \&quot;The originating VCS type. Can be one of ```subversion```, ```git```, ```mercurial```, or ```tfvc```. Please be aware that without this parameter, the import job will take additional time to detect the VCS type before beginning the import. This detection step will be reflected in the response.\&quot;\n        ]\n    },\n    \&quot;vcs_password\&quot;: {\n        \&quot;default\&quot;: \&quot;secret\&quot;,\n        \&quot;description\&quot;: \&quot;If authentication is required, the password to provide to ```vcs_url```.\&quot;,\n        \&quot;type\&quot;: \&quot;string\&quot;,\n        \&quot;x-swgg-descriptionLineList\&quot;: [\n            \&quot;If authentication is required, the password to provide to ```vcs_url```.\&quot;\n        ]\n    },\n    \&quot;vcs_url\&quot;: {\n        \&quot;default\&quot;: \&quot;http://svn.mycompany.com/svn/myproject\&quot;,\n        \&quot;description\&quot;: \&quot;**Required** The URL of the originating repository.\&quot;,\n        \&quot;type\&quot;: \&quot;string\&quot;,\n        \&quot;x-swgg-descriptionLineList\&quot;: [\n            \&quot;**Required** The URL of the originating repository.\&quot;\n        ]\n    },\n    \&quot;vcs_username\&quot;: {\n        \&quot;default\&quot;: \&quot;octocat\&quot;,\n        \&quot;description\&quot;: \&quot;If authentication is required, the username to provide to ```vcs_url```.\&quot;,\n        \&quot;type\&quot;: \&quot;string\&quot;,\n        \&quot;x-swgg-descriptionLineList\&quot;: [\n            \&quot;If authentication is required, the username to provide to ```vcs_url```.\&quot;\n        ]\n    }\n}\n\n                                                                                https://developer.github.com/v3/index.html#user-agent-required\nAll API requests MUST include a valid User-Agent header. Requests with no User-Agent header will be rejected. We request that you use your GitHub username, or the name of your application, for the User-Agent header value. This allows us to contact you if there are problems.\n\n        https://developer.github.com/v3/media/\nCustom media types are used in the API to let consumers choose the format of the data they wish to receive. This is done by adding one or more of the following types to the Accept header when you make a request. Media types are specific to resources, allowing them to change independently and support formats that other resources don't.\n\n                                                    {\n    \&quot;vcs_password\&quot;: {\n        \&quot;default\&quot;: \&quot;secret\&quot;,\n        \&quot;description\&quot;: \&quot;The password to provide to the originating repository.\&quot;,\n        \&quot;type\&quot;: \&quot;string\&quot;,\n        \&quot;x-swgg-descriptionLineList\&quot;: [\n            \&quot;The password to provide to the originating repository.\&quot;\n        ]\n    },\n    \&quot;vcs_username\&quot;: {\n        \&quot;default\&quot;: \&quot;octocat\&quot;,\n        \&quot;description\&quot;: \&quot;The username to provide to the originating repository.\&quot;,\n        \&quot;type\&quot;: \&quot;string\&quot;,\n        \&quot;x-swgg-descriptionLineList\&quot;: [\n            \&quot;The username to provide to the originating repository.\&quot;\n        ]\n    }\n}&quot;
 }"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- "" -->
-<title>swgg-github-migrations (2018.1.23)</title>
+<title>swgg-github-migration (2018.2.14)</title>
 <style>
 /*csslint
     box-sizing: false,
@@ -48,14 +58,14 @@ pre {
     white-space: pre-wrap;
 }
 @keyframes uiAnimateShake {
-    100% {
-        transform: translateX(0);
-    }
-    0%, 20%, 60% {
+    0%, 50% {
         transform: translateX(10px);
     }
-    40%, 80% {
+    25%, 75% {
         transform: translateX(-10px);
+    }
+    100% {
+        transform: translateX(0);
     }
 }
 .uiAnimateShake {
@@ -94,8 +104,8 @@ pre {
     max-width: 100%;
     padding: 0;
 }
-.swggUiContainer .operation > .thead:focus,
 .swggUiContainer pre,
+.swggUiContainer .operation > .thead:focus,
 .swggUiContainer .resource > .thead > .td:focus {
     outline: none;
 }
@@ -120,25 +130,6 @@ pre {
 .swggUiContainer textarea {
     min-height: 1.5rem;
 }
-.swggUiContainer .multilinePlaceholderContainer {
-    min-height: 10rem;
-    position: relative;
-}
-.swggUiContainer .multilinePlaceholderPre {
-    position: absolute;
-    white-space: pre;
-}
-.swggUiContainer .multilinePlaceholderTextarea {
-    position: absolute;
-}
-.swggUiContainer .operation > .thead > .td1 {
-    text-align: center;
-    width: 2rem;
-}
-.swggUiContainer .operation > .thead > .td2 {
-    text-align: center;
-    width: 5rem;
-}
 .swggUiContainer pre,
 .swggUiContainer textarea {
     font-family: Menlo, Monaco, Consolas, Courier New, monospace;
@@ -152,15 +143,44 @@ pre {
     overflow-wrap: break-word;
     white-space: pre-wrap;
 }
+.swggUiContainer .markdown pre {
+    max-height: none;
+}
+
+.swggUiContainer .multilinePlaceholderContainer {
+    min-height: 10rem;
+    position: relative;
+}
+.swggUiContainer .multilinePlaceholderPre {
+    position: absolute;
+    white-space: pre;
+}
+.swggUiContainer .multilinePlaceholderTextarea {
+    position: absolute;
+}
+.swggUiContainer .operation > .thead > .td1 {
+    text-align: left;
+    width: 2rem;
+}
+.swggUiContainer .operation > .thead > .td2 {
+    text-align: center;
+    width: 5rem;
+}
+.swggUiContainer .resourceIi {
+    min-width: 3rem;
+}
+.swggUiContainer .resourceSummary {
+    font-weight: lighter;
+}
 .swggUiContainer .responseBody,
 .swggUiContainer .responseHeaders,
 .swggUiContainer .responseStatusCode {
     font-weight: bold;
 }
 .swggUiContainer .schemaP pre,
-.swggUiContainer .schemaP .multilinePlaceholderContainer,
 .swggUiContainer .schemaP select[multiple],
-.swggUiContainer .schemaP textarea {
+.swggUiContainer .schemaP textarea,
+.swggUiContainer .schemaP .multilinePlaceholderContainer {
     height: 10rem;
 }
 .swggUiContainer .schemaP > .td3 {
@@ -170,16 +190,11 @@ pre {
     overflow: auto;
     word-wrap: break-word;
 }
-.swggUiContainer .td div,
 .swggUiContainer .td input,
 .swggUiContainer .td pre,
 .swggUiContainer .td select,
 .swggUiContainer .td textarea {
     width: 100%;
-}
-.swggUiContainer .thead,
-.swggUiContainer .tr {
-    display: flex;
 }
 .swggUiContainer > .thead > .td1 {
     font-size: x-large;
@@ -193,6 +208,10 @@ pre {
 .swggUiContainer button,
 .swggUiContainer .resourceDescription {
     background: #373;
+}
+.swggUiContainer pre,
+.swggUiContainer .operationDescription {
+    background: #ddd;
 }
 .swggUiContainer .methodDELETE {
     background: #b07;
@@ -221,8 +240,8 @@ pre {
 .swggUiContainer .operation {
     background: #dfd;
 }
-.swggUiContainer pre {
-    background: #ddd;
+.swggUiContainer .resourceDescription pre {
+    background: #777;
 }
 .swggUiContainer > .thead {
     background: #7b5;
@@ -235,7 +254,7 @@ pre {
 .swggUiContainer pre,
 .swggUiContainer select,
 .swggUiContainer textarea {
-    border: 1px solid #bbb;
+    border: 1px solid #999;
 }
 .swggUiContainer .resource:first-child {
     border-top: 1px solid #777;
@@ -258,13 +277,30 @@ pre {
     color: #fff;
 }
 .swggUiContainer .errorMessage {
-    color: #b00;
+    color: #c00;
 }
 .swggUiContainer .multilinePlaceholderPre {
     color: #999;
 }
+.swggUiContainer .resourceDescription a {
+    color: #7d7;
+}
+.swggUiContainer .resourceDescription strong {
+    color: #7f7;
+}
+.swggUiContainer .resourceDescription > code {
+    color: #ddf;
+}
 .swggUiContainer .styleColor777 {
     color: #777;
+}
+/* display */
+.swggUiContainer .onEventResourceDisplayAction {
+    display: inline-block;
+}
+.swggUiContainer .thead,
+.swggUiContainer .tr {
+    display: flex;
 }
 /* flex */
 .swggUiContainer .operation > .thead > .td3 {
@@ -306,21 +342,26 @@ pre {
 }
 .swggUiContainer audio,
 .swggUiContainer img,
-.swggUiContainer .operation .thead,
 .swggUiContainer option,
+.swggUiContainer video,
+.swggUiContainer .operation .thead,
 .swggUiContainer .responseBody,
 .swggUiContainer .responseMedia,
 .swggUiContainer .td,
-.swggUiContainer video {
+.swggUiContainer .td .onEventResourceDisplayAction {
     margin-bottom: 0;
 }
-.swggUiContainer > .info > ul,
+.swggUiContainer ul,
 .swggUiContainer .operation > .thead > .td1,
 .swggUiContainer .td {
     margin-left: 20px;
 }
 .swggUiContainer .label {
     margin-bottom: 1px;
+}
+.swggUiContainer .markdown ol,
+.swggUiContainer .markdown ul {
+    margin-left: 20px;
 }
 .swggUiContainer .onEventOperationAjax,
 .swggUiContainer .schemaP {
@@ -329,6 +370,9 @@ pre {
 .swggUiContainer .operation button {
     margin-bottom: 50px;
     margin-top: 40px;
+}
+.swggUiContainer .operation > .thead > .td4 {
+    margin-right: 20px;
 }
 .swggUiContainer .td:first-child {
     margin-left: 0;
@@ -341,40 +385,46 @@ pre {
 .swggUiContainer input {
     padding: 0 5px;
 }
+.swggUiContainer pre,
+.swggUiContainer textarea {
+    padding: 5px;
+}
 .swggUiContainer .operation > .content {
     padding: 20px;
 }
 .swggUiContainer .operation > .thead > .td {
     padding: 10px 0;
 }
-.swggUiContainer pre,
-.swggUiContainer textarea {
-    padding: 5px;
+.swggUiContainer .operationDescription {
+    padding: 15px 10px 1px 10px;
 }
 .swggUiContainer .resource:first-child {
     padding-top: 10px;
 }
 .swggUiContainer .resourceDescription {
-    padding: 10px 20px;
+    padding: 20px 20px 10px 20px;
 }
 .swggUiContainer > .thead > .td1 {
     padding-left: 40px;
-    padding-top: 5px;
+    padding-top: 6px;
 }
 
 
 
 /* hover */
+.swggUiContainer a:hover,
+.swggUiContainer > .thead > .td1:hover {
+    color: #33d;
+}
 .swggUiContainer button:hover {
     background: #33d;
 }
-.swggUiContainer .operation > .thead:hover {
+.swggUiContainer .operation > .thead:hover,
+.swggUiContainer .resource > .thead > .td:hover {
     background: #bbf;
 }
-.swggUiContainer a:hover,
-.swggUiContainer .resource > .thead > .td:hover,
-.swggUiContainer > .thead > .td1:hover {
-    color: #33d;
+.swggUiContainer .resourceDescription a:hover {
+    color: #7f7;
 }
 
 
@@ -412,11 +462,11 @@ pre {
 
 /* .hasError */
 .swggUiContainer button.hasError {
-    background: #b00;
+    background: #c00;
 }
 .swggUiContainer input.hasError,
 .swggUiContainer select.hasError {
-    border: 5px solid #b00;
+    border: 5px solid #c00;
 }
 .swggUiContainer pre.hasError,
 .swggUiContainer textarea.hasError {
@@ -436,25 +486,21 @@ pre {
     <button class="eventDelegateClick onEventUiReload td td4">explore</button>
     <button class="eventDelegateClick onEventUiReload td td5" id="swggApiKeyClearButton1">clear api-keys</button>
 </div>
+<div class="errorMessage" id="swggUiReloadErrorDiv1" style="background: none; border: 0;"></div>
 <div class="info reset">
     
     
-    <a href="https://github.com/kaizhu256/node-swgg-github-migrations" target="_blank"><h2>swgg-github-migrations (2018.1.23)</h2></a>
+    <a href="https://github.com/kaizhu256/node-swgg-github-migration" target="_blank"><h2>swgg-github-migration (2018.2.14)</h2></a>
     
-    <div>this zero-dependency package will provide a swagger-client for github-migrations's web-apis, with a working web-demo</div>
     
-    <h4><a download="" href="https://kaizhu256.github.io/node-swgg-github-migrations/build..beta..travis-ci.org/app/assets.app.js">download standalone app</a></h4>
+    <div class="markdown"><p>this zero-dependency package will provide a swagger-client for github-migration's web-apis, with a working web-demo</p>
+</div>
+    
+    
+    <h4><a download="" href="https://kaizhu256.github.io/node-swgg-github-migration/build..beta..travis-ci.org/app/assets.app.js">download standalone app</a></h4>
+    
     
     <ul>
-        
-        <li>
-            
-            <p>These APIs help you move projects to or from GitHub.<br><br>Enterprise Migrations. The Enterprise Migrations API (https://developer.github.com/v3/migration/migrations/) lets you move a repository from GitHub to GitHub Enterprise.<br><br>Source Imports. The Source Imports API (https://developer.github.com/v3/migration/source_imports/) lets you import a source repository to GitHub.</p>
-            
-            
-            <a href="https://developer.github.com/v3/migration/" target="_blank">https://developer.github.com/v3/migration/</a>
-            
-        </li>
         
         
         
@@ -490,32 +536,209 @@ console.log("initialized swgg-client");
 </div>
 <div class="reset resourceList"><div class="styleBorderBottom1px resource
         eventDelegateChange eventDelegateClick eventDelegateKeyup eventDelegateSubmit
-    " data-name="github-migrations" id="swgg_id_github_migrations_1">
+    " data-name="github-migration" id="swgg_id_github_migration_1">
 <h3 class="thead">
-    <span class="onEventResourceDisplayAction td td1" tabindex="0">github-migrations : These APIs help you move projects to or from GitHub.
+    <span class="onEventResourceDisplayAction td td1" tabindex="0">
+        <div class="onEventResourceDisplayAction resourceIi">I.</div>github-migration:
+        <span class="onEventResourceDisplayAction resourceSummary"># [Migration]()
 
-Enterprise Migrations. The Enterprise Migrations API (https://developer.github.com/v3/migration/migrations/) lets you move a repository from GitHub to GitHub Enterprise.
+These APIs help you move projects to or from GitHub.
 
-Source Imports. The Source Imports API (https://developer.github.com/v3/migration/source_imports/) lets you import a source repository to GitHub.
+# [Migrations]()
 
-https://developer.github.com/v3/migration/</span>
+The Migrations API is only available to [authenticated]() organization [owners]().
+
+To access the Migrations API, you must provide a custom [media type]() in the ```Accept``` header:
+```
+application/vnd.github.wyandotte-preview+json
+```
+
+# [Source Imports]()
+
+The source import APIs are currently in public preview. During this period, the APIs may change in a backwards-incompatible way.  To access the API during the preview period, you must provide a custom [media type]() in the ```Accept``` header:
+```
+application/vnd.github.barred-rock-preview
+```
+
+The Source Import API lets you start an import from a Git, Subversion, Mercurial, or Team Foundation Server source repository. This is the same functionality as [the GitHub Importer]().
+
+A typical source import would [start the import]() and then (optionally) [update the authors]() and/or [set the preference]() for using Git LFS if large files exist in the import. A more detailed example can be seen in this diagram:
+```
++---------+                     +--------+                              +---------------------+
+| Tooling |                     | GitHub |                              | Original Repository |
++---------+                     +--------+                              +---------------------+
+     |                              |                                              |
+     |  Start import                |                                              |
+     |-----------------------------&gt;|                                              |
+     |                              |                                              |
+     |                              |  Download source data                        |
+     |                              |---------------------------------------------&gt;|
+     |                              |                        Begin streaming data  |
+     |                              |&lt;---------------------------------------------|
+     |                              |                                              |
+     |  Get import progress         |                                              |
+     |-----------------------------&gt;|                                              |
+     |       "status": "importing"  |                                              |
+     |&lt;-----------------------------|                                              |
+     |                              |                                              |
+     |  Get commit authors          |                                              |
+     |-----------------------------&gt;|                                              |
+     |                              |                                              |
+     |  Map a commit author         |                                              |
+     |-----------------------------&gt;|                                              |
+     |                              |                                              |
+     |                              |                                              |
+     |                              |                       Finish streaming data  |
+     |                              |&lt;---------------------------------------------|
+     |                              |                                              |
+     |                              |  Rewrite commits with mapped authors         |
+     |                              |------+                                       |
+     |                              |      |                                       |
+     |                              |&lt;-----+                                       |
+     |                              |                                              |
+     |                              |  Update repository on GitHub                 |
+     |                              |------+                                       |
+     |                              |      |                                       |
+     |                              |&lt;-----+                                       |
+     |                              |                                              |
+     |  Map a commit author         |                                              |
+     |-----------------------------&gt;|                                              |
+     |                              |  Rewrite commits with mapped authors         |
+     |                              |------+                                       |
+     |                              |      |                                       |
+     |                              |&lt;-----+                                       |
+     |                              |                                              |
+     |                              |  Update repository on GitHub                 |
+     |                              |------+                                       |
+     |                              |      |                                       |
+     |                              |&lt;-----+                                       |
+     |                              |                                              |
+     |  Get large files             |                                              |
+     |-----------------------------&gt;|                                              |
+     |                              |                                              |
+     |  opt_in to Git LFS           |                                              |
+     |-----------------------------&gt;|                                              |
+     |                              |  Rewrite commits for large files             |
+     |                              |------+                                       |
+     |                              |      |                                       |
+     |                              |&lt;-----+                                       |
+     |                              |                                              |
+     |                              |  Update repository on GitHub                 |
+     |                              |------+                                       |
+     |                              |      |                                       |
+     |                              |&lt;-----+                                       |
+     |                              |                                              |
+     |  Get import progress         |                                              |
+     |-----------------------------&gt;|                                              |
+     |        "status": "complete"  |                                              |
+     |&lt;-----------------------------|                                              |
+     |                              |                                              |
+     |                              |                                              |
+```
+</span>
+    </span>
     <span class="onEventResourceDisplayAction td td2" style="border-left: 1px solid #000; margin: 0; padding-left: 20px;" tabindex="0">expand / collapse operations</span>
 </h3>
 <div class="operationList uiAnimateSlide" style="max-height: 100%;">
-    <div class="resourceDescription">These APIs help you move projects to or from GitHub.<br><br>Enterprise Migrations. The Enterprise Migrations API (https://developer.github.com/v3/migration/migrations/) lets you move a repository from GitHub to GitHub Enterprise.<br><br>Source Imports. The Source Imports API (https://developer.github.com/v3/migration/source_imports/) lets you import a source repository to GitHub.<br><br>https://developer.github.com/v3/migration/</div>
-<div class="operation" data-_method-path="GET /orgs/{}/migrations" id="swgg_id__2Forgs_2F_7Borg_7D_2Fmigrations_20GET_1">
+    <div class="markdown resourceDescription"><h1 id="-migration-https-developer-github-com-v3-migration-"><a href="https://developer.github.com/v3/migration/">Migration</a></h1>
+<p>These APIs help you move projects to or from GitHub.</p>
+<h1 id="-migrations-https-developer-github-com-v3-migration-migrations-"><a href="https://developer.github.com/v3/migration/migrations/">Migrations</a></h1>
+<p>The Migrations API is only available to <a href="https://developer.github.com/v3/#authentication">authenticated</a> organization <a href="https://help.github.com/articles/permission-levels-for-an-organization/">owners</a>.</p>
+<p>To access the Migrations API, you must provide a custom <a href="https://developer.github.com/v3/media">media type</a> in the <code>Accept</code> header:</p>
+<pre><code>application/vnd.github.wyandotte-preview+json
+</code></pre><h1 id="-source-imports-https-developer-github-com-v3-migration-source_imports-"><a href="https://developer.github.com/v3/migration/source_imports/">Source Imports</a></h1>
+<p>The source import APIs are currently in public preview. During this period, the APIs may change in a backwards-incompatible way.  To access the API during the preview period, you must provide a custom <a href="https://developer.github.com/v3/media">media type</a> in the <code>Accept</code> header:</p>
+<pre><code>application/vnd.github.barred-rock-preview
+</code></pre><p>The Source Import API lets you start an import from a Git, Subversion, Mercurial, or Team Foundation Server source repository. This is the same functionality as <a href="https://help.github.com/articles/importing-from-other-version-control-systems-to-github/">the GitHub Importer</a>.</p>
+<p>A typical source import would <a href="https://developer.github.com/v3/migration/source_imports/#start-an-import">start the import</a> and then (optionally) <a href="https://developer.github.com/v3/migration/source_imports/#map-a-commit-author">update the authors</a> and/or <a href="https://developer.github.com/v3/migration/source_imports/#set-git-lfs-preference">set the preference</a> for using Git LFS if large files exist in the import. A more detailed example can be seen in this diagram:</p>
+<pre><code>+---------+                     +--------+                              +---------------------+
+| Tooling |                     | GitHub |                              | Original Repository |
++---------+                     +--------+                              +---------------------+
+     |                              |                                              |
+     |  Start import                |                                              |
+     |-----------------------------&gt;|                                              |
+     |                              |                                              |
+     |                              |  Download source data                        |
+     |                              |---------------------------------------------&gt;|
+     |                              |                        Begin streaming data  |
+     |                              |&lt;---------------------------------------------|
+     |                              |                                              |
+     |  Get import progress         |                                              |
+     |-----------------------------&gt;|                                              |
+     |       "status": "importing"  |                                              |
+     |&lt;-----------------------------|                                              |
+     |                              |                                              |
+     |  Get commit authors          |                                              |
+     |-----------------------------&gt;|                                              |
+     |                              |                                              |
+     |  Map a commit author         |                                              |
+     |-----------------------------&gt;|                                              |
+     |                              |                                              |
+     |                              |                                              |
+     |                              |                       Finish streaming data  |
+     |                              |&lt;---------------------------------------------|
+     |                              |                                              |
+     |                              |  Rewrite commits with mapped authors         |
+     |                              |------+                                       |
+     |                              |      |                                       |
+     |                              |&lt;-----+                                       |
+     |                              |                                              |
+     |                              |  Update repository on GitHub                 |
+     |                              |------+                                       |
+     |                              |      |                                       |
+     |                              |&lt;-----+                                       |
+     |                              |                                              |
+     |  Map a commit author         |                                              |
+     |-----------------------------&gt;|                                              |
+     |                              |  Rewrite commits with mapped authors         |
+     |                              |------+                                       |
+     |                              |      |                                       |
+     |                              |&lt;-----+                                       |
+     |                              |                                              |
+     |                              |  Update repository on GitHub                 |
+     |                              |------+                                       |
+     |                              |      |                                       |
+     |                              |&lt;-----+                                       |
+     |                              |                                              |
+     |  Get large files             |                                              |
+     |-----------------------------&gt;|                                              |
+     |                              |                                              |
+     |  opt_in to Git LFS           |                                              |
+     |-----------------------------&gt;|                                              |
+     |                              |  Rewrite commits for large files             |
+     |                              |------+                                       |
+     |                              |      |                                       |
+     |                              |&lt;-----+                                       |
+     |                              |                                              |
+     |                              |  Update repository on GitHub                 |
+     |                              |------+                                       |
+     |                              |      |                                       |
+     |                              |&lt;-----+                                       |
+     |                              |                                              |
+     |  Get import progress         |                                              |
+     |-----------------------------&gt;|                                              |
+     |        "status": "complete"  |                                              |
+     |&lt;-----------------------------|                                              |
+     |                              |                                              |
+     |                              |                                              |
+</code></pre></div>
+<div class="operation" data-_method-path="DELETE /orgs/{}/migrations/{}/archive" id="swgg_id__2Forgs_2F_7Borg_7D_2Fmigrations_2F_7Bid_7D_2Farchive_20DELETE_1">
 <div class="onEventOperationDisplayShow onEventInputValidate thead" tabindex="0">
     <span class="td td1">1.</span>
-    <span class="methodGET td td2">GET</span>
-    <span class="td td3">/orgs/{org}/migrations</span>
-    <span class="styleColor777 td td4">Migrations - Get a list of migrations. Lists the most recent migrations.
+    <span class="methodDELETE td td2">DELETE</span>
+    <span class="td td3">/orgs/{org}/migrations/{id}/archive</span>
+    <span class="styleColor777 td td4">[Migrations]() - Delete a migration archive
 
-https://developer.github.com/v3/migration/migrations/#get-a-list-of-migrations</span>
+Deletes a previous migration archive. Migration archives are automatically deleted after seven days.</span>
 </div>
 <form accept-charset="UTF-8" class="content uiAnimateSlide" style="max-height: 100%;">
     
     <h4 class="label">description</h4>
-    <div class="styleColor777 tr">Migrations - Get a list of migrations. Lists the most recent migrations.<br><br>https://developer.github.com/v3/migration/migrations/#get-a-list-of-migrations</div>
+    <div class="markdown operationDescription">
+    <p><a href="https://developer.github.com/v3/migration/migrations/#delete-a-migration-archive">Migrations</a> - Delete a migration archive</p>
+<p>Deletes a previous migration archive. Migration archives are automatically deleted after seven days.</p>
+
+    </div>
     
     <h4 class="label">parameters</h4>
     <div class="schemaP styleBorderBottom1px styleColor777 tr">
@@ -531,7 +754,9 @@ https://developer.github.com/v3/migration/migrations/#get-a-list-of-migrations</
     
     
     <br>
-    <span class="styleColor777">OAuth2 token (sent as a parameter).<br><br>https://developer.github.com/v3/#authentication</span>
+    <span class="markdown styleColor777"><p><a href="https://developer.github.com/v3/#authentication">https://developer.github.com/v3/#authentication</a></p>
+<p>OAuth2 token (sent as a parameter)</p>
+</span>
     
 </span>
 <span class="td td2">string</span>
@@ -556,7 +781,9 @@ https://developer.github.com/v3/migration/migrations/#get-a-list-of-migrations</
     <br><span style="font-weight: bold;">(required)</span>
     
     <br>
-    <span class="styleColor777">user-agent header</span>
+    <span class="markdown styleColor777"><p><a href="https://developer.github.com/v3/index.html#user-agent-required">https://developer.github.com/v3/index.html#user-agent-required</a></p>
+<p>All API requests MUST include a valid <code>User-Agent</code> header. Requests with no <code>User-Agent</code> header will be rejected. We request that you use your GitHub username, or the name of your application, for the <code>User-Agent</code> header value. This allows us to contact you if there are problems.</p>
+</span>
     
 </span>
 <span class="td td2">string</span>
@@ -565,7 +792,7 @@ https://developer.github.com/v3/migration/migrations/#get-a-list-of-migrations</
     
     
     
-    <input class="input" placeholder="swgg" type="text">
+    <input class="input" placeholder="Awesome-Octocat-App" type="text">
     
     <div class="errorMessage"></div>
 </span>
@@ -581,16 +808,24 @@ https://developer.github.com/v3/migration/migrations/#get-a-list-of-migrations</
     <br><span style="font-weight: bold;">(required)</span>
     
     <br>
-    <span class="styleColor777">accept header</span>
+    <span class="markdown styleColor777"><p><a href="https://developer.github.com/v3/media/">https://developer.github.com/v3/media/</a></p>
+<p>Custom media types are used in the API to let consumers choose the format of the data they wish to receive. This is done by adding one or more of the following types to the <code>Accept</code> header when you make a request. Media types are specific to resources, allowing them to change independently and support formats that other resources don't.</p>
+</span>
     
 </span>
-<span class="td td2">string</span>
+<span class="td td2">array<br>(string)</span>
 <span class="td td3">
     
     
     
+    <select class="input" multiple="">
+        
+        <option data-value-select-option="%22application%2Fvnd.github.wyandotte-preview%2Bjson%22" id="swgg_id_accept_2" selected="">application/vnd.github.wyandotte-preview+json</option>
+        
+        <option data-value-select-option="%22application%2Fvnd.github.v3%2Bjson%22" id="swgg_id_accept_3">application/vnd.github.v3+json</option>
+        
+    </select>
     
-    <input class="input" placeholder="application/vnd.github.wyandotte-preview+json" type="text">
     
     <div class="errorMessage"></div>
 </span>
@@ -606,7 +841,8 @@ https://developer.github.com/v3/migration/migrations/#get-a-list-of-migrations</
     <br><span style="font-weight: bold;">(required)</span>
     
     <br>
-    <span class="styleColor777">github org</span>
+    <span class="markdown styleColor777"><p>no description</p>
+</span>
     
 </span>
 <span class="td td2">string</span>
@@ -615,7 +851,33 @@ https://developer.github.com/v3/migration/migrations/#get-a-list-of-migrations</
     
     
     
-    <input class="input" placeholder="swgg-io" type="text">
+    <input class="input" placeholder="org" type="text">
+    
+    <div class="errorMessage"></div>
+</span>
+<span class="td td4">
+    
+</span>
+</div>
+
+    
+    <div class="schemaP tr" id="swgg_id_id_1" data-name="id">
+<span class="td td1">
+    id
+    <br><span style="font-weight: bold;">(required)</span>
+    
+    <br>
+    <span class="markdown styleColor777"><p>no description</p>
+</span>
+    
+</span>
+<span class="td td2">string</span>
+<span class="td td3">
+    
+    
+    
+    
+    <input class="input" placeholder="id" type="text">
     
     <div class="errorMessage"></div>
 </span>
@@ -627,28 +889,32 @@ https://developer.github.com/v3/migration/migrations/#get-a-list-of-migrations</
     
     
     <h4 class="label">response messages</h4>
-    <div class="schemaResponse styleColor777 styleBorderBottom1px tr">
+    <div class="schemaResponse styleBorderBottom1px styleColor777 tr">
         <span class="td td1">http status code</span>
         <span class="td td2">reason</span>
     </div>
     
     <div class="schemaResponse tr">
         <span class="td td1">default</span>
-        <span class="td td2">default response</span>
+        <span class="markdown td td2"><p>default response</p>
+</span>
     </div>
     
     <button class="onEventOperationAjax">try it out!</button>
     <h4 class="label">javascript code</h4>
     <pre class="requestJavascript">/*
- * reproduce api-call "GET /orgs/{}/migrations"
+ * reproduce api-call "DELETE /orgs/{}/migrations/{}/archive"
  * 1. initialize swgg-client from previous step
  * 2. run code below to reproduce api-call
  */
-swgg.apiDict["GET /orgs/{}/migrations"].ajax({
+swgg.apiDict["DELETE /orgs/{}/migrations/{}/archive"].ajax({
     "paramDict": {
-        "user-agent": "swgg",
-        "accept": "application/vnd.github.wyandotte-preview+json",
-        "org": "swgg-io"
+        "user-agent": "Awesome-Octocat-App",
+        "accept": [
+            "application/vnd.github.wyandotte-preview+json"
+        ],
+        "org": "org",
+        "id": "id"
     }
 }, function (error, data) {
     if (error) {
@@ -660,12 +926,12 @@ swgg.apiDict["GET /orgs/{}/migrations"].ajax({
 </pre>
     <h4 class="label">curl request</h4>
     <pre class="requestCurl">curl \
---request GET \
---header 'user-agent: swgg' \
+--request DELETE \
+--header 'user-agent: Awesome-Octocat-App' \
 --header 'accept: application/vnd.github.wyandotte-preview+json' \
 --header 'Content-Type: application/json' \
 --data-binary '' \
-"https://api.github.com/orgs/swgg-io/migrations"</pre>
+"https://api.github.com/orgs/org/migrations/id/archive"</pre>
     <h4 class="label">response status code</h4>
     <pre class="responseStatusCode" tabindex="0"></pre>
     <h4 class="label">response headers</h4>
@@ -675,19 +941,23 @@ swgg.apiDict["GET /orgs/{}/migrations"].ajax({
     <div class="responseMedia"></div>
 </form>
 </div>
-<div class="operation" data-_method-path="POST /orgs/{}/migrations" id="swgg_id__2Forgs_2F_7Borg_7D_2Fmigrations_20POST_1">
+<div class="operation" data-_method-path="GET /orgs/{}/migrations/{}/archive" id="swgg_id__2Forgs_2F_7Borg_7D_2Fmigrations_2F_7Bid_7D_2Farchive_20GET_1">
 <div class="onEventOperationDisplayShow onEventInputValidate thead" tabindex="0">
     <span class="td td1">2.</span>
-    <span class="methodPOST td td2">POST</span>
-    <span class="td td3">/orgs/{org}/migrations</span>
-    <span class="styleColor777 td td4">Migrations - Start a migration. Initiates the generation of a migration archive.
+    <span class="methodGET td td2">GET</span>
+    <span class="td td3">/orgs/{org}/migrations/{id}/archive</span>
+    <span class="styleColor777 td td4">[Migrations]() - Download a migration archive
 
-https://developer.github.com/v3/migration/migrations/#start-a-migration</span>
+Fetches the URL to a migration archive.</span>
 </div>
 <form accept-charset="UTF-8" class="content uiAnimateSlide" style="border-bottom: 0; border-top: 0; margin-bottom: 0; margin-top: 0; max-height: 0; padding-bottom: 0; padding-top: 0;">
     
     <h4 class="label">description</h4>
-    <div class="styleColor777 tr">Migrations - Start a migration. Initiates the generation of a migration archive.<br><br>https://developer.github.com/v3/migration/migrations/#start-a-migration</div>
+    <div class="markdown operationDescription">
+    <p><a href="https://developer.github.com/v3/migration/migrations/#download-a-migration-archive">Migrations</a> - Download a migration archive</p>
+<p>Fetches the URL to a migration archive.</p>
+
+    </div>
     
     <h4 class="label">parameters</h4>
     <div class="schemaP styleBorderBottom1px styleColor777 tr">
@@ -703,7 +973,9 @@ https://developer.github.com/v3/migration/migrations/#start-a-migration</span>
     
     
     <br>
-    <span class="styleColor777">OAuth2 token (sent as a parameter).<br><br>https://developer.github.com/v3/#authentication</span>
+    <span class="markdown styleColor777"><p><a href="https://developer.github.com/v3/#authentication">https://developer.github.com/v3/#authentication</a></p>
+<p>OAuth2 token (sent as a parameter)</p>
+</span>
     
 </span>
 <span class="td td2">string</span>
@@ -728,7 +1000,9 @@ https://developer.github.com/v3/migration/migrations/#start-a-migration</span>
     <br><span style="font-weight: bold;">(required)</span>
     
     <br>
-    <span class="styleColor777">user-agent header</span>
+    <span class="markdown styleColor777"><p><a href="https://developer.github.com/v3/index.html#user-agent-required">https://developer.github.com/v3/index.html#user-agent-required</a></p>
+<p>All API requests MUST include a valid <code>User-Agent</code> header. Requests with no <code>User-Agent</code> header will be rejected. We request that you use your GitHub username, or the name of your application, for the <code>User-Agent</code> header value. This allows us to contact you if there are problems.</p>
+</span>
     
 </span>
 <span class="td td2">string</span>
@@ -737,7 +1011,7 @@ https://developer.github.com/v3/migration/migrations/#start-a-migration</span>
     
     
     
-    <input class="input" placeholder="swgg" type="text">
+    <input class="input" placeholder="Awesome-Octocat-App" type="text">
     
     <div class="errorMessage"></div>
 </span>
@@ -747,22 +1021,30 @@ https://developer.github.com/v3/migration/migrations/#start-a-migration</span>
 </div>
 
     
-    <div class="schemaP tr" id="swgg_id_accept_2" data-name="accept">
+    <div class="schemaP tr" id="swgg_id_accept_4" data-name="accept">
 <span class="td td1">
     accept
     <br><span style="font-weight: bold;">(required)</span>
     
     <br>
-    <span class="styleColor777">accept header</span>
+    <span class="markdown styleColor777"><p><a href="https://developer.github.com/v3/media/">https://developer.github.com/v3/media/</a></p>
+<p>Custom media types are used in the API to let consumers choose the format of the data they wish to receive. This is done by adding one or more of the following types to the <code>Accept</code> header when you make a request. Media types are specific to resources, allowing them to change independently and support formats that other resources don't.</p>
+</span>
     
 </span>
-<span class="td td2">string</span>
+<span class="td td2">array<br>(string)</span>
 <span class="td td3">
     
     
     
+    <select class="input" multiple="">
+        
+        <option data-value-select-option="%22application%2Fvnd.github.wyandotte-preview%2Bjson%22" id="swgg_id_accept_5" selected="">application/vnd.github.wyandotte-preview+json</option>
+        
+        <option data-value-select-option="%22application%2Fvnd.github.v3%2Bjson%22" id="swgg_id_accept_6">application/vnd.github.v3+json</option>
+        
+    </select>
     
-    <input class="input" placeholder="application/vnd.github.wyandotte-preview+json" type="text">
     
     <div class="errorMessage"></div>
 </span>
@@ -778,7 +1060,8 @@ https://developer.github.com/v3/migration/migrations/#start-a-migration</span>
     <br><span style="font-weight: bold;">(required)</span>
     
     <br>
-    <span class="styleColor777">github org</span>
+    <span class="markdown styleColor777"><p>no description</p>
+</span>
     
 </span>
 <span class="td td2">string</span>
@@ -787,7 +1070,7 @@ https://developer.github.com/v3/migration/migrations/#start-a-migration</span>
     
     
     
-    <input class="input" placeholder="swgg-io" type="text">
+    <input class="input" placeholder="org" type="text">
     
     <div class="errorMessage"></div>
 </span>
@@ -797,68 +1080,43 @@ https://developer.github.com/v3/migration/migrations/#start-a-migration</span>
 </div>
 
     
-    <div class="schemaP tr" id="swgg_id_body_1" data-name="body">
+    <div class="schemaP tr" id="swgg_id_id_2" data-name="id">
 <span class="td td1">
-    body
+    id
     <br><span style="font-weight: bold;">(required)</span>
     
+    <br>
+    <span class="markdown styleColor777"><p>no description</p>
 </span>
-<span class="td td2">object</span>
+    
+</span>
+<span class="td td2">string</span>
 <span class="td td3">
     
-    <div class="multilinePlaceholderContainer">
-        <pre class="multilinePlaceholderPre">{
-    "exclude_attachments": false,
-    "lock_repositories": false,
-    "repositories": [
-        "octocat/Hello-World"
-    ]
-}</pre>
-        <textarea class="input multilinePlaceholderTextarea onEventInputTextareaChange"></textarea>
-    </div>
     
     
     
+    <input class="input" placeholder="id" type="text">
     
     <div class="errorMessage"></div>
 </span>
 <span class="td td4">
-    <pre>{
-    "exclude_attachments": {
-        "default": false,
-        "description": "Indicates whether attachments should be excluded from the migration (to reduce migration archive file size). Default: false.",
-        "type": "boolean"
-    },
-    "lock_repositories": {
-        "default": false,
-        "description": "Indicates whether repositories should be locked (to prevent manipulation) while migrating data. Default: false.",
-        "type": "boolean"
-    },
-    "repositories": {
-        "default": [
-            "octocat/Hello-World"
-        ],
-        "description": "A list of arrays indicating which repositories should be migrated.",
-        "items": {
-            "type": "string"
-        },
-        "type": "array"
-    }
-}</pre>
+    
 </span>
 </div>
 
     
     
     <h4 class="label">response messages</h4>
-    <div class="schemaResponse styleColor777 styleBorderBottom1px tr">
+    <div class="schemaResponse styleBorderBottom1px styleColor777 tr">
         <span class="td td1">http status code</span>
         <span class="td td2">reason</span>
     </div>
     
     <div class="schemaResponse tr">
         <span class="td td1">default</span>
-        <span class="td td2">default response</span>
+        <span class="markdown td td2"><p>default response</p>
+</span>
     </div>
     
     <button class="onEventOperationAjax">try it out!</button>
@@ -875,19 +1133,23 @@ https://developer.github.com/v3/migration/migrations/#start-a-migration</span>
     <div class="responseMedia"></div>
 </form>
 </div>
-<div class="operation" data-_method-path="GET /orgs/{}/migrations/{}" id="swgg_id__2Forgs_2F_7Borg_7D_2Fmigrations_2F_7Bmigration_id_7D_20GET_1">
+<div class="operation" data-_method-path="GET /orgs/{}/migrations" id="swgg_id__2Forgs_2F_7Borg_7D_2Fmigrations_20GET_1">
 <div class="onEventOperationDisplayShow onEventInputValidate thead" tabindex="0">
     <span class="td td1">3.</span>
     <span class="methodGET td td2">GET</span>
-    <span class="td td3">/orgs/{org}/migrations/{migration_id}</span>
-    <span class="styleColor777 td td4">Migrations - Get the status of a migration. Fetches the status of a migration.
+    <span class="td td3">/orgs/{org}/migrations</span>
+    <span class="styleColor777 td td4">[Migrations]() - Get a list of migrations
 
-https://developer.github.com/v3/migration/migrations/#get-the-status-of-a-migration</span>
+Lists the most recent migrations.</span>
 </div>
 <form accept-charset="UTF-8" class="content uiAnimateSlide" style="border-bottom: 0; border-top: 0; margin-bottom: 0; margin-top: 0; max-height: 0; padding-bottom: 0; padding-top: 0;">
     
     <h4 class="label">description</h4>
-    <div class="styleColor777 tr">Migrations - Get the status of a migration. Fetches the status of a migration.<br><br>https://developer.github.com/v3/migration/migrations/#get-the-status-of-a-migration</div>
+    <div class="markdown operationDescription">
+    <p><a href="https://developer.github.com/v3/migration/migrations/#get-a-list-of-migrations">Migrations</a> - Get a list of migrations</p>
+<p>Lists the most recent migrations.</p>
+
+    </div>
     
     <h4 class="label">parameters</h4>
     <div class="schemaP styleBorderBottom1px styleColor777 tr">
@@ -903,7 +1165,9 @@ https://developer.github.com/v3/migration/migrations/#get-the-status-of-a-migrat
     
     
     <br>
-    <span class="styleColor777">OAuth2 token (sent as a parameter).<br><br>https://developer.github.com/v3/#authentication</span>
+    <span class="markdown styleColor777"><p><a href="https://developer.github.com/v3/#authentication">https://developer.github.com/v3/#authentication</a></p>
+<p>OAuth2 token (sent as a parameter)</p>
+</span>
     
 </span>
 <span class="td td2">string</span>
@@ -928,7 +1192,9 @@ https://developer.github.com/v3/migration/migrations/#get-the-status-of-a-migrat
     <br><span style="font-weight: bold;">(required)</span>
     
     <br>
-    <span class="styleColor777">user-agent header</span>
+    <span class="markdown styleColor777"><p><a href="https://developer.github.com/v3/index.html#user-agent-required">https://developer.github.com/v3/index.html#user-agent-required</a></p>
+<p>All API requests MUST include a valid <code>User-Agent</code> header. Requests with no <code>User-Agent</code> header will be rejected. We request that you use your GitHub username, or the name of your application, for the <code>User-Agent</code> header value. This allows us to contact you if there are problems.</p>
+</span>
     
 </span>
 <span class="td td2">string</span>
@@ -937,7 +1203,7 @@ https://developer.github.com/v3/migration/migrations/#get-the-status-of-a-migrat
     
     
     
-    <input class="input" placeholder="swgg" type="text">
+    <input class="input" placeholder="Awesome-Octocat-App" type="text">
     
     <div class="errorMessage"></div>
 </span>
@@ -947,22 +1213,30 @@ https://developer.github.com/v3/migration/migrations/#get-the-status-of-a-migrat
 </div>
 
     
-    <div class="schemaP tr" id="swgg_id_accept_3" data-name="accept">
+    <div class="schemaP tr" id="swgg_id_accept_7" data-name="accept">
 <span class="td td1">
     accept
     <br><span style="font-weight: bold;">(required)</span>
     
     <br>
-    <span class="styleColor777">accept header</span>
+    <span class="markdown styleColor777"><p><a href="https://developer.github.com/v3/media/">https://developer.github.com/v3/media/</a></p>
+<p>Custom media types are used in the API to let consumers choose the format of the data they wish to receive. This is done by adding one or more of the following types to the <code>Accept</code> header when you make a request. Media types are specific to resources, allowing them to change independently and support formats that other resources don't.</p>
+</span>
     
 </span>
-<span class="td td2">string</span>
+<span class="td td2">array<br>(string)</span>
 <span class="td td3">
     
     
     
+    <select class="input" multiple="">
+        
+        <option data-value-select-option="%22application%2Fvnd.github.wyandotte-preview%2Bjson%22" id="swgg_id_accept_8" selected="">application/vnd.github.wyandotte-preview+json</option>
+        
+        <option data-value-select-option="%22application%2Fvnd.github.v3%2Bjson%22" id="swgg_id_accept_9">application/vnd.github.v3+json</option>
+        
+    </select>
     
-    <input class="input" placeholder="application/vnd.github.wyandotte-preview+json" type="text">
     
     <div class="errorMessage"></div>
 </span>
@@ -978,7 +1252,8 @@ https://developer.github.com/v3/migration/migrations/#get-the-status-of-a-migrat
     <br><span style="font-weight: bold;">(required)</span>
     
     <br>
-    <span class="styleColor777">github org</span>
+    <span class="markdown styleColor777"><p>no description</p>
+</span>
     
 </span>
 <span class="td td2">string</span>
@@ -987,32 +1262,7 @@ https://developer.github.com/v3/migration/migrations/#get-the-status-of-a-migrat
     
     
     
-    <input class="input" placeholder="swgg-io" type="text">
-    
-    <div class="errorMessage"></div>
-</span>
-<span class="td td4">
-    
-</span>
-</div>
-
-    
-    <div class="schemaP tr" id="swgg_id_migration_id_1" data-name="migration_id">
-<span class="td td1">
-    migration_id
-    <br><span style="font-weight: bold;">(required)</span>
-    
-    <br>
-    <span class="styleColor777">github migration_id</span>
-    
-</span>
-<span class="td td2">string</span>
-<span class="td td3">
-    
-    
-    
-    
-    <input class="input" placeholder="20305" type="text">
+    <input class="input" placeholder="org" type="text">
     
     <div class="errorMessage"></div>
 </span>
@@ -1024,14 +1274,15 @@ https://developer.github.com/v3/migration/migrations/#get-the-status-of-a-migrat
     
     
     <h4 class="label">response messages</h4>
-    <div class="schemaResponse styleColor777 styleBorderBottom1px tr">
+    <div class="schemaResponse styleBorderBottom1px styleColor777 tr">
         <span class="td td1">http status code</span>
         <span class="td td2">reason</span>
     </div>
     
     <div class="schemaResponse tr">
         <span class="td td1">default</span>
-        <span class="td td2">default response</span>
+        <span class="markdown td td2"><p>default response</p>
+</span>
     </div>
     
     <button class="onEventOperationAjax">try it out!</button>
@@ -1048,19 +1299,23 @@ https://developer.github.com/v3/migration/migrations/#get-the-status-of-a-migrat
     <div class="responseMedia"></div>
 </form>
 </div>
-<div class="operation" data-_method-path="DELETE /orgs/{}/migrations/{}/archive" id="swgg_id__2Forgs_2F_7Borg_7D_2Fmigrations_2F_7Bmigration_id_7D_2Farchive_20DELETE_1">
+<div class="operation" data-_method-path="GET /orgs/{}/migrations/{}" id="swgg_id__2Forgs_2F_7Borg_7D_2Fmigrations_2F_7Bid_7D_20GET_1">
 <div class="onEventOperationDisplayShow onEventInputValidate thead" tabindex="0">
     <span class="td td1">4.</span>
-    <span class="methodDELETE td td2">DELETE</span>
-    <span class="td td3">/orgs/{org}/migrations/{migration_id}/archive</span>
-    <span class="styleColor777 td td4">Migrations - Delete a migration archive. Deletes a previous migration archive. Migration archives are automatically deleted after seven days.
+    <span class="methodGET td td2">GET</span>
+    <span class="td td3">/orgs/{org}/migrations/{id}</span>
+    <span class="styleColor777 td td4">[Migrations]() - Get the status of a migration
 
-https://developer.github.com/v3/migration/migrations/#delete-a-migration-archive</span>
+Fetches the status of a migration.</span>
 </div>
 <form accept-charset="UTF-8" class="content uiAnimateSlide" style="border-bottom: 0; border-top: 0; margin-bottom: 0; margin-top: 0; max-height: 0; padding-bottom: 0; padding-top: 0;">
     
     <h4 class="label">description</h4>
-    <div class="styleColor777 tr">Migrations - Delete a migration archive. Deletes a previous migration archive. Migration archives are automatically deleted after seven days.<br><br>https://developer.github.com/v3/migration/migrations/#delete-a-migration-archive</div>
+    <div class="markdown operationDescription">
+    <p><a href="https://developer.github.com/v3/migration/migrations/#get-the-status-of-a-migration">Migrations</a> - Get the status of a migration</p>
+<p>Fetches the status of a migration.</p>
+
+    </div>
     
     <h4 class="label">parameters</h4>
     <div class="schemaP styleBorderBottom1px styleColor777 tr">
@@ -1076,7 +1331,9 @@ https://developer.github.com/v3/migration/migrations/#delete-a-migration-archive
     
     
     <br>
-    <span class="styleColor777">OAuth2 token (sent as a parameter).<br><br>https://developer.github.com/v3/#authentication</span>
+    <span class="markdown styleColor777"><p><a href="https://developer.github.com/v3/#authentication">https://developer.github.com/v3/#authentication</a></p>
+<p>OAuth2 token (sent as a parameter)</p>
+</span>
     
 </span>
 <span class="td td2">string</span>
@@ -1101,7 +1358,9 @@ https://developer.github.com/v3/migration/migrations/#delete-a-migration-archive
     <br><span style="font-weight: bold;">(required)</span>
     
     <br>
-    <span class="styleColor777">user-agent header</span>
+    <span class="markdown styleColor777"><p><a href="https://developer.github.com/v3/index.html#user-agent-required">https://developer.github.com/v3/index.html#user-agent-required</a></p>
+<p>All API requests MUST include a valid <code>User-Agent</code> header. Requests with no <code>User-Agent</code> header will be rejected. We request that you use your GitHub username, or the name of your application, for the <code>User-Agent</code> header value. This allows us to contact you if there are problems.</p>
+</span>
     
 </span>
 <span class="td td2">string</span>
@@ -1110,7 +1369,7 @@ https://developer.github.com/v3/migration/migrations/#delete-a-migration-archive
     
     
     
-    <input class="input" placeholder="swgg" type="text">
+    <input class="input" placeholder="Awesome-Octocat-App" type="text">
     
     <div class="errorMessage"></div>
 </span>
@@ -1120,22 +1379,30 @@ https://developer.github.com/v3/migration/migrations/#delete-a-migration-archive
 </div>
 
     
-    <div class="schemaP tr" id="swgg_id_accept_4" data-name="accept">
+    <div class="schemaP tr" id="swgg_id_accept_10" data-name="accept">
 <span class="td td1">
     accept
     <br><span style="font-weight: bold;">(required)</span>
     
     <br>
-    <span class="styleColor777">accept header</span>
+    <span class="markdown styleColor777"><p><a href="https://developer.github.com/v3/media/">https://developer.github.com/v3/media/</a></p>
+<p>Custom media types are used in the API to let consumers choose the format of the data they wish to receive. This is done by adding one or more of the following types to the <code>Accept</code> header when you make a request. Media types are specific to resources, allowing them to change independently and support formats that other resources don't.</p>
+</span>
     
 </span>
-<span class="td td2">string</span>
+<span class="td td2">array<br>(string)</span>
 <span class="td td3">
     
     
     
+    <select class="input" multiple="">
+        
+        <option data-value-select-option="%22application%2Fvnd.github.wyandotte-preview%2Bjson%22" id="swgg_id_accept_11" selected="">application/vnd.github.wyandotte-preview+json</option>
+        
+        <option data-value-select-option="%22application%2Fvnd.github.v3%2Bjson%22" id="swgg_id_accept_12">application/vnd.github.v3+json</option>
+        
+    </select>
     
-    <input class="input" placeholder="application/vnd.github.wyandotte-preview+json" type="text">
     
     <div class="errorMessage"></div>
 </span>
@@ -1151,7 +1418,8 @@ https://developer.github.com/v3/migration/migrations/#delete-a-migration-archive
     <br><span style="font-weight: bold;">(required)</span>
     
     <br>
-    <span class="styleColor777">github org</span>
+    <span class="markdown styleColor777"><p>no description</p>
+</span>
     
 </span>
 <span class="td td2">string</span>
@@ -1160,7 +1428,7 @@ https://developer.github.com/v3/migration/migrations/#delete-a-migration-archive
     
     
     
-    <input class="input" placeholder="swgg-io" type="text">
+    <input class="input" placeholder="org" type="text">
     
     <div class="errorMessage"></div>
 </span>
@@ -1170,13 +1438,14 @@ https://developer.github.com/v3/migration/migrations/#delete-a-migration-archive
 </div>
 
     
-    <div class="schemaP tr" id="swgg_id_migration_id_2" data-name="migration_id">
+    <div class="schemaP tr" id="swgg_id_id_3" data-name="id">
 <span class="td td1">
-    migration_id
+    id
     <br><span style="font-weight: bold;">(required)</span>
     
     <br>
-    <span class="styleColor777">github migration_id</span>
+    <span class="markdown styleColor777"><p>no description</p>
+</span>
     
 </span>
 <span class="td td2">string</span>
@@ -1185,7 +1454,7 @@ https://developer.github.com/v3/migration/migrations/#delete-a-migration-archive
     
     
     
-    <input class="input" placeholder="20305" type="text">
+    <input class="input" placeholder="id" type="text">
     
     <div class="errorMessage"></div>
 </span>
@@ -1197,14 +1466,15 @@ https://developer.github.com/v3/migration/migrations/#delete-a-migration-archive
     
     
     <h4 class="label">response messages</h4>
-    <div class="schemaResponse styleColor777 styleBorderBottom1px tr">
+    <div class="schemaResponse styleBorderBottom1px styleColor777 tr">
         <span class="td td1">http status code</span>
         <span class="td td2">reason</span>
     </div>
     
     <div class="schemaResponse tr">
         <span class="td td1">default</span>
-        <span class="td td2">default response</span>
+        <span class="markdown td td2"><p>default response</p>
+</span>
     </div>
     
     <button class="onEventOperationAjax">try it out!</button>
@@ -1221,19 +1491,23 @@ https://developer.github.com/v3/migration/migrations/#delete-a-migration-archive
     <div class="responseMedia"></div>
 </form>
 </div>
-<div class="operation" data-_method-path="GET /orgs/{}/migrations/{}/archive" id="swgg_id__2Forgs_2F_7Borg_7D_2Fmigrations_2F_7Bmigration_id_7D_2Farchive_20GET_1">
+<div class="operation" data-_method-path="POST /orgs/{}/migrations" id="swgg_id__2Forgs_2F_7Borg_7D_2Fmigrations_20POST_1">
 <div class="onEventOperationDisplayShow onEventInputValidate thead" tabindex="0">
     <span class="td td1">5.</span>
-    <span class="methodGET td td2">GET</span>
-    <span class="td td3">/orgs/{org}/migrations/{migration_id}/archive</span>
-    <span class="styleColor777 td td4">Migrations - Download a migration archive. Fetches the URL to a migration archive.
+    <span class="methodPOST td td2">POST</span>
+    <span class="td td3">/orgs/{org}/migrations</span>
+    <span class="styleColor777 td td4">[Migrations]() - Start a migration
 
-https://developer.github.com/v3/migration/migrations/#download-a-migration-archive</span>
+Initiates the generation of a migration archive.</span>
 </div>
 <form accept-charset="UTF-8" class="content uiAnimateSlide" style="border-bottom: 0; border-top: 0; margin-bottom: 0; margin-top: 0; max-height: 0; padding-bottom: 0; padding-top: 0;">
     
     <h4 class="label">description</h4>
-    <div class="styleColor777 tr">Migrations - Download a migration archive. Fetches the URL to a migration archive.<br><br>https://developer.github.com/v3/migration/migrations/#download-a-migration-archive</div>
+    <div class="markdown operationDescription">
+    <p><a href="https://developer.github.com/v3/migration/migrations/#start-a-migration">Migrations</a> - Start a migration</p>
+<p>Initiates the generation of a migration archive.</p>
+
+    </div>
     
     <h4 class="label">parameters</h4>
     <div class="schemaP styleBorderBottom1px styleColor777 tr">
@@ -1249,7 +1523,9 @@ https://developer.github.com/v3/migration/migrations/#download-a-migration-archi
     
     
     <br>
-    <span class="styleColor777">OAuth2 token (sent as a parameter).<br><br>https://developer.github.com/v3/#authentication</span>
+    <span class="markdown styleColor777"><p><a href="https://developer.github.com/v3/#authentication">https://developer.github.com/v3/#authentication</a></p>
+<p>OAuth2 token (sent as a parameter)</p>
+</span>
     
 </span>
 <span class="td td2">string</span>
@@ -1274,7 +1550,9 @@ https://developer.github.com/v3/migration/migrations/#download-a-migration-archi
     <br><span style="font-weight: bold;">(required)</span>
     
     <br>
-    <span class="styleColor777">user-agent header</span>
+    <span class="markdown styleColor777"><p><a href="https://developer.github.com/v3/index.html#user-agent-required">https://developer.github.com/v3/index.html#user-agent-required</a></p>
+<p>All API requests MUST include a valid <code>User-Agent</code> header. Requests with no <code>User-Agent</code> header will be rejected. We request that you use your GitHub username, or the name of your application, for the <code>User-Agent</code> header value. This allows us to contact you if there are problems.</p>
+</span>
     
 </span>
 <span class="td td2">string</span>
@@ -1283,7 +1561,7 @@ https://developer.github.com/v3/migration/migrations/#download-a-migration-archi
     
     
     
-    <input class="input" placeholder="swgg" type="text">
+    <input class="input" placeholder="Awesome-Octocat-App" type="text">
     
     <div class="errorMessage"></div>
 </span>
@@ -1293,22 +1571,30 @@ https://developer.github.com/v3/migration/migrations/#download-a-migration-archi
 </div>
 
     
-    <div class="schemaP tr" id="swgg_id_accept_5" data-name="accept">
+    <div class="schemaP tr" id="swgg_id_accept_13" data-name="accept">
 <span class="td td1">
     accept
     <br><span style="font-weight: bold;">(required)</span>
     
     <br>
-    <span class="styleColor777">accept header</span>
+    <span class="markdown styleColor777"><p><a href="https://developer.github.com/v3/media/">https://developer.github.com/v3/media/</a></p>
+<p>Custom media types are used in the API to let consumers choose the format of the data they wish to receive. This is done by adding one or more of the following types to the <code>Accept</code> header when you make a request. Media types are specific to resources, allowing them to change independently and support formats that other resources don't.</p>
+</span>
     
 </span>
-<span class="td td2">string</span>
+<span class="td td2">array<br>(string)</span>
 <span class="td td3">
     
     
     
+    <select class="input" multiple="">
+        
+        <option data-value-select-option="%22application%2Fvnd.github.wyandotte-preview%2Bjson%22" id="swgg_id_accept_14" selected="">application/vnd.github.wyandotte-preview+json</option>
+        
+        <option data-value-select-option="%22application%2Fvnd.github.v3%2Bjson%22" id="swgg_id_accept_15">application/vnd.github.v3+json</option>
+        
+    </select>
     
-    <input class="input" placeholder="application/vnd.github.wyandotte-preview+json" type="text">
     
     <div class="errorMessage"></div>
 </span>
@@ -1324,7 +1610,8 @@ https://developer.github.com/v3/migration/migrations/#download-a-migration-archi
     <br><span style="font-weight: bold;">(required)</span>
     
     <br>
-    <span class="styleColor777">github org</span>
+    <span class="markdown styleColor777"><p>no description</p>
+</span>
     
 </span>
 <span class="td td2">string</span>
@@ -1333,7 +1620,7 @@ https://developer.github.com/v3/migration/migrations/#download-a-migration-archi
     
     
     
-    <input class="input" placeholder="swgg-io" type="text">
+    <input class="input" placeholder="org" type="text">
     
     <div class="errorMessage"></div>
 </span>
@@ -1343,41 +1630,70 @@ https://developer.github.com/v3/migration/migrations/#download-a-migration-archi
 </div>
 
     
-    <div class="schemaP tr" id="swgg_id_migration_id_3" data-name="migration_id">
+    <div class="schemaP tr" id="swgg_id_body_1" data-name="body">
 <span class="td td1">
-    migration_id
-    <br><span style="font-weight: bold;">(required)</span>
+    body
+    
     
     <br>
-    <span class="styleColor777">github migration_id</span>
+    <span class="markdown styleColor777"><p>no description</p>
+</span>
     
 </span>
-<span class="td td2">string</span>
+<span class="td td2">object</span>
 <span class="td td3">
     
+    <div class="multilinePlaceholderContainer">
+        <pre class="multilinePlaceholderPre">{
+    "lock_repositories": false,
+    "repositories": [
+        "octocat/Hello-World"
+    ]
+}</pre>
+        <textarea class="input multilinePlaceholderTextarea onEventInputTextareaChange"></textarea>
+    </div>
     
     
     
-    <input class="input" placeholder="20305" type="text">
     
     <div class="errorMessage"></div>
 </span>
 <span class="td td4">
-    
+    <pre>{
+    "lock_repositories": {
+        "default": false,
+        "description": "Indicates whether repositories should be locked (to prevent manipulation) while migrating data. Default: ```false```.",
+        "type": "boolean",
+        "x-swgg-descriptionLineList": [
+            "Indicates whether repositories should be locked (to prevent manipulation) while migrating data. Default: ```false```."
+        ]
+    },
+    "repositories": {
+        "default": [
+            "octocat/Hello-World"
+        ],
+        "description": "no description",
+        "items": {
+            "type": "string"
+        },
+        "type": "array"
+    }
+}</pre>
 </span>
 </div>
 
     
     
     <h4 class="label">response messages</h4>
-    <div class="schemaResponse styleColor777 styleBorderBottom1px tr">
+    <div class="schemaResponse styleBorderBottom1px styleColor777 tr">
         <span class="td td1">http status code</span>
         <span class="td td2">reason</span>
     </div>
     
     <div class="schemaResponse tr">
         <span class="td td1">default</span>
-        <span class="td td2">default response</span>
+        <span class="markdown td td2"><p>default response</p>
+</span>
     </div>
     
     <button class="onEventOperationAjax">try it out!</button>
@@ -1394,19 +1710,23 @@ https://developer.github.com/v3/migration/migrations/#download-a-migration-archi
     <div class="responseMedia"></div>
 </form>
 </div>
-<div class="operation" data-_method-path="DELETE /orgs/{}/migrations/{}/repos/{}/lock" id="swgg_id__2Forgs_2F_7Borg_7D_2Fmigrations_2F_7Bmigration_id_7D_2Frepos_2F_7Brepo_name_7D_2Flock_20DELETE_1">
+<div class="operation" data-_method-path="DELETE /orgs/{}/migrations/{}/repos/{}/lock" id="swgg_id__2Forgs_2F_7Borg_7D_2Fmigrations_2F_7Bid_7D_2Frepos_2F_7Brepo_name_7D_2Flock_20DELETE_1">
 <div class="onEventOperationDisplayShow onEventInputValidate thead" tabindex="0">
     <span class="td td1">6.</span>
     <span class="methodDELETE td td2">DELETE</span>
-    <span class="td td3">/orgs/{org}/migrations/{migration_id}/repos/{repo_name}/lock</span>
-    <span class="styleColor777 td td4">Migrations - Unlock a repository. Unlocks a repository that was locked for migration. You should unlock each migrated repository and delete them when the migration is complete and you no longer need the source data.
+    <span class="td td3">/orgs/{org}/migrations/{id}/repos/{repo_name}/lock</span>
+    <span class="styleColor777 td td4">[Migrations]() - Unlock a repository
 
-https://developer.github.com/v3/migration/migrations/#unlock-a-repository</span>
+Unlocks a repository that was locked for migration. You should unlock each migrated repository and [delete them]() when the migration is complete and you no longer need the source data.</span>
 </div>
 <form accept-charset="UTF-8" class="content uiAnimateSlide" style="border-bottom: 0; border-top: 0; margin-bottom: 0; margin-top: 0; max-height: 0; padding-bottom: 0; padding-top: 0;">
     
     <h4 class="label">description</h4>
-    <div class="styleColor777 tr">Migrations - Unlock a repository. Unlocks a repository that was locked for migration. You should unlock each migrated repository and delete them when the migration is complete and you no longer need the source data.<br><br>https://developer.github.com/v3/migration/migrations/#unlock-a-repository</div>
+    <div class="markdown operationDescription">
+    <p><a href="https://developer.github.com/v3/migration/migrations/#unlock-a-repository">Migrations</a> - Unlock a repository</p>
+<p>Unlocks a repository that was locked for migration. You should unlock each migrated repository and <a href="https://developer.github.com/v3/repos/#delete-a-repository">delete them</a> when the migration is complete and you no longer need the source data.</p>
+
+    </div>
     
     <h4 class="label">parameters</h4>
     <div class="schemaP styleBorderBottom1px styleColor777 tr">
@@ -1422,7 +1742,9 @@ https://developer.github.com/v3/migration/migrations/#unlock-a-repository</span>
     
     
     <br>
-    <span class="styleColor777">OAuth2 token (sent as a parameter).<br><br>https://developer.github.com/v3/#authentication</span>
+    <span class="markdown styleColor777"><p><a href="https://developer.github.com/v3/#authentication">https://developer.github.com/v3/#authentication</a></p>
+<p>OAuth2 token (sent as a parameter)</p>
+</span>
     
 </span>
 <span class="td td2">string</span>
@@ -1447,7 +1769,9 @@ https://developer.github.com/v3/migration/migrations/#unlock-a-repository</span>
     <br><span style="font-weight: bold;">(required)</span>
     
     <br>
-    <span class="styleColor777">user-agent header</span>
+    <span class="markdown styleColor777"><p><a href="https://developer.github.com/v3/index.html#user-agent-required">https://developer.github.com/v3/index.html#user-agent-required</a></p>
+<p>All API requests MUST include a valid <code>User-Agent</code> header. Requests with no <code>User-Agent</code> header will be rejected. We request that you use your GitHub username, or the name of your application, for the <code>User-Agent</code> header value. This allows us to contact you if there are problems.</p>
+</span>
     
 </span>
 <span class="td td2">string</span>
@@ -1456,7 +1780,7 @@ https://developer.github.com/v3/migration/migrations/#unlock-a-repository</span>
     
     
     
-    <input class="input" placeholder="swgg" type="text">
+    <input class="input" placeholder="Awesome-Octocat-App" type="text">
     
     <div class="errorMessage"></div>
 </span>
@@ -1466,22 +1790,30 @@ https://developer.github.com/v3/migration/migrations/#unlock-a-repository</span>
 </div>
 
     
-    <div class="schemaP tr" id="swgg_id_accept_6" data-name="accept">
+    <div class="schemaP tr" id="swgg_id_accept_16" data-name="accept">
 <span class="td td1">
     accept
     <br><span style="font-weight: bold;">(required)</span>
     
     <br>
-    <span class="styleColor777">accept header</span>
+    <span class="markdown styleColor777"><p><a href="https://developer.github.com/v3/media/">https://developer.github.com/v3/media/</a></p>
+<p>Custom media types are used in the API to let consumers choose the format of the data they wish to receive. This is done by adding one or more of the following types to the <code>Accept</code> header when you make a request. Media types are specific to resources, allowing them to change independently and support formats that other resources don't.</p>
+</span>
     
 </span>
-<span class="td td2">string</span>
+<span class="td td2">array<br>(string)</span>
 <span class="td td3">
     
     
     
+    <select class="input" multiple="">
+        
+        <option data-value-select-option="%22application%2Fvnd.github.wyandotte-preview%2Bjson%22" id="swgg_id_accept_17" selected="">application/vnd.github.wyandotte-preview+json</option>
+        
+        <option data-value-select-option="%22application%2Fvnd.github.v3%2Bjson%22" id="swgg_id_accept_18">application/vnd.github.v3+json</option>
+        
+    </select>
     
-    <input class="input" placeholder="application/vnd.github.wyandotte-preview+json" type="text">
     
     <div class="errorMessage"></div>
 </span>
@@ -1497,7 +1829,8 @@ https://developer.github.com/v3/migration/migrations/#unlock-a-repository</span>
     <br><span style="font-weight: bold;">(required)</span>
     
     <br>
-    <span class="styleColor777">github org</span>
+    <span class="markdown styleColor777"><p>no description</p>
+</span>
     
 </span>
 <span class="td td2">string</span>
@@ -1506,7 +1839,7 @@ https://developer.github.com/v3/migration/migrations/#unlock-a-repository</span>
     
     
     
-    <input class="input" placeholder="swgg-io" type="text">
+    <input class="input" placeholder="org" type="text">
     
     <div class="errorMessage"></div>
 </span>
@@ -1516,13 +1849,14 @@ https://developer.github.com/v3/migration/migrations/#unlock-a-repository</span>
 </div>
 
     
-    <div class="schemaP tr" id="swgg_id_migration_id_4" data-name="migration_id">
+    <div class="schemaP tr" id="swgg_id_id_4" data-name="id">
 <span class="td td1">
-    migration_id
+    id
     <br><span style="font-weight: bold;">(required)</span>
     
     <br>
-    <span class="styleColor777">github migration_id</span>
+    <span class="markdown styleColor777"><p>no description</p>
+</span>
     
 </span>
 <span class="td td2">string</span>
@@ -1531,7 +1865,7 @@ https://developer.github.com/v3/migration/migrations/#unlock-a-repository</span>
     
     
     
-    <input class="input" placeholder="20305" type="text">
+    <input class="input" placeholder="id" type="text">
     
     <div class="errorMessage"></div>
 </span>
@@ -1547,7 +1881,8 @@ https://developer.github.com/v3/migration/migrations/#unlock-a-repository</span>
     <br><span style="font-weight: bold;">(required)</span>
     
     <br>
-    <span class="styleColor777">github repo_name</span>
+    <span class="markdown styleColor777"><p>no description</p>
+</span>
     
 </span>
 <span class="td td2">string</span>
@@ -1556,7 +1891,7 @@ https://developer.github.com/v3/migration/migrations/#unlock-a-repository</span>
     
     
     
-    <input class="input" placeholder="swgg-io/node-swgg-google-all" type="text">
+    <input class="input" placeholder="repo_name" type="text">
     
     <div class="errorMessage"></div>
 </span>
@@ -1568,14 +1903,15 @@ https://developer.github.com/v3/migration/migrations/#unlock-a-repository</span>
     
     
     <h4 class="label">response messages</h4>
-    <div class="schemaResponse styleColor777 styleBorderBottom1px tr">
+    <div class="schemaResponse styleBorderBottom1px styleColor777 tr">
         <span class="td td1">http status code</span>
         <span class="td td2">reason</span>
     </div>
     
     <div class="schemaResponse tr">
         <span class="td td1">default</span>
-        <span class="td td2">default response</span>
+        <span class="markdown td td2"><p>default response</p>
+</span>
     </div>
     
     <button class="onEventOperationAjax">try it out!</button>
@@ -1597,14 +1933,18 @@ https://developer.github.com/v3/migration/migrations/#unlock-a-repository</span>
     <span class="td td1">7.</span>
     <span class="methodDELETE td td2">DELETE</span>
     <span class="td td3">/repos/{owner}/{repo}/import</span>
-    <span class="styleColor777 td td4">Source Imports - Cancel an import. Stop an import for a repository.
+    <span class="styleColor777 td td4">[Source Imports]() - Cancel an import
 
-https://developer.github.com/v3/migration/source_imports/#cancel-an-import</span>
+Stop an import for a repository.</span>
 </div>
 <form accept-charset="UTF-8" class="content uiAnimateSlide" style="border-bottom: 0; border-top: 0; margin-bottom: 0; margin-top: 0; max-height: 0; padding-bottom: 0; padding-top: 0;">
     
     <h4 class="label">description</h4>
-    <div class="styleColor777 tr">Source Imports - Cancel an import. Stop an import for a repository.<br><br>https://developer.github.com/v3/migration/source_imports/#cancel-an-import</div>
+    <div class="markdown operationDescription">
+    <p><a href="https://developer.github.com/v3/migration/source_imports/#cancel-an-import">Source Imports</a> - Cancel an import</p>
+<p>Stop an import for a repository.</p>
+
+    </div>
     
     <h4 class="label">parameters</h4>
     <div class="schemaP styleBorderBottom1px styleColor777 tr">
@@ -1620,7 +1960,9 @@ https://developer.github.com/v3/migration/source_imports/#cancel-an-import</span
     
     
     <br>
-    <span class="styleColor777">OAuth2 token (sent as a parameter).<br><br>https://developer.github.com/v3/#authentication</span>
+    <span class="markdown styleColor777"><p><a href="https://developer.github.com/v3/#authentication">https://developer.github.com/v3/#authentication</a></p>
+<p>OAuth2 token (sent as a parameter)</p>
+</span>
     
 </span>
 <span class="td td2">string</span>
@@ -1645,7 +1987,9 @@ https://developer.github.com/v3/migration/source_imports/#cancel-an-import</span
     <br><span style="font-weight: bold;">(required)</span>
     
     <br>
-    <span class="styleColor777">user-agent header</span>
+    <span class="markdown styleColor777"><p><a href="https://developer.github.com/v3/index.html#user-agent-required">https://developer.github.com/v3/index.html#user-agent-required</a></p>
+<p>All API requests MUST include a valid <code>User-Agent</code> header. Requests with no <code>User-Agent</code> header will be rejected. We request that you use your GitHub username, or the name of your application, for the <code>User-Agent</code> header value. This allows us to contact you if there are problems.</p>
+</span>
     
 </span>
 <span class="td td2">string</span>
@@ -1654,7 +1998,7 @@ https://developer.github.com/v3/migration/source_imports/#cancel-an-import</span
     
     
     
-    <input class="input" placeholder="swgg" type="text">
+    <input class="input" placeholder="Awesome-Octocat-App" type="text">
     
     <div class="errorMessage"></div>
 </span>
@@ -1664,22 +2008,30 @@ https://developer.github.com/v3/migration/source_imports/#cancel-an-import</span
 </div>
 
     
-    <div class="schemaP tr" id="swgg_id_accept_7" data-name="accept">
+    <div class="schemaP tr" id="swgg_id_accept_19" data-name="accept">
 <span class="td td1">
     accept
     <br><span style="font-weight: bold;">(required)</span>
     
     <br>
-    <span class="styleColor777">accept header</span>
+    <span class="markdown styleColor777"><p><a href="https://developer.github.com/v3/media/">https://developer.github.com/v3/media/</a></p>
+<p>Custom media types are used in the API to let consumers choose the format of the data they wish to receive. This is done by adding one or more of the following types to the <code>Accept</code> header when you make a request. Media types are specific to resources, allowing them to change independently and support formats that other resources don't.</p>
+</span>
     
 </span>
-<span class="td td2">string</span>
+<span class="td td2">array<br>(string)</span>
 <span class="td td3">
     
     
     
+    <select class="input" multiple="">
+        
+        <option data-value-select-option="%22application%2Fvnd.github.barred-rock-preview%22" id="swgg_id_accept_20" selected="">application/vnd.github.barred-rock-preview</option>
+        
+        <option data-value-select-option="%22application%2Fvnd.github.v3%2Bjson%22" id="swgg_id_accept_21">application/vnd.github.v3+json</option>
+        
+    </select>
     
-    <input class="input" placeholder="application/vnd.github.barred-rock-preview" type="text">
     
     <div class="errorMessage"></div>
 </span>
@@ -1695,7 +2047,8 @@ https://developer.github.com/v3/migration/source_imports/#cancel-an-import</span
     <br><span style="font-weight: bold;">(required)</span>
     
     <br>
-    <span class="styleColor777">github owner</span>
+    <span class="markdown styleColor777"><p>no description</p>
+</span>
     
 </span>
 <span class="td td2">string</span>
@@ -1704,7 +2057,7 @@ https://developer.github.com/v3/migration/source_imports/#cancel-an-import</span
     
     
     
-    <input class="input" placeholder="swgg-io" type="text">
+    <input class="input" placeholder="owner" type="text">
     
     <div class="errorMessage"></div>
 </span>
@@ -1720,7 +2073,8 @@ https://developer.github.com/v3/migration/source_imports/#cancel-an-import</span
     <br><span style="font-weight: bold;">(required)</span>
     
     <br>
-    <span class="styleColor777">github repo</span>
+    <span class="markdown styleColor777"><p>no description</p>
+</span>
     
 </span>
 <span class="td td2">string</span>
@@ -1729,7 +2083,7 @@ https://developer.github.com/v3/migration/source_imports/#cancel-an-import</span
     
     
     
-    <input class="input" placeholder="node-swgg-google-all" type="text">
+    <input class="input" placeholder="repo" type="text">
     
     <div class="errorMessage"></div>
 </span>
@@ -1741,14 +2095,15 @@ https://developer.github.com/v3/migration/source_imports/#cancel-an-import</span
     
     
     <h4 class="label">response messages</h4>
-    <div class="schemaResponse styleColor777 styleBorderBottom1px tr">
+    <div class="schemaResponse styleBorderBottom1px styleColor777 tr">
         <span class="td td1">http status code</span>
         <span class="td td2">reason</span>
     </div>
     
     <div class="schemaResponse tr">
         <span class="td td1">default</span>
-        <span class="td td2">default response</span>
+        <span class="markdown td td2"><p>default response</p>
+</span>
     </div>
     
     <button class="onEventOperationAjax">try it out!</button>
@@ -1765,19 +2120,26 @@ https://developer.github.com/v3/migration/source_imports/#cancel-an-import</span
     <div class="responseMedia"></div>
 </form>
 </div>
-<div class="operation" data-_method-path="GET /repos/{}/{}/import" id="swgg_id__2Frepos_2F_7Bowner_7D_2F_7Brepo_7D_2Fimport_20GET_1">
+<div class="operation" data-_method-path="GET /repos/{}/{}/import/authors" id="swgg_id__2Frepos_2F_7Bowner_7D_2F_7Brepo_7D_2Fimport_2Fauthors_20GET_1">
 <div class="onEventOperationDisplayShow onEventInputValidate thead" tabindex="0">
     <span class="td td1">8.</span>
     <span class="methodGET td td2">GET</span>
-    <span class="td td3">/repos/{owner}/{repo}/import</span>
-    <span class="styleColor777 td td4">Source Imports - Get import progress. View the progress of an import.
+    <span class="td td3">/repos/{owner}/{repo}/import/authors</span>
+    <span class="styleColor777 td td4">[Source Imports]() - Get commit authors
 
-https://developer.github.com/v3/migration/source_imports/#get-import-progress</span>
+Each type of source control system represents authors in a different way. For example, a Git commit author has a display name and an email address, but a Subversion commit author just has a username. The GitHub Importer will make the author information valid, but the author might not be correct. For example, it will change the bare Subversion username ```hubot``` into something like ```hubot &lt;hubot@12341234-abab-fefe-8787-fedcba987654&gt;```.
+
+This API method and the "Map a commit author" method allow you to provide correct Git author information.</span>
 </div>
 <form accept-charset="UTF-8" class="content uiAnimateSlide" style="border-bottom: 0; border-top: 0; margin-bottom: 0; margin-top: 0; max-height: 0; padding-bottom: 0; padding-top: 0;">
     
     <h4 class="label">description</h4>
-    <div class="styleColor777 tr">Source Imports - Get import progress. View the progress of an import.<br><br>https://developer.github.com/v3/migration/source_imports/#get-import-progress</div>
+    <div class="markdown operationDescription">
+    <p><a href="https://developer.github.com/v3/migration/source_imports/#get-commit-authors">Source Imports</a> - Get commit authors</p>
+<p>Each type of source control system represents authors in a different way. For example, a Git commit author has a display name and an email address, but a Subversion commit author just has a username. The GitHub Importer will make the author information valid, but the author might not be correct. For example, it will change the bare Subversion username <code>hubot</code> into something like <code>hubot &lt;hubot@12341234-abab-fefe-8787-fedcba987654&gt;</code>.</p>
+<p>This API method and the "Map a commit author" method allow you to provide correct Git author information.</p>
+
+    </div>
     
     <h4 class="label">parameters</h4>
     <div class="schemaP styleBorderBottom1px styleColor777 tr">
@@ -1793,7 +2155,9 @@ https://developer.github.com/v3/migration/source_imports/#get-import-progress</s
     
     
     <br>
-    <span class="styleColor777">OAuth2 token (sent as a parameter).<br><br>https://developer.github.com/v3/#authentication</span>
+    <span class="markdown styleColor777"><p><a href="https://developer.github.com/v3/#authentication">https://developer.github.com/v3/#authentication</a></p>
+<p>OAuth2 token (sent as a parameter)</p>
+</span>
     
 </span>
 <span class="td td2">string</span>
@@ -1818,7 +2182,9 @@ https://developer.github.com/v3/migration/source_imports/#get-import-progress</s
     <br><span style="font-weight: bold;">(required)</span>
     
     <br>
-    <span class="styleColor777">user-agent header</span>
+    <span class="markdown styleColor777"><p><a href="https://developer.github.com/v3/index.html#user-agent-required">https://developer.github.com/v3/index.html#user-agent-required</a></p>
+<p>All API requests MUST include a valid <code>User-Agent</code> header. Requests with no <code>User-Agent</code> header will be rejected. We request that you use your GitHub username, or the name of your application, for the <code>User-Agent</code> header value. This allows us to contact you if there are problems.</p>
+</span>
     
 </span>
 <span class="td td2">string</span>
@@ -1827,7 +2193,7 @@ https://developer.github.com/v3/migration/source_imports/#get-import-progress</s
     
     
     
-    <input class="input" placeholder="swgg" type="text">
+    <input class="input" placeholder="Awesome-Octocat-App" type="text">
     
     <div class="errorMessage"></div>
 </span>
@@ -1837,22 +2203,30 @@ https://developer.github.com/v3/migration/source_imports/#get-import-progress</s
 </div>
 
     
-    <div class="schemaP tr" id="swgg_id_accept_8" data-name="accept">
+    <div class="schemaP tr" id="swgg_id_accept_22" data-name="accept">
 <span class="td td1">
     accept
     <br><span style="font-weight: bold;">(required)</span>
     
     <br>
-    <span class="styleColor777">accept header</span>
+    <span class="markdown styleColor777"><p><a href="https://developer.github.com/v3/media/">https://developer.github.com/v3/media/</a></p>
+<p>Custom media types are used in the API to let consumers choose the format of the data they wish to receive. This is done by adding one or more of the following types to the <code>Accept</code> header when you make a request. Media types are specific to resources, allowing them to change independently and support formats that other resources don't.</p>
+</span>
     
 </span>
-<span class="td td2">string</span>
+<span class="td td2">array<br>(string)</span>
 <span class="td td3">
     
     
     
+    <select class="input" multiple="">
+        
+        <option data-value-select-option="%22application%2Fvnd.github.barred-rock-preview%22" id="swgg_id_accept_23" selected="">application/vnd.github.barred-rock-preview</option>
+        
+        <option data-value-select-option="%22application%2Fvnd.github.v3%2Bjson%22" id="swgg_id_accept_24">application/vnd.github.v3+json</option>
+        
+    </select>
     
-    <input class="input" placeholder="application/vnd.github.barred-rock-preview" type="text">
     
     <div class="errorMessage"></div>
 </span>
@@ -1868,7 +2242,8 @@ https://developer.github.com/v3/migration/source_imports/#get-import-progress</s
     <br><span style="font-weight: bold;">(required)</span>
     
     <br>
-    <span class="styleColor777">github owner</span>
+    <span class="markdown styleColor777"><p>no description</p>
+</span>
     
 </span>
 <span class="td td2">string</span>
@@ -1877,7 +2252,7 @@ https://developer.github.com/v3/migration/source_imports/#get-import-progress</s
     
     
     
-    <input class="input" placeholder="swgg-io" type="text">
+    <input class="input" placeholder="owner" type="text">
     
     <div class="errorMessage"></div>
 </span>
@@ -1893,7 +2268,8 @@ https://developer.github.com/v3/migration/source_imports/#get-import-progress</s
     <br><span style="font-weight: bold;">(required)</span>
     
     <br>
-    <span class="styleColor777">github repo</span>
+    <span class="markdown styleColor777"><p>no description</p>
+</span>
     
 </span>
 <span class="td td2">string</span>
@@ -1902,7 +2278,33 @@ https://developer.github.com/v3/migration/source_imports/#get-import-progress</s
     
     
     
-    <input class="input" placeholder="node-swgg-google-all" type="text">
+    <input class="input" placeholder="repo" type="text">
+    
+    <div class="errorMessage"></div>
+</span>
+<span class="td td4">
+    
+</span>
+</div>
+
+    
+    <div class="schemaP tr" id="swgg_id_since_1" data-name="since">
+<span class="td td1">
+    since
+    
+    
+    <br>
+    <span class="markdown styleColor777"><p>Only authors found after this id are returned. Provide the highest author ID you've seen so far. New authors may be added to the list at any point while the importer is performing the <code>raw</code> step.</p>
+</span>
+    
+</span>
+<span class="td td2">string</span>
+<span class="td td3">
+    
+    
+    
+    
+    <input class="input" placeholder="abcd1234" type="text">
     
     <div class="errorMessage"></div>
 </span>
@@ -1914,14 +2316,15 @@ https://developer.github.com/v3/migration/source_imports/#get-import-progress</s
     
     
     <h4 class="label">response messages</h4>
-    <div class="schemaResponse styleColor777 styleBorderBottom1px tr">
+    <div class="schemaResponse styleBorderBottom1px styleColor777 tr">
         <span class="td td1">http status code</span>
         <span class="td td2">reason</span>
     </div>
     
     <div class="schemaResponse tr">
         <span class="td td1">default</span>
-        <span class="td td2">default response</span>
+        <span class="markdown td td2"><p>default response</p>
+</span>
     </div>
     
     <button class="onEventOperationAjax">try it out!</button>
@@ -1938,19 +2341,23 @@ https://developer.github.com/v3/migration/source_imports/#get-import-progress</s
     <div class="responseMedia"></div>
 </form>
 </div>
-<div class="operation" data-_method-path="PATCH /repos/{}/{}/import" id="swgg_id__2Frepos_2F_7Bowner_7D_2F_7Brepo_7D_2Fimport_20PATCH_1">
+<div class="operation" data-_method-path="GET /repos/{}/{}/import" id="swgg_id__2Frepos_2F_7Bowner_7D_2F_7Brepo_7D_2Fimport_20GET_1">
 <div class="onEventOperationDisplayShow onEventInputValidate thead" tabindex="0">
     <span class="td td1">9.</span>
-    <span class="methodPATCH td td2">PATCH</span>
+    <span class="methodGET td td2">GET</span>
     <span class="td td3">/repos/{owner}/{repo}/import</span>
-    <span class="styleColor777 td td4">Source Imports - Update existing import. An import can be updated with credentials or a project choice by passing in the appropriate parameters in this API request. If no parameters are provided, the import will be restarted.
+    <span class="styleColor777 td td4">[Source Imports]() - Get import progress
 
-https://developer.github.com/v3/migration/source_imports/#update-existing-import</span>
+View the progress of an import.</span>
 </div>
 <form accept-charset="UTF-8" class="content uiAnimateSlide" style="border-bottom: 0; border-top: 0; margin-bottom: 0; margin-top: 0; max-height: 0; padding-bottom: 0; padding-top: 0;">
     
     <h4 class="label">description</h4>
-    <div class="styleColor777 tr">Source Imports - Update existing import. An import can be updated with credentials or a project choice by passing in the appropriate parameters in this API request. If no parameters are provided, the import will be restarted.<br><br>https://developer.github.com/v3/migration/source_imports/#update-existing-import</div>
+    <div class="markdown operationDescription">
+    <p><a href="https://developer.github.com/v3/migration/source_imports/#get-import-progress">Source Imports</a> - Get import progress</p>
+<p>View the progress of an import.</p>
+
+    </div>
     
     <h4 class="label">parameters</h4>
     <div class="schemaP styleBorderBottom1px styleColor777 tr">
@@ -1966,7 +2373,9 @@ https://developer.github.com/v3/migration/source_imports/#update-existing-import
     
     
     <br>
-    <span class="styleColor777">OAuth2 token (sent as a parameter).<br><br>https://developer.github.com/v3/#authentication</span>
+    <span class="markdown styleColor777"><p><a href="https://developer.github.com/v3/#authentication">https://developer.github.com/v3/#authentication</a></p>
+<p>OAuth2 token (sent as a parameter)</p>
+</span>
     
 </span>
 <span class="td td2">string</span>
@@ -1991,7 +2400,9 @@ https://developer.github.com/v3/migration/source_imports/#update-existing-import
     <br><span style="font-weight: bold;">(required)</span>
     
     <br>
-    <span class="styleColor777">user-agent header</span>
+    <span class="markdown styleColor777"><p><a href="https://developer.github.com/v3/index.html#user-agent-required">https://developer.github.com/v3/index.html#user-agent-required</a></p>
+<p>All API requests MUST include a valid <code>User-Agent</code> header. Requests with no <code>User-Agent</code> header will be rejected. We request that you use your GitHub username, or the name of your application, for the <code>User-Agent</code> header value. This allows us to contact you if there are problems.</p>
+</span>
     
 </span>
 <span class="td td2">string</span>
@@ -2000,7 +2411,7 @@ https://developer.github.com/v3/migration/source_imports/#update-existing-import
     
     
     
-    <input class="input" placeholder="swgg" type="text">
+    <input class="input" placeholder="Awesome-Octocat-App" type="text">
     
     <div class="errorMessage"></div>
 </span>
@@ -2010,22 +2421,30 @@ https://developer.github.com/v3/migration/source_imports/#update-existing-import
 </div>
 
     
-    <div class="schemaP tr" id="swgg_id_accept_9" data-name="accept">
+    <div class="schemaP tr" id="swgg_id_accept_25" data-name="accept">
 <span class="td td1">
     accept
     <br><span style="font-weight: bold;">(required)</span>
     
     <br>
-    <span class="styleColor777">accept header</span>
+    <span class="markdown styleColor777"><p><a href="https://developer.github.com/v3/media/">https://developer.github.com/v3/media/</a></p>
+<p>Custom media types are used in the API to let consumers choose the format of the data they wish to receive. This is done by adding one or more of the following types to the <code>Accept</code> header when you make a request. Media types are specific to resources, allowing them to change independently and support formats that other resources don't.</p>
+</span>
     
 </span>
-<span class="td td2">string</span>
+<span class="td td2">array<br>(string)</span>
 <span class="td td3">
     
     
     
+    <select class="input" multiple="">
+        
+        <option data-value-select-option="%22application%2Fvnd.github.barred-rock-preview%22" id="swgg_id_accept_26" selected="">application/vnd.github.barred-rock-preview</option>
+        
+        <option data-value-select-option="%22application%2Fvnd.github.v3%2Bjson%22" id="swgg_id_accept_27">application/vnd.github.v3+json</option>
+        
+    </select>
     
-    <input class="input" placeholder="application/vnd.github.barred-rock-preview" type="text">
     
     <div class="errorMessage"></div>
 </span>
@@ -2041,7 +2460,8 @@ https://developer.github.com/v3/migration/source_imports/#update-existing-import
     <br><span style="font-weight: bold;">(required)</span>
     
     <br>
-    <span class="styleColor777">github owner</span>
+    <span class="markdown styleColor777"><p>no description</p>
+</span>
     
 </span>
 <span class="td td2">string</span>
@@ -2050,7 +2470,7 @@ https://developer.github.com/v3/migration/source_imports/#update-existing-import
     
     
     
-    <input class="input" placeholder="swgg-io" type="text">
+    <input class="input" placeholder="owner" type="text">
     
     <div class="errorMessage"></div>
 </span>
@@ -2066,7 +2486,8 @@ https://developer.github.com/v3/migration/source_imports/#update-existing-import
     <br><span style="font-weight: bold;">(required)</span>
     
     <br>
-    <span class="styleColor777">github repo</span>
+    <span class="markdown styleColor777"><p>no description</p>
+</span>
     
 </span>
 <span class="td td2">string</span>
@@ -2075,65 +2496,27 @@ https://developer.github.com/v3/migration/source_imports/#update-existing-import
     
     
     
-    <input class="input" placeholder="node-swgg-google-all" type="text">
+    <input class="input" placeholder="repo" type="text">
     
     <div class="errorMessage"></div>
 </span>
 <span class="td td4">
     
-</span>
-</div>
-
-    
-    <div class="schemaP tr" id="swgg_id_body_2" data-name="body">
-<span class="td td1">
-    body
-    <br><span style="font-weight: bold;">(required)</span>
-    
-</span>
-<span class="td td2">object</span>
-<span class="td td3">
-    
-    <div class="multilinePlaceholderContainer">
-        <pre class="multilinePlaceholderPre">{
-    "vcs_password": "secret",
-    "vcs_username": "octocat"
-}</pre>
-        <textarea class="input multilinePlaceholderTextarea onEventInputTextareaChange"></textarea>
-    </div>
-    
-    
-    
-    
-    <div class="errorMessage"></div>
-</span>
-<span class="td td4">
-    <pre>{
-    "vcs_password": {
-        "default": "secret",
-        "description": "If authentication is required, the password to provide to vcs_url.",
-        "type": "string"
-    },
-    "vcs_username": {
-        "default": "octocat",
-        "description": "If authentication is required, the username to provide to vcs_url.",
-        "type": "string"
-    }
-}</pre>
 </span>
 </div>
 
     
     
     <h4 class="label">response messages</h4>
-    <div class="schemaResponse styleColor777 styleBorderBottom1px tr">
+    <div class="schemaResponse styleBorderBottom1px styleColor777 tr">
         <span class="td td1">http status code</span>
         <span class="td td2">reason</span>
     </div>
     
     <div class="schemaResponse tr">
         <span class="td td1">default</span>
-        <span class="td td2">default response</span>
+        <span class="markdown td td2"><p>default response</p>
+</span>
     </div>
     
     <button class="onEventOperationAjax">try it out!</button>
@@ -2150,19 +2533,23 @@ https://developer.github.com/v3/migration/source_imports/#update-existing-import
     <div class="responseMedia"></div>
 </form>
 </div>
-<div class="operation" data-_method-path="PUT /repos/{}/{}/import" id="swgg_id__2Frepos_2F_7Bowner_7D_2F_7Brepo_7D_2Fimport_20PUT_1">
+<div class="operation" data-_method-path="GET /repos/{}/{}/import/large_files" id="swgg_id__2Frepos_2F_7Bowner_7D_2F_7Brepo_7D_2Fimport_2Flarge_files_20GET_1">
 <div class="onEventOperationDisplayShow onEventInputValidate thead" tabindex="0">
     <span class="td td1">10.</span>
-    <span class="methodPUT td td2">PUT</span>
-    <span class="td td3">/repos/{owner}/{repo}/import</span>
-    <span class="styleColor777 td td4">Source Imports - Start an import. Start a source import to a GitHub repository using GitHub Importer.
+    <span class="methodGET td td2">GET</span>
+    <span class="td td3">/repos/{owner}/{repo}/import/large_files</span>
+    <span class="styleColor777 td td4">[Source Imports]() - Get large files
 
-https://developer.github.com/v3/migration/source_imports/#start-an-import</span>
+List files larger than 100MB found during the import</span>
 </div>
 <form accept-charset="UTF-8" class="content uiAnimateSlide" style="border-bottom: 0; border-top: 0; margin-bottom: 0; margin-top: 0; max-height: 0; padding-bottom: 0; padding-top: 0;">
     
     <h4 class="label">description</h4>
-    <div class="styleColor777 tr">Source Imports - Start an import. Start a source import to a GitHub repository using GitHub Importer.<br><br>https://developer.github.com/v3/migration/source_imports/#start-an-import</div>
+    <div class="markdown operationDescription">
+    <p><a href="https://developer.github.com/v3/migration/source_imports/#get-large-files">Source Imports</a> - Get large files</p>
+<p>List files larger than 100MB found during the import</p>
+
+    </div>
     
     <h4 class="label">parameters</h4>
     <div class="schemaP styleBorderBottom1px styleColor777 tr">
@@ -2178,7 +2565,9 @@ https://developer.github.com/v3/migration/source_imports/#start-an-import</span>
     
     
     <br>
-    <span class="styleColor777">OAuth2 token (sent as a parameter).<br><br>https://developer.github.com/v3/#authentication</span>
+    <span class="markdown styleColor777"><p><a href="https://developer.github.com/v3/#authentication">https://developer.github.com/v3/#authentication</a></p>
+<p>OAuth2 token (sent as a parameter)</p>
+</span>
     
 </span>
 <span class="td td2">string</span>
@@ -2203,7 +2592,9 @@ https://developer.github.com/v3/migration/source_imports/#start-an-import</span>
     <br><span style="font-weight: bold;">(required)</span>
     
     <br>
-    <span class="styleColor777">user-agent header</span>
+    <span class="markdown styleColor777"><p><a href="https://developer.github.com/v3/index.html#user-agent-required">https://developer.github.com/v3/index.html#user-agent-required</a></p>
+<p>All API requests MUST include a valid <code>User-Agent</code> header. Requests with no <code>User-Agent</code> header will be rejected. We request that you use your GitHub username, or the name of your application, for the <code>User-Agent</code> header value. This allows us to contact you if there are problems.</p>
+</span>
     
 </span>
 <span class="td td2">string</span>
@@ -2212,7 +2603,7 @@ https://developer.github.com/v3/migration/source_imports/#start-an-import</span>
     
     
     
-    <input class="input" placeholder="swgg" type="text">
+    <input class="input" placeholder="Awesome-Octocat-App" type="text">
     
     <div class="errorMessage"></div>
 </span>
@@ -2222,22 +2613,30 @@ https://developer.github.com/v3/migration/source_imports/#start-an-import</span>
 </div>
 
     
-    <div class="schemaP tr" id="swgg_id_accept_10" data-name="accept">
+    <div class="schemaP tr" id="swgg_id_accept_28" data-name="accept">
 <span class="td td1">
     accept
     <br><span style="font-weight: bold;">(required)</span>
     
     <br>
-    <span class="styleColor777">accept header</span>
+    <span class="markdown styleColor777"><p><a href="https://developer.github.com/v3/media/">https://developer.github.com/v3/media/</a></p>
+<p>Custom media types are used in the API to let consumers choose the format of the data they wish to receive. This is done by adding one or more of the following types to the <code>Accept</code> header when you make a request. Media types are specific to resources, allowing them to change independently and support formats that other resources don't.</p>
+</span>
     
 </span>
-<span class="td td2">string</span>
+<span class="td td2">array<br>(string)</span>
 <span class="td td3">
     
     
     
+    <select class="input" multiple="">
+        
+        <option data-value-select-option="%22application%2Fvnd.github.barred-rock-preview%22" id="swgg_id_accept_29" selected="">application/vnd.github.barred-rock-preview</option>
+        
+        <option data-value-select-option="%22application%2Fvnd.github.v3%2Bjson%22" id="swgg_id_accept_30">application/vnd.github.v3+json</option>
+        
+    </select>
     
-    <input class="input" placeholder="application/vnd.github.barred-rock-preview" type="text">
     
     <div class="errorMessage"></div>
 </span>
@@ -2253,7 +2652,8 @@ https://developer.github.com/v3/migration/source_imports/#start-an-import</span>
     <br><span style="font-weight: bold;">(required)</span>
     
     <br>
-    <span class="styleColor777">github owner</span>
+    <span class="markdown styleColor777"><p>no description</p>
+</span>
     
 </span>
 <span class="td td2">string</span>
@@ -2262,7 +2662,7 @@ https://developer.github.com/v3/migration/source_imports/#start-an-import</span>
     
     
     
-    <input class="input" placeholder="swgg-io" type="text">
+    <input class="input" placeholder="owner" type="text">
     
     <div class="errorMessage"></div>
 </span>
@@ -2278,7 +2678,8 @@ https://developer.github.com/v3/migration/source_imports/#start-an-import</span>
     <br><span style="font-weight: bold;">(required)</span>
     
     <br>
-    <span class="styleColor777">github repo</span>
+    <span class="markdown styleColor777"><p>no description</p>
+</span>
     
 </span>
 <span class="td td2">string</span>
@@ -2287,87 +2688,27 @@ https://developer.github.com/v3/migration/source_imports/#start-an-import</span>
     
     
     
-    <input class="input" placeholder="node-swgg-google-all" type="text">
+    <input class="input" placeholder="repo" type="text">
     
     <div class="errorMessage"></div>
 </span>
 <span class="td td4">
     
-</span>
-</div>
-
-    
-    <div class="schemaP tr" id="swgg_id_body_3" data-name="body">
-<span class="td td1">
-    body
-    <br><span style="font-weight: bold;">(required)</span>
-    
-</span>
-<span class="td td2">object</span>
-<span class="td td3">
-    
-    <div class="multilinePlaceholderContainer">
-        <pre class="multilinePlaceholderPre">{
-    "tfvc_project": "abcd1234",
-    "vcs": "subversion",
-    "vcs_password": "secret",
-    "vcs_url": "http://svn.mycompany.com/svn/myproject",
-    "vcs_username": "octocat"
-}</pre>
-        <textarea class="input multilinePlaceholderTextarea onEventInputTextareaChange"></textarea>
-    </div>
-    
-    
-    
-    
-    <div class="errorMessage"></div>
-</span>
-<span class="td td4">
-    <pre>{
-    "tfvc_project": {
-        "description": "For a tfvc import, the name of the project that is being imported.",
-        "type": "string"
-    },
-    "vcs": {
-        "description": "The originating VCS type. Can be one of subversion, git, mercurial, or tfvc. Please be aware that without this parameter, the import job will take additional time to detect the VCS type before beginning the import. This detection step will be reflected in the response.",
-        "enum": [
-            "subversion",
-            "git",
-            "mercurial",
-            "tfvc"
-        ],
-        "type": "string"
-    },
-    "vcs_password": {
-        "default": "secret",
-        "description": "If authentication is required, the password to provide to vcs_url.",
-        "type": "string"
-    },
-    "vcs_url": {
-        "default": "http://svn.mycompany.com/svn/myproject",
-        "description": "The URL of the originating repository.",
-        "type": "string"
-    },
-    "vcs_username": {
-        "default": "octocat",
-        "description": "If authentication is required, the username to provide to vcs_url.",
-        "type": "string"
-    }
-}</pre>
 </span>
 </div>
 
     
     
     <h4 class="label">response messages</h4>
-    <div class="schemaResponse styleColor777 styleBorderBottom1px tr">
+    <div class="schemaResponse styleBorderBottom1px styleColor777 tr">
         <span class="td td1">http status code</span>
         <span class="td td2">reason</span>
     </div>
     
     <div class="schemaResponse tr">
         <span class="td td1">default</span>
-        <span class="td td2">default response</span>
+        <span class="markdown td td2"><p>default response</p>
+</span>
     </div>
     
     <button class="onEventOperationAjax">try it out!</button>
@@ -2384,19 +2725,23 @@ https://developer.github.com/v3/migration/source_imports/#start-an-import</span>
     <div class="responseMedia"></div>
 </form>
 </div>
-<div class="operation" data-_method-path="GET /repos/{}/{}/import/authors" id="swgg_id__2Frepos_2F_7Bowner_7D_2F_7Brepo_7D_2Fimport_2Fauthors_20GET_1">
+<div class="operation" data-_method-path="PATCH /repos/{}/{}/import/authors/{}" id="swgg_id__2Frepos_2F_7Bowner_7D_2F_7Brepo_7D_2Fimport_2Fauthors_2F_7Bauthor_id_7D_20PATCH_1">
 <div class="onEventOperationDisplayShow onEventInputValidate thead" tabindex="0">
     <span class="td td1">11.</span>
-    <span class="methodGET td td2">GET</span>
-    <span class="td td3">/repos/{owner}/{repo}/import/authors</span>
-    <span class="styleColor777 td td4">Source Imports - Get commit authors. Each type of source control system represents authors in a different way. For example, a Git commit author has a display name and an email address, but a Subversion commit author just has a username. The GitHub Importer will make the author information valid, but the author might not be correct. For example, it will change the bare Subversion username hubot into something like hubot &lt;hubot@12341234-abab-fefe-8787-fedcba987654&gt;. This API method and the "Map a commit author" method allow you to provide correct Git author information.
+    <span class="methodPATCH td td2">PATCH</span>
+    <span class="td td3">/repos/{owner}/{repo}/import/authors/{author_id}</span>
+    <span class="styleColor777 td td4">[Source Imports]() - Map a commit author
 
-https://developer.github.com/v3/migration/source_imports/#get-commit-authors</span>
+Update an author's identity for the import. Your application can continue updating authors any time before you push new commits to the repository.</span>
 </div>
 <form accept-charset="UTF-8" class="content uiAnimateSlide" style="border-bottom: 0; border-top: 0; margin-bottom: 0; margin-top: 0; max-height: 0; padding-bottom: 0; padding-top: 0;">
     
     <h4 class="label">description</h4>
-    <div class="styleColor777 tr">Source Imports - Get commit authors. Each type of source control system represents authors in a different way. For example, a Git commit author has a display name and an email address, but a Subversion commit author just has a username. The GitHub Importer will make the author information valid, but the author might not be correct. For example, it will change the bare Subversion username hubot into something like hubot &lt;hubot@12341234-abab-fefe-8787-fedcba987654&gt;. This API method and the "Map a commit author" method allow you to provide correct Git author information.<br><br>https://developer.github.com/v3/migration/source_imports/#get-commit-authors</div>
+    <div class="markdown operationDescription">
+    <p><a href="https://developer.github.com/v3/migration/source_imports/#map-a-commit-author">Source Imports</a> - Map a commit author</p>
+<p>Update an author's identity for the import. Your application can continue updating authors any time before you push new commits to the repository.</p>
+
+    </div>
     
     <h4 class="label">parameters</h4>
     <div class="schemaP styleBorderBottom1px styleColor777 tr">
@@ -2412,7 +2757,9 @@ https://developer.github.com/v3/migration/source_imports/#get-commit-authors</sp
     
     
     <br>
-    <span class="styleColor777">OAuth2 token (sent as a parameter).<br><br>https://developer.github.com/v3/#authentication</span>
+    <span class="markdown styleColor777"><p><a href="https://developer.github.com/v3/#authentication">https://developer.github.com/v3/#authentication</a></p>
+<p>OAuth2 token (sent as a parameter)</p>
+</span>
     
 </span>
 <span class="td td2">string</span>
@@ -2437,7 +2784,9 @@ https://developer.github.com/v3/migration/source_imports/#get-commit-authors</sp
     <br><span style="font-weight: bold;">(required)</span>
     
     <br>
-    <span class="styleColor777">user-agent header</span>
+    <span class="markdown styleColor777"><p><a href="https://developer.github.com/v3/index.html#user-agent-required">https://developer.github.com/v3/index.html#user-agent-required</a></p>
+<p>All API requests MUST include a valid <code>User-Agent</code> header. Requests with no <code>User-Agent</code> header will be rejected. We request that you use your GitHub username, or the name of your application, for the <code>User-Agent</code> header value. This allows us to contact you if there are problems.</p>
+</span>
     
 </span>
 <span class="td td2">string</span>
@@ -2446,7 +2795,7 @@ https://developer.github.com/v3/migration/source_imports/#get-commit-authors</sp
     
     
     
-    <input class="input" placeholder="swgg" type="text">
+    <input class="input" placeholder="Awesome-Octocat-App" type="text">
     
     <div class="errorMessage"></div>
 </span>
@@ -2456,22 +2805,30 @@ https://developer.github.com/v3/migration/source_imports/#get-commit-authors</sp
 </div>
 
     
-    <div class="schemaP tr" id="swgg_id_accept_11" data-name="accept">
+    <div class="schemaP tr" id="swgg_id_accept_31" data-name="accept">
 <span class="td td1">
     accept
     <br><span style="font-weight: bold;">(required)</span>
     
     <br>
-    <span class="styleColor777">accept header</span>
+    <span class="markdown styleColor777"><p><a href="https://developer.github.com/v3/media/">https://developer.github.com/v3/media/</a></p>
+<p>Custom media types are used in the API to let consumers choose the format of the data they wish to receive. This is done by adding one or more of the following types to the <code>Accept</code> header when you make a request. Media types are specific to resources, allowing them to change independently and support formats that other resources don't.</p>
+</span>
     
 </span>
-<span class="td td2">string</span>
+<span class="td td2">array<br>(string)</span>
 <span class="td td3">
     
     
     
+    <select class="input" multiple="">
+        
+        <option data-value-select-option="%22application%2Fvnd.github.barred-rock-preview%22" id="swgg_id_accept_32" selected="">application/vnd.github.barred-rock-preview</option>
+        
+        <option data-value-select-option="%22application%2Fvnd.github.v3%2Bjson%22" id="swgg_id_accept_33">application/vnd.github.v3+json</option>
+        
+    </select>
     
-    <input class="input" placeholder="application/vnd.github.barred-rock-preview" type="text">
     
     <div class="errorMessage"></div>
 </span>
@@ -2487,7 +2844,8 @@ https://developer.github.com/v3/migration/source_imports/#get-commit-authors</sp
     <br><span style="font-weight: bold;">(required)</span>
     
     <br>
-    <span class="styleColor777">github owner</span>
+    <span class="markdown styleColor777"><p>no description</p>
+</span>
     
 </span>
 <span class="td td2">string</span>
@@ -2496,7 +2854,7 @@ https://developer.github.com/v3/migration/source_imports/#get-commit-authors</sp
     
     
     
-    <input class="input" placeholder="swgg-io" type="text">
+    <input class="input" placeholder="owner" type="text">
     
     <div class="errorMessage"></div>
 </span>
@@ -2512,7 +2870,8 @@ https://developer.github.com/v3/migration/source_imports/#get-commit-authors</sp
     <br><span style="font-weight: bold;">(required)</span>
     
     <br>
-    <span class="styleColor777">github repo</span>
+    <span class="markdown styleColor777"><p>no description</p>
+</span>
     
 </span>
 <span class="td td2">string</span>
@@ -2521,7 +2880,7 @@ https://developer.github.com/v3/migration/source_imports/#get-commit-authors</sp
     
     
     
-    <input class="input" placeholder="node-swgg-google-all" type="text">
+    <input class="input" placeholder="repo" type="text">
     
     <div class="errorMessage"></div>
 </span>
@@ -2531,41 +2890,92 @@ https://developer.github.com/v3/migration/source_imports/#get-commit-authors</sp
 </div>
 
     
-    <div class="schemaP tr" id="swgg_id_since_1" data-name="since">
+    <div class="schemaP tr" id="swgg_id_author_id_1" data-name="author_id">
 <span class="td td1">
-    since
-    
+    author_id
+    <br><span style="font-weight: bold;">(required)</span>
     
     <br>
-    <span class="styleColor777">Only authors found after this id are returned. Provide the highest author ID you've seen so far. New authors may be added to the list at any point while the importer is performing the raw step.</span>
+    <span class="markdown styleColor777"><p>no description</p>
+</span>
     
 </span>
-<span class="td td2">string<br>(date-time)</span>
+<span class="td td2">string</span>
 <span class="td td3">
     
     
     
     
-    <input class="input" placeholder="2018-01-24T10:29:22.125Z" type="text">
+    <input class="input" placeholder="author_id" type="text">
     
     <div class="errorMessage"></div>
 </span>
 <span class="td td4">
     
+</span>
+</div>
+
+    
+    <div class="schemaP tr" id="swgg_id_body_2" data-name="body">
+<span class="td td1">
+    body
+    
+    
+    <br>
+    <span class="markdown styleColor777"><p>no description</p>
+</span>
+    
+</span>
+<span class="td td2">object</span>
+<span class="td td3">
+    
+    <div class="multilinePlaceholderContainer">
+        <pre class="multilinePlaceholderPre">{
+    "email": "hubot@github.com",
+    "name": "Hubot the Robot"
+}</pre>
+        <textarea class="input multilinePlaceholderTextarea onEventInputTextareaChange"></textarea>
+    </div>
+    
+    
+    
+    
+    <div class="errorMessage"></div>
+</span>
+<span class="td td4">
+    <pre>{
+    "email": {
+        "default": "hubot@github.com",
+        "description": "The new Git author email.",
+        "type": "string",
+        "x-swgg-descriptionLineList": [
+            "The new Git author email."
+        ]
+    },
+    "name": {
+        "default": "Hubot the Robot",
+        "description": "The new Git author name.",
+        "type": "string",
+        "x-swgg-descriptionLineList": [
+            "The new Git author name."
+        ]
+    }
+}</pre>
 </span>
 </div>
 
     
     
     <h4 class="label">response messages</h4>
-    <div class="schemaResponse styleColor777 styleBorderBottom1px tr">
+    <div class="schemaResponse styleBorderBottom1px styleColor777 tr">
         <span class="td td1">http status code</span>
         <span class="td td2">reason</span>
     </div>
     
     <div class="schemaResponse tr">
         <span class="td td1">default</span>
-        <span class="td td2">default response</span>
+        <span class="markdown td td2"><p>default response</p>
+</span>
     </div>
     
     <button class="onEventOperationAjax">try it out!</button>
@@ -2582,19 +2992,23 @@ https://developer.github.com/v3/migration/source_imports/#get-commit-authors</sp
     <div class="responseMedia"></div>
 </form>
 </div>
-<div class="operation" data-_method-path="PATCH /repos/{}/{}/import/authors/{}" id="swgg_id__2Frepos_2F_7Bowner_7D_2F_7Brepo_7D_2Fimport_2Fauthors_2F_7Bauthor_id_7D_20PATCH_1">
+<div class="operation" data-_method-path="PATCH /repos/{}/{}/import/lfs" id="swgg_id__2Frepos_2F_7Bowner_7D_2F_7Brepo_7D_2Fimport_2Flfs_20PATCH_1">
 <div class="onEventOperationDisplayShow onEventInputValidate thead" tabindex="0">
     <span class="td td1">12.</span>
     <span class="methodPATCH td td2">PATCH</span>
-    <span class="td td3">/repos/{owner}/{repo}/import/authors/{author_id}</span>
-    <span class="styleColor777 td td4">Source Imports - Map a commit author. Update an author's identity for the import. Your application can continue updating authors any time before you push new commits to the repository.
+    <span class="td td3">/repos/{owner}/{repo}/import/lfs</span>
+    <span class="styleColor777 td td4">[Source Imports]() - Set Git LFS preference
 
-https://developer.github.com/v3/migration/source_imports/#map-a-commit-author</span>
+You can import repositories from Subversion, Mercurial, and TFS that include files larger than 100MB. This ability is powered by [Git LFS](). You can learn more about our LFS feature and working with large files [on our help site]().</span>
 </div>
 <form accept-charset="UTF-8" class="content uiAnimateSlide" style="border-bottom: 0; border-top: 0; margin-bottom: 0; margin-top: 0; max-height: 0; padding-bottom: 0; padding-top: 0;">
     
     <h4 class="label">description</h4>
-    <div class="styleColor777 tr">Source Imports - Map a commit author. Update an author's identity for the import. Your application can continue updating authors any time before you push new commits to the repository.<br><br>https://developer.github.com/v3/migration/source_imports/#map-a-commit-author</div>
+    <div class="markdown operationDescription">
+    <p><a href="https://developer.github.com/v3/migration/source_imports/#set-git-lfs-preference">Source Imports</a> - Set Git LFS preference</p>
+<p>You can import repositories from Subversion, Mercurial, and TFS that include files larger than 100MB. This ability is powered by <a href="https://git-lfs.github.com/">Git LFS</a>. You can learn more about our LFS feature and working with large files <a href="https://help.github.com/articles/versioning-large-files/">on our help site</a>.</p>
+
+    </div>
     
     <h4 class="label">parameters</h4>
     <div class="schemaP styleBorderBottom1px styleColor777 tr">
@@ -2610,7 +3024,9 @@ https://developer.github.com/v3/migration/source_imports/#map-a-commit-author</s
     
     
     <br>
-    <span class="styleColor777">OAuth2 token (sent as a parameter).<br><br>https://developer.github.com/v3/#authentication</span>
+    <span class="markdown styleColor777"><p><a href="https://developer.github.com/v3/#authentication">https://developer.github.com/v3/#authentication</a></p>
+<p>OAuth2 token (sent as a parameter)</p>
+</span>
     
 </span>
 <span class="td td2">string</span>
@@ -2635,7 +3051,9 @@ https://developer.github.com/v3/migration/source_imports/#map-a-commit-author</s
     <br><span style="font-weight: bold;">(required)</span>
     
     <br>
-    <span class="styleColor777">user-agent header</span>
+    <span class="markdown styleColor777"><p><a href="https://developer.github.com/v3/index.html#user-agent-required">https://developer.github.com/v3/index.html#user-agent-required</a></p>
+<p>All API requests MUST include a valid <code>User-Agent</code> header. Requests with no <code>User-Agent</code> header will be rejected. We request that you use your GitHub username, or the name of your application, for the <code>User-Agent</code> header value. This allows us to contact you if there are problems.</p>
+</span>
     
 </span>
 <span class="td td2">string</span>
@@ -2644,7 +3062,7 @@ https://developer.github.com/v3/migration/source_imports/#map-a-commit-author</s
     
     
     
-    <input class="input" placeholder="swgg" type="text">
+    <input class="input" placeholder="Awesome-Octocat-App" type="text">
     
     <div class="errorMessage"></div>
 </span>
@@ -2654,22 +3072,30 @@ https://developer.github.com/v3/migration/source_imports/#map-a-commit-author</s
 </div>
 
     
-    <div class="schemaP tr" id="swgg_id_accept_12" data-name="accept">
+    <div class="schemaP tr" id="swgg_id_accept_34" data-name="accept">
 <span class="td td1">
     accept
     <br><span style="font-weight: bold;">(required)</span>
     
     <br>
-    <span class="styleColor777">accept header</span>
+    <span class="markdown styleColor777"><p><a href="https://developer.github.com/v3/media/">https://developer.github.com/v3/media/</a></p>
+<p>Custom media types are used in the API to let consumers choose the format of the data they wish to receive. This is done by adding one or more of the following types to the <code>Accept</code> header when you make a request. Media types are specific to resources, allowing them to change independently and support formats that other resources don't.</p>
+</span>
     
 </span>
-<span class="td td2">string</span>
+<span class="td td2">array<br>(string)</span>
 <span class="td td3">
     
     
     
+    <select class="input" multiple="">
+        
+        <option data-value-select-option="%22application%2Fvnd.github.barred-rock-preview%22" id="swgg_id_accept_35" selected="">application/vnd.github.barred-rock-preview</option>
+        
+        <option data-value-select-option="%22application%2Fvnd.github.v3%2Bjson%22" id="swgg_id_accept_36">application/vnd.github.v3+json</option>
+        
+    </select>
     
-    <input class="input" placeholder="application/vnd.github.barred-rock-preview" type="text">
     
     <div class="errorMessage"></div>
 </span>
@@ -2685,7 +3111,8 @@ https://developer.github.com/v3/migration/source_imports/#map-a-commit-author</s
     <br><span style="font-weight: bold;">(required)</span>
     
     <br>
-    <span class="styleColor777">github owner</span>
+    <span class="markdown styleColor777"><p>no description</p>
+</span>
     
 </span>
 <span class="td td2">string</span>
@@ -2694,7 +3121,7 @@ https://developer.github.com/v3/migration/source_imports/#map-a-commit-author</s
     
     
     
-    <input class="input" placeholder="swgg-io" type="text">
+    <input class="input" placeholder="owner" type="text">
     
     <div class="errorMessage"></div>
 </span>
@@ -2710,7 +3137,8 @@ https://developer.github.com/v3/migration/source_imports/#map-a-commit-author</s
     <br><span style="font-weight: bold;">(required)</span>
     
     <br>
-    <span class="styleColor777">github repo</span>
+    <span class="markdown styleColor777"><p>no description</p>
+</span>
     
 </span>
 <span class="td td2">string</span>
@@ -2719,7 +3147,7 @@ https://developer.github.com/v3/migration/source_imports/#map-a-commit-author</s
     
     
     
-    <input class="input" placeholder="node-swgg-google-all" type="text">
+    <input class="input" placeholder="repo" type="text">
     
     <div class="errorMessage"></div>
 </span>
@@ -2729,35 +3157,14 @@ https://developer.github.com/v3/migration/source_imports/#map-a-commit-author</s
 </div>
 
     
-    <div class="schemaP tr" id="swgg_id_author_id_1" data-name="author_id">
-<span class="td td1">
-    author_id
-    <br><span style="font-weight: bold;">(required)</span>
-    
-    <br>
-    <span class="styleColor777">github author_id</span>
-    
-</span>
-<span class="td td2">string</span>
-<span class="td td3">
-    
-    
-    
-    
-    <input class="input" placeholder="abcd1234" type="text">
-    
-    <div class="errorMessage"></div>
-</span>
-<span class="td td4">
-    
-</span>
-</div>
-
-    
-    <div class="schemaP tr" id="swgg_id_body_4" data-name="body">
+    <div class="schemaP tr" id="swgg_id_body_3" data-name="body">
 <span class="td td1">
     body
-    <br><span style="font-weight: bold;">(required)</span>
+    
+    
+    <br>
+    <span class="markdown styleColor777"><p>no description</p>
+</span>
     
 </span>
 <span class="td td2">object</span>
@@ -2765,8 +3172,7 @@ https://developer.github.com/v3/migration/source_imports/#map-a-commit-author</s
     
     <div class="multilinePlaceholderContainer">
         <pre class="multilinePlaceholderPre">{
-    "email": "hubot@github.com",
-    "name": "Hubot the Robot"
+    "use_lfs": "opt_in"
 }</pre>
         <textarea class="input multilinePlaceholderTextarea onEventInputTextareaChange"></textarea>
     </div>
@@ -2778,18 +3184,17 @@ https://developer.github.com/v3/migration/source_imports/#map-a-commit-author</s
 </span>
 <span class="td td4">
     <pre>{
-    "email": {
-        "default": "hubot@github.com",
-        "format": "email",
-        "in": "query",
-        "name": "email",
-        "type": "string"
-    },
-    "name": {
-        "default": "Hubot the Robot",
-        "in": "query",
-        "name": "name",
-        "type": "string"
+    "use_lfs": {
+        "default": "opt_in",
+        "description": "**Required** Can be one of ```opt_in``` (large files will be stored using Git LFS) or ```opt_out``` (large files will be removed during the import).",
+        "enum": [
+            "opt_in",
+            "opt_out"
+        ],
+        "type": "string",
+        "x-swgg-descriptionLineList": [
+            "**Required** Can be one of ```opt_in``` (large files will be stored using Git LFS) or ```opt_out``` (large files will be removed during the import)."
+        ]
     }
 }</pre>
 </span>
@@ -2798,14 +3203,15 @@ https://developer.github.com/v3/migration/source_imports/#map-a-commit-author</s
     
     
     <h4 class="label">response messages</h4>
-    <div class="schemaResponse styleColor777 styleBorderBottom1px tr">
+    <div class="schemaResponse styleBorderBottom1px styleColor777 tr">
         <span class="td td1">http status code</span>
         <span class="td td2">reason</span>
     </div>
     
     <div class="schemaResponse tr">
         <span class="td td1">default</span>
-        <span class="td td2">default response</span>
+        <span class="markdown td td2"><p>default response</p>
+</span>
     </div>
     
     <button class="onEventOperationAjax">try it out!</button>
@@ -2822,19 +3228,23 @@ https://developer.github.com/v3/migration/source_imports/#map-a-commit-author</s
     <div class="responseMedia"></div>
 </form>
 </div>
-<div class="operation" data-_method-path="GET /repos/{}/{}/import/large_files" id="swgg_id__2Frepos_2F_7Bowner_7D_2F_7Brepo_7D_2Fimport_2Flarge_files_20GET_1">
+<div class="operation" data-_method-path="PUT /repos/{}/{}/import" id="swgg_id__2Frepos_2F_7Bowner_7D_2F_7Brepo_7D_2Fimport_20PUT_1">
 <div class="onEventOperationDisplayShow onEventInputValidate thead" tabindex="0">
     <span class="td td1">13.</span>
-    <span class="methodGET td td2">GET</span>
-    <span class="td td3">/repos/{owner}/{repo}/import/large_files</span>
-    <span class="styleColor777 td td4">Source Imports - Get large files. List files larger than 100MB found during the import.
+    <span class="methodPUT td td2">PUT</span>
+    <span class="td td3">/repos/{owner}/{repo}/import</span>
+    <span class="styleColor777 td td4">[Source Imports]() - Start an import
 
-https://developer.github.com/v3/migration/source_imports/#get-large-files</span>
+Start a source import to a GitHub repository using GitHub Importer.</span>
 </div>
 <form accept-charset="UTF-8" class="content uiAnimateSlide" style="border-bottom: 0; border-top: 0; margin-bottom: 0; margin-top: 0; max-height: 0; padding-bottom: 0; padding-top: 0;">
     
     <h4 class="label">description</h4>
-    <div class="styleColor777 tr">Source Imports - Get large files. List files larger than 100MB found during the import.<br><br>https://developer.github.com/v3/migration/source_imports/#get-large-files</div>
+    <div class="markdown operationDescription">
+    <p><a href="https://developer.github.com/v3/migration/source_imports/#start-an-import">Source Imports</a> - Start an import</p>
+<p>Start a source import to a GitHub repository using GitHub Importer.</p>
+
+    </div>
     
     <h4 class="label">parameters</h4>
     <div class="schemaP styleBorderBottom1px styleColor777 tr">
@@ -2850,7 +3260,9 @@ https://developer.github.com/v3/migration/source_imports/#get-large-files</span>
     
     
     <br>
-    <span class="styleColor777">OAuth2 token (sent as a parameter).<br><br>https://developer.github.com/v3/#authentication</span>
+    <span class="markdown styleColor777"><p><a href="https://developer.github.com/v3/#authentication">https://developer.github.com/v3/#authentication</a></p>
+<p>OAuth2 token (sent as a parameter)</p>
+</span>
     
 </span>
 <span class="td td2">string</span>
@@ -2875,7 +3287,9 @@ https://developer.github.com/v3/migration/source_imports/#get-large-files</span>
     <br><span style="font-weight: bold;">(required)</span>
     
     <br>
-    <span class="styleColor777">user-agent header</span>
+    <span class="markdown styleColor777"><p><a href="https://developer.github.com/v3/index.html#user-agent-required">https://developer.github.com/v3/index.html#user-agent-required</a></p>
+<p>All API requests MUST include a valid <code>User-Agent</code> header. Requests with no <code>User-Agent</code> header will be rejected. We request that you use your GitHub username, or the name of your application, for the <code>User-Agent</code> header value. This allows us to contact you if there are problems.</p>
+</span>
     
 </span>
 <span class="td td2">string</span>
@@ -2884,7 +3298,7 @@ https://developer.github.com/v3/migration/source_imports/#get-large-files</span>
     
     
     
-    <input class="input" placeholder="swgg" type="text">
+    <input class="input" placeholder="Awesome-Octocat-App" type="text">
     
     <div class="errorMessage"></div>
 </span>
@@ -2894,22 +3308,30 @@ https://developer.github.com/v3/migration/source_imports/#get-large-files</span>
 </div>
 
     
-    <div class="schemaP tr" id="swgg_id_accept_13" data-name="accept">
+    <div class="schemaP tr" id="swgg_id_accept_37" data-name="accept">
 <span class="td td1">
     accept
     <br><span style="font-weight: bold;">(required)</span>
     
     <br>
-    <span class="styleColor777">accept header</span>
+    <span class="markdown styleColor777"><p><a href="https://developer.github.com/v3/media/">https://developer.github.com/v3/media/</a></p>
+<p>Custom media types are used in the API to let consumers choose the format of the data they wish to receive. This is done by adding one or more of the following types to the <code>Accept</code> header when you make a request. Media types are specific to resources, allowing them to change independently and support formats that other resources don't.</p>
+</span>
     
 </span>
-<span class="td td2">string</span>
+<span class="td td2">array<br>(string)</span>
 <span class="td td3">
     
     
     
+    <select class="input" multiple="">
+        
+        <option data-value-select-option="%22application%2Fvnd.github.barred-rock-preview%22" id="swgg_id_accept_38" selected="">application/vnd.github.barred-rock-preview</option>
+        
+        <option data-value-select-option="%22application%2Fvnd.github.v3%2Bjson%22" id="swgg_id_accept_39">application/vnd.github.v3+json</option>
+        
+    </select>
     
-    <input class="input" placeholder="application/vnd.github.barred-rock-preview" type="text">
     
     <div class="errorMessage"></div>
 </span>
@@ -2925,7 +3347,8 @@ https://developer.github.com/v3/migration/source_imports/#get-large-files</span>
     <br><span style="font-weight: bold;">(required)</span>
     
     <br>
-    <span class="styleColor777">github owner</span>
+    <span class="markdown styleColor777"><p>no description</p>
+</span>
     
 </span>
 <span class="td td2">string</span>
@@ -2934,7 +3357,7 @@ https://developer.github.com/v3/migration/source_imports/#get-large-files</span>
     
     
     
-    <input class="input" placeholder="swgg-io" type="text">
+    <input class="input" placeholder="owner" type="text">
     
     <div class="errorMessage"></div>
 </span>
@@ -2950,7 +3373,8 @@ https://developer.github.com/v3/migration/source_imports/#get-large-files</span>
     <br><span style="font-weight: bold;">(required)</span>
     
     <br>
-    <span class="styleColor777">github repo</span>
+    <span class="markdown styleColor777"><p>no description</p>
+</span>
     
 </span>
 <span class="td td2">string</span>
@@ -2959,7 +3383,7 @@ https://developer.github.com/v3/migration/source_imports/#get-large-files</span>
     
     
     
-    <input class="input" placeholder="node-swgg-google-all" type="text">
+    <input class="input" placeholder="repo" type="text">
     
     <div class="errorMessage"></div>
 </span>
@@ -2969,16 +3393,90 @@ https://developer.github.com/v3/migration/source_imports/#get-large-files</span>
 </div>
 
     
+    <div class="schemaP tr" id="swgg_id_body_4" data-name="body">
+<span class="td td1">
+    body
+    
+    
+    <br>
+    <span class="markdown styleColor777"><p>no description</p>
+</span>
+    
+</span>
+<span class="td td2">object</span>
+<span class="td td3">
+    
+    <div class="multilinePlaceholderContainer">
+        <pre class="multilinePlaceholderPre">{
+    "vcs": "subversion",
+    "vcs_password": "secret",
+    "vcs_url": "http://svn.mycompany.com/svn/myproject",
+    "vcs_username": "octocat"
+}</pre>
+        <textarea class="input multilinePlaceholderTextarea onEventInputTextareaChange"></textarea>
+    </div>
+    
+    
+    
+    
+    <div class="errorMessage"></div>
+</span>
+<span class="td td4">
+    <pre>{
+    "vcs": {
+        "default": "subversion",
+        "description": "The originating VCS type. Can be one of ```subversion```, ```git```, ```mercurial```, or ```tfvc```. Please be aware that without this parameter, the import job will take additional time to detect the VCS type before beginning the import. This detection step will be reflected in the response.",
+        "enum": [
+            "subversion",
+            "git",
+            "mercurial",
+            "tfvc"
+        ],
+        "type": "string",
+        "x-swgg-descriptionLineList": [
+            "The originating VCS type. Can be one of ```subversion```, ```git```, ```mercurial```, or ```tfvc```. Please be aware that without this parameter, the import job will take additional time to detect the VCS type before beginning the import. This detection step will be reflected in the response."
+        ]
+    },
+    "vcs_password": {
+        "default": "secret",
+        "description": "If authentication is required, the password to provide to ```vcs_url```.",
+        "type": "string",
+        "x-swgg-descriptionLineList": [
+            "If authentication is required, the password to provide to ```vcs_url```."
+        ]
+    },
+    "vcs_url": {
+        "default": "http://svn.mycompany.com/svn/myproject",
+        "description": "**Required** The URL of the originating repository.",
+        "type": "string",
+        "x-swgg-descriptionLineList": [
+            "**Required** The URL of the originating repository."
+        ]
+    },
+    "vcs_username": {
+        "default": "octocat",
+        "description": "If authentication is required, the username to provide to ```vcs_url```.",
+        "type": "string",
+        "x-swgg-descriptionLineList": [
+            "If authentication is required, the username to provide to ```vcs_url```."
+        ]
+    }
+}</pre>
+</span>
+</div>
+
+    
     
     <h4 class="label">response messages</h4>
-    <div class="schemaResponse styleColor777 styleBorderBottom1px tr">
+    <div class="schemaResponse styleBorderBottom1px styleColor777 tr">
         <span class="td td1">http status code</span>
         <span class="td td2">reason</span>
     </div>
     
     <div class="schemaResponse tr">
         <span class="td td1">default</span>
-        <span class="td td2">default response</span>
+        <span class="markdown td td2"><p>default response</p>
+</span>
     </div>
     
     <button class="onEventOperationAjax">try it out!</button>
@@ -2995,19 +3493,23 @@ https://developer.github.com/v3/migration/source_imports/#get-large-files</span>
     <div class="responseMedia"></div>
 </form>
 </div>
-<div class="operation" data-_method-path="PATCH /repos/{}/{}/import/lfs" id="swgg_id__2Frepos_2F_7Bowner_7D_2F_7Brepo_7D_2Fimport_2Flfs_20PATCH_1">
+<div class="operation" data-_method-path="PATCH /repos/{}/{}/import" id="swgg_id__2Frepos_2F_7Bowner_7D_2F_7Brepo_7D_2Fimport_20PATCH_1">
 <div class="onEventOperationDisplayShow onEventInputValidate thead" tabindex="0">
     <span class="td td1">14.</span>
     <span class="methodPATCH td td2">PATCH</span>
-    <span class="td td3">/repos/{owner}/{repo}/import/lfs</span>
-    <span class="styleColor777 td td4">Source Imports - Set Git LFS preference. You can import repositories from Subversion, Mercurial, and TFS that include files larger than 100MB. This ability is powered by Git LFS. You can learn more about our LFS feature and working with large files on our help site.
+    <span class="td td3">/repos/{owner}/{repo}/import</span>
+    <span class="styleColor777 td td4">[Source Imports]() - Update existing import
 
-https://developer.github.com/v3/migration/source_imports/#set-git-lfs-preference</span>
+An import can be updated with credentials or a project choice by passing in the appropriate parameters in this API request. If no parameters are provided, the import will be restarted.</span>
 </div>
 <form accept-charset="UTF-8" class="content uiAnimateSlide" style="border-bottom: 0; border-top: 0; margin-bottom: 0; margin-top: 0; max-height: 0; padding-bottom: 0; padding-top: 0;">
     
     <h4 class="label">description</h4>
-    <div class="styleColor777 tr">Source Imports - Set Git LFS preference. You can import repositories from Subversion, Mercurial, and TFS that include files larger than 100MB. This ability is powered by Git LFS. You can learn more about our LFS feature and working with large files on our help site.<br><br>https://developer.github.com/v3/migration/source_imports/#set-git-lfs-preference</div>
+    <div class="markdown operationDescription">
+    <p><a href="https://developer.github.com/v3/migration/source_imports/#update-existing-import">Source Imports</a> - Update existing import</p>
+<p>An import can be updated with credentials or a project choice by passing in the appropriate parameters in this API request. If no parameters are provided, the import will be restarted.</p>
+
+    </div>
     
     <h4 class="label">parameters</h4>
     <div class="schemaP styleBorderBottom1px styleColor777 tr">
@@ -3023,7 +3525,9 @@ https://developer.github.com/v3/migration/source_imports/#set-git-lfs-preference
     
     
     <br>
-    <span class="styleColor777">OAuth2 token (sent as a parameter).<br><br>https://developer.github.com/v3/#authentication</span>
+    <span class="markdown styleColor777"><p><a href="https://developer.github.com/v3/#authentication">https://developer.github.com/v3/#authentication</a></p>
+<p>OAuth2 token (sent as a parameter)</p>
+</span>
     
 </span>
 <span class="td td2">string</span>
@@ -3048,7 +3552,9 @@ https://developer.github.com/v3/migration/source_imports/#set-git-lfs-preference
     <br><span style="font-weight: bold;">(required)</span>
     
     <br>
-    <span class="styleColor777">user-agent header</span>
+    <span class="markdown styleColor777"><p><a href="https://developer.github.com/v3/index.html#user-agent-required">https://developer.github.com/v3/index.html#user-agent-required</a></p>
+<p>All API requests MUST include a valid <code>User-Agent</code> header. Requests with no <code>User-Agent</code> header will be rejected. We request that you use your GitHub username, or the name of your application, for the <code>User-Agent</code> header value. This allows us to contact you if there are problems.</p>
+</span>
     
 </span>
 <span class="td td2">string</span>
@@ -3057,7 +3563,7 @@ https://developer.github.com/v3/migration/source_imports/#set-git-lfs-preference
     
     
     
-    <input class="input" placeholder="swgg" type="text">
+    <input class="input" placeholder="Awesome-Octocat-App" type="text">
     
     <div class="errorMessage"></div>
 </span>
@@ -3067,22 +3573,30 @@ https://developer.github.com/v3/migration/source_imports/#set-git-lfs-preference
 </div>
 
     
-    <div class="schemaP tr" id="swgg_id_accept_14" data-name="accept">
+    <div class="schemaP tr" id="swgg_id_accept_40" data-name="accept">
 <span class="td td1">
     accept
     <br><span style="font-weight: bold;">(required)</span>
     
     <br>
-    <span class="styleColor777">accept header</span>
+    <span class="markdown styleColor777"><p><a href="https://developer.github.com/v3/media/">https://developer.github.com/v3/media/</a></p>
+<p>Custom media types are used in the API to let consumers choose the format of the data they wish to receive. This is done by adding one or more of the following types to the <code>Accept</code> header when you make a request. Media types are specific to resources, allowing them to change independently and support formats that other resources don't.</p>
+</span>
     
 </span>
-<span class="td td2">string</span>
+<span class="td td2">array<br>(string)</span>
 <span class="td td3">
     
     
     
+    <select class="input" multiple="">
+        
+        <option data-value-select-option="%22application%2Fvnd.github.barred-rock-preview%22" id="swgg_id_accept_41" selected="">application/vnd.github.barred-rock-preview</option>
+        
+        <option data-value-select-option="%22application%2Fvnd.github.v3%2Bjson%22" id="swgg_id_accept_42">application/vnd.github.v3+json</option>
+        
+    </select>
     
-    <input class="input" placeholder="application/vnd.github.barred-rock-preview" type="text">
     
     <div class="errorMessage"></div>
 </span>
@@ -3098,7 +3612,8 @@ https://developer.github.com/v3/migration/source_imports/#set-git-lfs-preference
     <br><span style="font-weight: bold;">(required)</span>
     
     <br>
-    <span class="styleColor777">github owner</span>
+    <span class="markdown styleColor777"><p>no description</p>
+</span>
     
 </span>
 <span class="td td2">string</span>
@@ -3107,7 +3622,7 @@ https://developer.github.com/v3/migration/source_imports/#set-git-lfs-preference
     
     
     
-    <input class="input" placeholder="swgg-io" type="text">
+    <input class="input" placeholder="owner" type="text">
     
     <div class="errorMessage"></div>
 </span>
@@ -3123,7 +3638,8 @@ https://developer.github.com/v3/migration/source_imports/#set-git-lfs-preference
     <br><span style="font-weight: bold;">(required)</span>
     
     <br>
-    <span class="styleColor777">github repo</span>
+    <span class="markdown styleColor777"><p>no description</p>
+</span>
     
 </span>
 <span class="td td2">string</span>
@@ -3132,7 +3648,7 @@ https://developer.github.com/v3/migration/source_imports/#set-git-lfs-preference
     
     
     
-    <input class="input" placeholder="node-swgg-google-all" type="text">
+    <input class="input" placeholder="repo" type="text">
     
     <div class="errorMessage"></div>
 </span>
@@ -3145,7 +3661,11 @@ https://developer.github.com/v3/migration/source_imports/#set-git-lfs-preference
     <div class="schemaP tr" id="swgg_id_body_5" data-name="body">
 <span class="td td1">
     body
-    <br><span style="font-weight: bold;">(required)</span>
+    
+    
+    <br>
+    <span class="markdown styleColor777"><p>no description</p>
+</span>
     
 </span>
 <span class="td td2">object</span>
@@ -3153,7 +3673,8 @@ https://developer.github.com/v3/migration/source_imports/#set-git-lfs-preference
     
     <div class="multilinePlaceholderContainer">
         <pre class="multilinePlaceholderPre">{
-    "use_lfs": "opt_in"
+    "vcs_password": "secret",
+    "vcs_username": "octocat"
 }</pre>
         <textarea class="input multilinePlaceholderTextarea onEventInputTextareaChange"></textarea>
     </div>
@@ -3165,13 +3686,21 @@ https://developer.github.com/v3/migration/source_imports/#set-git-lfs-preference
 </span>
 <span class="td td4">
     <pre>{
-    "use_lfs": {
-        "description": "Can be one of opt_in (large files will be stored using Git LFS) or opt_out (large files will be removed during the import).",
-        "enum": [
-            "opt_in",
-            "opt_out"
-        ],
-        "type": "string"
+    "vcs_password": {
+        "default": "secret",
+        "description": "The password to provide to the originating repository.",
+        "type": "string",
+        "x-swgg-descriptionLineList": [
+            "The password to provide to the originating repository."
+        ]
+    },
+    "vcs_username": {
+        "default": "octocat",
+        "description": "The username to provide to the originating repository.",
+        "type": "string",
+        "x-swgg-descriptionLineList": [
+            "The username to provide to the originating repository."
+        ]
     }
 }</pre>
 </span>
@@ -3180,14 +3709,15 @@ https://developer.github.com/v3/migration/source_imports/#set-git-lfs-preference
     
     
     <h4 class="label">response messages</h4>
-    <div class="schemaResponse styleColor777 styleBorderBottom1px tr">
+    <div class="schemaResponse styleBorderBottom1px styleColor777 tr">
         <span class="td td1">http status code</span>
         <span class="td td2">reason</span>
     </div>
     
     <div class="schemaResponse tr">
         <span class="td td1">default</span>
-        <span class="td td2">default response</span>
+        <span class="markdown td td2"><p>default response</p>
+</span>
     </div>
     
     <button class="onEventOperationAjax">try it out!</button>

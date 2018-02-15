@@ -1,4 +1,4 @@
-/* istanbul instrument in package swgg_github_migrations */
+/* istanbul instrument in package swgg_github_migration */
 /*jslint
     bitwise: true,
     browser: true,
