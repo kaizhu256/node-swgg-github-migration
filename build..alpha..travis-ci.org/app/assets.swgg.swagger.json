@@ -157,6 +157,9 @@
                     },
                     {
                         "collectionFormat": "csv",
+                        "default": [
+                            "application/vnd.github.wyandotte-preview+json"
+                        ],
                         "enum": [
                             "application/vnd.github.wyandotte-preview+json",
                             "application/vnd.github.v3+json"
@@ -166,6 +169,7 @@
                             "type": "string"
                         },
                         "name": "accept",
+                        "required": true,
                         "type": "array",
                         "x-swgg-descriptionLineList": [
                             "https://developer.github.com/v3/media/",
@@ -212,6 +216,9 @@
                     },
                     {
                         "collectionFormat": "csv",
+                        "default": [
+                            "application/vnd.github.wyandotte-preview+json"
+                        ],
                         "enum": [
                             "application/vnd.github.wyandotte-preview+json",
                             "application/vnd.github.v3+json"
@@ -221,6 +228,7 @@
                             "type": "string"
                         },
                         "name": "accept",
+                        "required": true,
                         "type": "array",
                         "x-swgg-descriptionLineList": [
                             "https://developer.github.com/v3/media/",
@@ -276,6 +284,9 @@
                     },
                     {
                         "collectionFormat": "csv",
+                        "default": [
+                            "application/vnd.github.wyandotte-preview+json"
+                        ],
                         "enum": [
                             "application/vnd.github.wyandotte-preview+json",
                             "application/vnd.github.v3+json"
@@ -285,6 +296,7 @@
                             "type": "string"
                         },
                         "name": "accept",
+                        "required": true,
                         "type": "array",
                         "x-swgg-descriptionLineList": [
                             "https://developer.github.com/v3/media/",
@@ -340,6 +352,9 @@
                     },
                     {
                         "collectionFormat": "csv",
+                        "default": [
+                            "application/vnd.github.wyandotte-preview+json"
+                        ],
                         "enum": [
                             "application/vnd.github.wyandotte-preview+json",
                             "application/vnd.github.v3+json"
@@ -349,6 +364,7 @@
                             "type": "string"
                         },
                         "name": "accept",
+                        "required": true,
                         "type": "array",
                         "x-swgg-descriptionLineList": [
                             "https://developer.github.com/v3/media/",
@@ -402,6 +418,9 @@
                     },
                     {
                         "collectionFormat": "csv",
+                        "default": [
+                            "application/vnd.github.wyandotte-preview+json"
+                        ],
                         "enum": [
                             "application/vnd.github.wyandotte-preview+json",
                             "application/vnd.github.v3+json"
@@ -411,6 +430,7 @@
                             "type": "string"
                         },
                         "name": "accept",
+                        "required": true,
                         "type": "array",
                         "x-swgg-descriptionLineList": [
                             "https://developer.github.com/v3/media/",
@@ -466,6 +486,9 @@
                     },
                     {
                         "collectionFormat": "csv",
+                        "default": [
+                            "application/vnd.github.wyandotte-preview+json"
+                        ],
                         "enum": [
                             "application/vnd.github.wyandotte-preview+json",
                             "application/vnd.github.v3+json"
@@ -475,6 +498,7 @@
                             "type": "string"
                         },
                         "name": "accept",
+                        "required": true,
                         "type": "array",
                         "x-swgg-descriptionLineList": [
                             "https://developer.github.com/v3/media/",
@@ -537,6 +561,9 @@
                     },
                     {
                         "collectionFormat": "csv",
+                        "default": [
+                            "application/vnd.github.barred-rock-preview"
+                        ],
                         "enum": [
                             "application/vnd.github.barred-rock-preview",
                             "application/vnd.github.v3+json"
@@ -546,6 +573,7 @@
                             "type": "string"
                         },
                         "name": "accept",
+                        "required": true,
                         "type": "array",
                         "x-swgg-descriptionLineList": [
                             "https://developer.github.com/v3/media/",
@@ -599,6 +627,9 @@
                     },
                     {
                         "collectionFormat": "csv",
+                        "default": [
+                            "application/vnd.github.barred-rock-preview"
+                        ],
                         "enum": [
                             "application/vnd.github.barred-rock-preview",
                             "application/vnd.github.v3+json"
@@ -608,6 +639,7 @@
                             "type": "string"
                         },
                         "name": "accept",
+                        "required": true,
                         "type": "array",
                         "x-swgg-descriptionLineList": [
                             "https://developer.github.com/v3/media/",
@@ -661,6 +693,9 @@
                     },
                     {
                         "collectionFormat": "csv",
+                        "default": [
+                            "application/vnd.github.barred-rock-preview"
+                        ],
                         "enum": [
                             "application/vnd.github.barred-rock-preview",
                             "application/vnd.github.v3+json"
@@ -670,6 +705,7 @@
                             "type": "string"
                         },
                         "name": "accept",
+                        "required": true,
                         "type": "array",
                         "x-swgg-descriptionLineList": [
                             "https://developer.github.com/v3/media/",
@@ -730,6 +766,9 @@
                     },
                     {
                         "collectionFormat": "csv",
+                        "default": [
+                            "application/vnd.github.barred-rock-preview"
+                        ],
                         "enum": [
                             "application/vnd.github.barred-rock-preview",
                             "application/vnd.github.v3+json"
@@ -739,6 +778,7 @@
                             "type": "string"
                         },
                         "name": "accept",
+                        "required": true,
                         "type": "array",
                         "x-swgg-descriptionLineList": [
                             "https://developer.github.com/v3/media/",
@@ -801,6 +841,9 @@
                     },
                     {
                         "collectionFormat": "csv",
+                        "default": [
+                            "application/vnd.github.barred-rock-preview"
+                        ],
                         "enum": [
                             "application/vnd.github.barred-rock-preview",
                             "application/vnd.github.v3+json"
@@ -810,6 +853,7 @@
                             "type": "string"
                         },
                         "name": "accept",
+                        "required": true,
                         "type": "array",
                         "x-swgg-descriptionLineList": [
                             "https://developer.github.com/v3/media/",
@@ -875,6 +919,9 @@
                     },
                     {
                         "collectionFormat": "csv",
+                        "default": [
+                            "application/vnd.github.barred-rock-preview"
+                        ],
                         "enum": [
                             "application/vnd.github.barred-rock-preview",
                             "application/vnd.github.v3+json"
@@ -884,6 +931,7 @@
                             "type": "string"
                         },
                         "name": "accept",
+                        "required": true,
                         "type": "array",
                         "x-swgg-descriptionLineList": [
                             "https://developer.github.com/v3/media/",
@@ -953,6 +1001,9 @@
                     },
                     {
                         "collectionFormat": "csv",
+                        "default": [
+                            "application/vnd.github.barred-rock-preview"
+                        ],
                         "enum": [
                             "application/vnd.github.barred-rock-preview",
                             "application/vnd.github.v3+json"
@@ -962,6 +1013,7 @@
                             "type": "string"
                         },
                         "name": "accept",
+                        "required": true,
                         "type": "array",
                         "x-swgg-descriptionLineList": [
                             "https://developer.github.com/v3/media/",
@@ -1017,6 +1069,9 @@
                     },
                     {
                         "collectionFormat": "csv",
+                        "default": [
+                            "application/vnd.github.barred-rock-preview"
+                        ],
                         "enum": [
                             "application/vnd.github.barred-rock-preview",
                             "application/vnd.github.v3+json"
@@ -1026,6 +1081,7 @@
                             "type": "string"
                         },
                         "name": "accept",
+                        "required": true,
                         "type": "array",
                         "x-swgg-descriptionLineList": [
                             "https://developer.github.com/v3/media/",

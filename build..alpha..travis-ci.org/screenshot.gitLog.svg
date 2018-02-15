@@ -1,77 +1,83 @@
-<svg height="606" width="720" xmlns="http://www.w3.org/2000/svg">
-<rect height="606" fill="#555" width="720"></rect>
+<svg height="654" width="720" xmlns="http://www.w3.org/2000/svg">
+<rect height="654" fill="#555" width="720"></rect>
 <text fill="#7f7" font-family="Courier New" font-size="12" xml:space="preserve">
-<tspan x="10" y="26">2018-02-15 11:22:32 +0700</tspan>
+<tspan x="10" y="26">2018-02-15 12:01:27 +0700</tspan>
 
-<tspan x="10" y="42">- npm publish v2018.2.14</tspan>
+<tspan x="10" y="42">require.preview</tspan>
 
-<tspan x="10" y="58">- rename package swgg-github-migrations -&gt; swgg-github-migration</tspan>
+<tspan x="10" y="58"></tspan>
 
-<tspan x="10" y="74">- revamp documentation with markdown</tspan>
+<tspan x="10" y="74">2018-02-15 11:22:32 +0700</tspan>
 
-<tspan x="10" y="90"></tspan>
+<tspan x="10" y="90">- npm publish v2018.2.14</tspan>
 
-<tspan x="10" y="106">2018-02-15 11:16:24 +0700</tspan>
+<tspan x="10" y="106">- rename package swgg-github-migrations -&gt; swgg-github-migration</tspan>
 
-<tspan x="10" y="122">no.description</tspan>
+<tspan x="10" y="122">- revamp documentation with markdown</tspan>
 
 <tspan x="10" y="138"></tspan>
 
-<tspan x="10" y="154">2018-02-15 10:47:56 +0700</tspan>
+<tspan x="10" y="154">2018-02-15 11:16:24 +0700</tspan>
 
-<tspan x="10" y="170">diagram</tspan>
+<tspan x="10" y="170">no.description</tspan>
 
 <tspan x="10" y="186"></tspan>
 
-<tspan x="10" y="202">2018-02-15 09:17:23 +0700</tspan>
+<tspan x="10" y="202">2018-02-15 10:47:56 +0700</tspan>
 
-<tspan x="10" y="218">- rename package swgg-github-migrations -&gt; swgg-github-migration</tspan>
+<tspan x="10" y="218">diagram</tspan>
 
 <tspan x="10" y="234"></tspan>
 
-<tspan x="10" y="250">2018-02-15 09:02:56 +0700</tspan>
+<tspan x="10" y="250">2018-02-15 09:17:23 +0700</tspan>
 
-<tspan x="10" y="266">rename</tspan>
+<tspan x="10" y="266">- rename package swgg-github-migrations -&gt; swgg-github-migration</tspan>
 
 <tspan x="10" y="282"></tspan>
 
-<tspan x="10" y="298">2018-02-15 08:44:17 +0700</tspan>
+<tspan x="10" y="298">2018-02-15 09:02:56 +0700</tspan>
 
-<tspan x="10" y="314">update</tspan>
+<tspan x="10" y="314">rename</tspan>
 
 <tspan x="10" y="330"></tspan>
 
-<tspan x="10" y="346">2018-02-13 08:47:56 +0700</tspan>
+<tspan x="10" y="346">2018-02-15 08:44:17 +0700</tspan>
 
 <tspan x="10" y="362">update</tspan>
 
 <tspan x="10" y="378"></tspan>
 
-<tspan x="10" y="394">2018-01-24 17:41:15 +0700</tspan>
+<tspan x="10" y="394">2018-02-13 08:47:56 +0700</tspan>
 
-<tspan x="10" y="410">[build clean]</tspan>
+<tspan x="10" y="410">update</tspan>
 
 <tspan x="10" y="426"></tspan>
 
-<tspan x="10" y="442">2018-01-24 17:05:22 +0700</tspan>
+<tspan x="10" y="442">2018-01-24 17:41:15 +0700</tspan>
 
-<tspan x="10" y="458">[npm publish] - npm publish 2018.1.23</tspan>
+<tspan x="10" y="458">[build clean]</tspan>
 
-<tspan x="10" y="474">- add github-migrations-migrations web-apis</tspan>
+<tspan x="10" y="474"></tspan>
 
-<tspan x="10" y="490">- add github-migrations-source-imports web-apis</tspan>
+<tspan x="10" y="490">2018-01-24 17:05:22 +0700</tspan>
 
-<tspan x="10" y="506"></tspan>
+<tspan x="10" y="506">[npm publish] - npm publish 2018.1.23</tspan>
 
-<tspan x="10" y="522">2018-01-20 16:35:05 +0700</tspan>
+<tspan x="10" y="522">- add github-migrations-migrations web-apis</tspan>
 
-<tspan x="10" y="538">skeleton app</tspan>
+<tspan x="10" y="538">- add github-migrations-source-imports web-apis</tspan>
 
 <tspan x="10" y="554"></tspan>
 
-<tspan x="10" y="570">2014-03-26 02:31:50 +0700</tspan>
+<tspan x="10" y="570">2018-01-20 16:35:05 +0700</tspan>
 
-<tspan x="10" y="586">add blank README.md</tspan>
+<tspan x="10" y="586">skeleton app</tspan>
+
+<tspan x="10" y="602"></tspan>
+
+<tspan x="10" y="618">2014-03-26 02:31:50 +0700</tspan>
+
+<tspan x="10" y="634">add blank README.md</tspan>
 
 </text>
 </svg>
