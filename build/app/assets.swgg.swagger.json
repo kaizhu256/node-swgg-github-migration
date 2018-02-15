@@ -45,6 +45,12 @@
             "properties": {
                 "vcs": {
                     "default": "subversion",
+                    "enum": [
+                        "subversion",
+                        "git",
+                        "mercurial",
+                        "tfvc"
+                    ],
                     "type": "string",
                     "x-swgg-descriptionLineList": [
                         "The originating VCS type. Can be one of ```subversion```, ```git```, ```mercurial```, or ```tfvc```. Please be aware that without this parameter, the import job will take additional time to detect the VCS type before beginning the import. This detection step will be reflected in the response."
@@ -100,6 +106,10 @@
             "properties": {
                 "use_lfs": {
                     "default": "opt_in",
+                    "enum": [
+                        "opt_in",
+                        "opt_out"
+                    ],
                     "type": "string",
                     "x-swgg-descriptionLineList": [
                         "**Required** Can be one of ```opt_in``` (large files will be stored using Git LFS) or ```opt_out``` (large files will be removed during the import)."
