@@ -1,9 +1,9 @@
-<svg height="878" width="720" xmlns="http://www.w3.org/2000/svg">
-<rect height="878" fill="#555" width="720"></rect>
+<svg height="846" width="720" xmlns="http://www.w3.org/2000/svg">
+<rect height="846" fill="#555" width="720"></rect>
 <text fill="#7f7" font-family="Courier New" font-size="12" xml:space="preserve">
 <tspan x="10" y="26"></tspan>
 
-<tspan x="10" y="42">[MODE_BUILD=buildApidoc] - 2018-02-15T04:19:07.558Z - npm-testing /home/travis/build/kaizhu256/n\</tspan>
+<tspan x="10" y="42">[MODE_BUILD=buildApidoc] - 2018-02-15T04:25:19.325Z - npm-testing /home/travis/build/kaizhu256/n\</tspan>
 <tspan x="10" y="58">ode-swgg-github-migration</tspan>
 
 <tspan x="10" y="74"></tspan>
@@ -15,7 +15,7 @@
 
 <tspan x="10" y="138">override assets assets.swgg.swagger.json</tspan>
 
-<tspan x="10" y="154">&gt; server listening on http-port 50906</tspan>
+<tspan x="10" y="154">&gt; server listening on http-port 34215</tspan>
 
 <tspan x="10" y="170">apidocCreate - readExample /home/travis/build/kaizhu256/node-swgg-github-migration/package.json</tspan>
 
@@ -33,69 +33,66 @@
 
 <tspan x="10" y="298">apidocCreate - readExample /home/travis/build/kaizhu256/node-swgg-github-migration/README.md</tspan>
 
-<tspan x="10" y="314">apidocCreate - readExample /home/travis/build/kaizhu256/node-swgg-github-migration/swgg-github-m\</tspan>
-<tspan x="10" y="330">igration</tspan>
+<tspan x="10" y="314">apidocCreate - readExample /home/travis/build/kaizhu256/node-swgg-github-migration/test.js</tspan>
 
-<tspan x="10" y="346">apidocCreate - readExample /home/travis/build/kaizhu256/node-swgg-github-migration/test.js</tspan>
+<tspan x="10" y="330">apidocCreate - readExample /home/travis/build/kaizhu256/node-swgg-github-migration/.travis.yml</tspan>
 
-<tspan x="10" y="362">apidocCreate - readExample /home/travis/build/kaizhu256/node-swgg-github-migration/.travis.yml</tspan>
+<tspan x="10" y="346">apidocCreate - requiring /home/travis/build/kaizhu256/node-swgg-github-migration ...</tspan>
 
-<tspan x="10" y="378">apidocCreate - requiring /home/travis/build/kaizhu256/node-swgg-github-migration ...</tspan>
+<tspan x="10" y="362">apidocCreate - ... required /home/travis/build/kaizhu256/node-swgg-github-migration</tspan>
 
-<tspan x="10" y="394">apidocCreate - ... required /home/travis/build/kaizhu256/node-swgg-github-migration</tspan>
+<tspan x="10" y="378">created apidoc file /home/travis/build/kaizhu256/node-swgg-github-migration/tmp/build/apidoc.htm\</tspan>
+<tspan x="10" y="394">l</tspan>
 
-<tspan x="10" y="410">created apidoc file /home/travis/build/kaizhu256/node-swgg-github-migration/tmp/build/apidoc.htm\</tspan>
-<tspan x="10" y="426">l</tspan>
+<tspan x="10" y="410"></tspan>
+
+<tspan x="10" y="426">[node test-case 1 of 1 passed] - testCase_buildApidoc_default</tspan>
 
 <tspan x="10" y="442"></tspan>
 
-<tspan x="10" y="458">[node test-case 1 of 1 passed] - testCase_buildApidoc_default</tspan>
+<tspan x="10" y="458">buildApidoc - merged test-report from file /home/travis/build/kaizhu256/node-swgg-github-migrati\</tspan>
+<tspan x="10" y="474">on/tmp/build/test-report.json</tspan>
 
-<tspan x="10" y="474"></tspan>
+<tspan x="10" y="490"></tspan>
 
-<tspan x="10" y="490">buildApidoc - merged test-report from file /home/travis/build/kaizhu256/node-swgg-github-migrati\</tspan>
-<tspan x="10" y="506">on/tmp/build/test-report.json</tspan>
+<tspan x="10" y="506">-------------------------------------------------------</tspan>
 
-<tspan x="10" y="522"></tspan>
+<tspan x="10" y="522">| test-report - buildApidoc - node - linux v6.13.0 - 2018-02-15T04:25:19.609Z</tspan>
 
-<tspan x="10" y="538">-------------------------------------------------------</tspan>
+<tspan x="10" y="538">|     212 ms            0 failed        1 passed      |</tspan>
 
-<tspan x="10" y="554">| test-report - buildApidoc - node - linux v6.13.0 - 2018-02-15T04:19:07.790Z</tspan>
+<tspan x="10" y="554">-------------------------------------------------------</tspan>
 
-<tspan x="10" y="570">|     190 ms            0 failed        1 passed      |</tspan>
+<tspan x="10" y="570">| test-report - npmTest - browser - /index.default.html - Mozilla/5.0 (X11; Linux x86_64) AppleW\</tspan>
+<tspan x="10" y="586">ebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Electron/1.6.15 Safari/537.36 - 2018-02-15T\</tspan>
+<tspan x="10" y="602">04:25:01.607Z</tspan>
 
-<tspan x="10" y="586">-------------------------------------------------------</tspan>
+<tspan x="10" y="618">|      62 ms            0 failed        8 passed      |</tspan>
 
-<tspan x="10" y="602">| test-report - npmTest - browser - /index.default.html - Mozilla/5.0 (X11; Linux x86_64) AppleW\</tspan>
-<tspan x="10" y="618">ebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Electron/1.6.15 Safari/537.36 - 2018-02-15T\</tspan>
-<tspan x="10" y="634">04:18:50.109Z</tspan>
+<tspan x="10" y="634">-------------------------------------------------------</tspan>
 
-<tspan x="10" y="650">|      16 ms            0 failed        8 passed      |</tspan>
+<tspan x="10" y="650">| test-report - npmTest - node - linux v6.13.0 - 2018-02-15T04:24:58.952Z</tspan>
 
-<tspan x="10" y="666">-------------------------------------------------------</tspan>
+<tspan x="10" y="666">|   16970 ms            0 failed        8 passed      |</tspan>
 
-<tspan x="10" y="682">| test-report - npmTest - node - linux v6.13.0 - 2018-02-15T04:18:47.582Z</tspan>
+<tspan x="10" y="682">-------------------------------------------------------</tspan>
 
-<tspan x="10" y="698">|   16774 ms            0 failed        8 passed      |</tspan>
+<tspan x="10" y="698"></tspan>
 
-<tspan x="10" y="714">-------------------------------------------------------</tspan>
+<tspan x="10" y="714">created test-report file /home/travis/build/kaizhu256/node-swgg-github-migration/tmp/build/test-\</tspan>
+<tspan x="10" y="730">report.html</tspan>
 
-<tspan x="10" y="730"></tspan>
+<tspan x="10" y="746"></tspan>
 
-<tspan x="10" y="746">created test-report file /home/travis/build/kaizhu256/node-swgg-github-migration/tmp/build/test-\</tspan>
-<tspan x="10" y="762">report.html</tspan>
+<tspan x="10" y="762"></tspan>
 
-<tspan x="10" y="778"></tspan>
+<tspan x="10" y="778">buildApidoc - 0 failed tests</tspan>
 
 <tspan x="10" y="794"></tspan>
 
-<tspan x="10" y="810">buildApidoc - 0 failed tests</tspan>
+<tspan x="10" y="810"></tspan>
 
-<tspan x="10" y="826"></tspan>
-
-<tspan x="10" y="842"></tspan>
-
-<tspan x="10" y="858">[MODE_BUILD=buildApidoc] - 2018-02-15T04:19:09.809Z - EXIT_CODE - 0</tspan>
+<tspan x="10" y="826">[MODE_BUILD=buildApidoc] - 2018-02-15T04:25:21.811Z - EXIT_CODE - 0</tspan>
 
 </text>
 </svg>
