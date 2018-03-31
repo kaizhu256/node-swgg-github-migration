@@ -1,0 +1,37 @@
+<svg height="286" width="720" xmlns="http://www.w3.org/2000/svg">
+<rect height="286" fill="#555" width="720"></rect>
+<text fill="#7f7" font-family="Courier New" font-size="12" xml:space="preserve">
+<tspan x="10" y="26">2018-02-15 12:33:47 +0700</tspan>
+
+<tspan x="10" y="42">[npm publish] - npm publish v2018.2.14</tspan>
+
+<tspan x="10" y="58">- fix ascii-diagrams in descriptions</tspan>
+
+<tspan x="10" y="74">- rename package swgg-github-migrations -&gt; swgg-github-migration</tspan>
+
+<tspan x="10" y="90">- revamp documentation with markdown</tspan>
+
+<tspan x="10" y="106"></tspan>
+
+<tspan x="10" y="122">2018-01-24 17:05:22 +0700</tspan>
+
+<tspan x="10" y="138">[npm publish] - npm publish 2018.1.23</tspan>
+
+<tspan x="10" y="154">- add github-migrations-migrations web-apis</tspan>
+
+<tspan x="10" y="170">- add github-migrations-source-imports web-apis</tspan>
+
+<tspan x="10" y="186"></tspan>
+
+<tspan x="10" y="202">2018-01-20 16:35:05 +0700</tspan>
+
+<tspan x="10" y="218">skeleton app</tspan>
+
+<tspan x="10" y="234"></tspan>
+
+<tspan x="10" y="250">2014-03-26 02:31:50 +0700</tspan>
+
+<tspan x="10" y="266">add blank README.md</tspan>
+
+</text>
+</svg>

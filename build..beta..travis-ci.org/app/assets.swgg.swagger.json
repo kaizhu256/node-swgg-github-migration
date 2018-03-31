@@ -1,0 +1,821 @@
+{
+    "basePath": "/",
+    "definitions": {
+        "github-migrations.OrgOrgMigrations.POST": {
+            "properties": {
+                "exclude_attachments": {
+                    "default": false,
+                    "description": "Indicates whether attachments should be excluded from the migration (to reduce migration archive file size). Default: false.",
+                    "type": "boolean"
+                },
+                "lock_repositories": {
+                    "default": false,
+                    "description": "Indicates whether repositories should be locked (to prevent manipulation) while migrating data. Default: false.",
+                    "type": "boolean"
+                },
+                "repositories": {
+                    "default": [
+                        "octocat/Hello-World"
+                    ],
+                    "description": "A list of arrays indicating which repositories should be migrated.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "repositories"
+            ],
+            "x-swgg-tags0": "github-migrations"
+        },
+        "github-migrations.ReposOwnerRepoImport.PATCH": {
+            "properties": {
+                "vcs_password": {
+                    "default": "secret",
+                    "description": "If authentication is required, the password to provide to vcs_url.",
+                    "type": "string"
+                },
+                "vcs_username": {
+                    "default": "octocat",
+                    "description": "If authentication is required, the username to provide to vcs_url.",
+                    "type": "string"
+                }
+            },
+            "x-swgg-tags0": "github-migrations"
+        },
+        "github-migrations.ReposOwnerRepoImport.PUT": {
+            "properties": {
+                "tfvc_project": {
+                    "description": "For a tfvc import, the name of the project that is being imported.",
+                    "type": "string"
+                },
+                "vcs": {
+                    "description": "The originating VCS type. Can be one of subversion, git, mercurial, or tfvc. Please be aware that without this parameter, the import job will take additional time to detect the VCS type before beginning the import. This detection step will be reflected in the response.",
+                    "enum": [
+                        "subversion",
+                        "git",
+                        "mercurial",
+                        "tfvc"
+                    ],
+                    "type": "string"
+                },
+                "vcs_password": {
+                    "default": "secret",
+                    "description": "If authentication is required, the password to provide to vcs_url.",
+                    "type": "string"
+                },
+                "vcs_url": {
+                    "default": "http://svn.mycompany.com/svn/myproject",
+                    "description": "The URL of the originating repository.",
+                    "type": "string"
+                },
+                "vcs_username": {
+                    "default": "octocat",
+                    "description": "If authentication is required, the username to provide to vcs_url.",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "vcs_url"
+            ],
+            "x-swgg-tags0": "github-migrations"
+        },
+        "github-migrations.ReposOwnerRepoImportAuthorsAuthorId.PATCH": {
+            "properties": {
+                "email": {
+                    "$ref": "#/parameters/github-all.email"
+                },
+                "name": {
+                    "$ref": "#/parameters/github-all.name"
+                }
+            },
+            "x-swgg-tags0": "github-migrations"
+        },
+        "github-migrations.ReposOwnerRepoImportLfs.PATCH": {
+            "properties": {
+                "use_lfs": {
+                    "description": "Can be one of opt_in (large files will be stored using Git LFS) or opt_out (large files will be removed during the import).",
+                    "enum": [
+                        "opt_in",
+                        "opt_out"
+                    ],
+                    "type": "string"
+                }
+            },
+            "required": [
+                "use_lfs"
+            ],
+            "x-swgg-tags0": "github-migrations"
+        }
+    },
+    "externalDocs": {
+        "description": "These APIs help you move projects to or from GitHub.\n\nEnterprise Migrations. The Enterprise Migrations API (https://developer.github.com/v3/migration/migrations/) lets you move a repository from GitHub to GitHub Enterprise.\n\nSource Imports. The Source Imports API (https://developer.github.com/v3/migration/source_imports/) lets you import a source repository to GitHub.",
+        "url": "https://developer.github.com/v3/migration/"
+    },
+    "info": {
+        "description": "this zero-dependency package will provide a swagger-client for github-migrations's web-apis, with a working web-demo",
+        "title": "swgg-github-migrations",
+        "version": "2018.1.23",
+        "x-swgg-downloadStandaloneApp": "https://kaizhu256.github.io/node-swgg-github-migrations/build..beta..travis-ci.org/app/assets.app.js",
+        "x-swgg-homepage": "https://github.com/kaizhu256/node-swgg-github-migrations"
+    },
+    "parameters": {
+        "github-all.author_id": {
+            "description": "github author_id",
+            "in": "path",
+            "name": "author_id",
+            "required": true,
+            "type": "string"
+        },
+        "github-all.content-length": {
+            "default": 0,
+            "description": "content-length header",
+            "in": "header",
+            "name": "content-length",
+            "required": true,
+            "type": "integer"
+        },
+        "github-all.email": {
+            "default": "hubot@github.com",
+            "format": "email",
+            "in": "query",
+            "name": "email",
+            "type": "string"
+        },
+        "github-all.key": {
+            "default": "xxxxxxxx",
+            "description": "OAuth2 token (sent as a parameter).\n\nhttps://developer.github.com/v3/#authentication",
+            "in": "query",
+            "name": "access_token",
+            "type": "string",
+            "x-swgg-apiKey": true
+        },
+        "github-all.name": {
+            "default": "Hubot the Robot",
+            "in": "query",
+            "name": "name",
+            "type": "string"
+        },
+        "github-all.org": {
+            "default": "swgg-io",
+            "description": "github org",
+            "in": "path",
+            "name": "org",
+            "required": true,
+            "type": "string"
+        },
+        "github-all.owner": {
+            "default": "swgg-io",
+            "description": "github owner",
+            "in": "path",
+            "name": "owner",
+            "required": true,
+            "type": "string"
+        },
+        "github-all.repo": {
+            "default": "node-swgg-google-all",
+            "description": "github repo",
+            "in": "path",
+            "name": "repo",
+            "required": true,
+            "type": "string"
+        },
+        "github-all.repo_name": {
+            "default": "swgg-io/node-swgg-google-all",
+            "description": "github repo_name",
+            "in": "path",
+            "name": "repo_name",
+            "required": true,
+            "type": "string"
+        },
+        "github-all.user-agent": {
+            "default": "swgg",
+            "description": "user-agent header",
+            "in": "header",
+            "name": "user-agent",
+            "required": true,
+            "type": "string"
+        },
+        "github-all.username": {
+            "default": "swgg-user",
+            "description": "github username",
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "type": "string"
+        },
+        "github-migrations-migrations.accept": {
+            "default": "application/vnd.github.wyandotte-preview+json",
+            "description": "accept header",
+            "in": "header",
+            "name": "accept",
+            "required": true,
+            "type": "string",
+            "x-swgg-tags0": "github-migrations"
+        },
+        "github-migrations-source-imports.accept": {
+            "default": "application/vnd.github.barred-rock-preview",
+            "description": "accept header",
+            "in": "header",
+            "name": "accept",
+            "required": true,
+            "type": "string",
+            "x-swgg-tags0": "github-migrations"
+        },
+        "github-migrations.migration_id": {
+            "default": "20305",
+            "description": "github migration_id",
+            "in": "path",
+            "name": "migration_id",
+            "required": true,
+            "type": "string",
+            "x-swgg-tags0": "github-migrations"
+        },
+        "github-repositories.branch": {
+            "default": "master",
+            "description": "The branch name. Default: the repository’s default branch (usually master).",
+            "in": "query",
+            "name": "branch",
+            "type": "string"
+        },
+        "github-repositories.content": {
+            "description": "The new file content, Base64 encoded.",
+            "format": "byte",
+            "in": "query",
+            "name": "content",
+            "required": true,
+            "type": "string"
+        },
+        "github-repositories.message": {
+            "default": "this is a commit message.",
+            "description": "The commit message.",
+            "in": "query",
+            "name": "message",
+            "required": true,
+            "type": "string"
+        },
+        "github-repositories.path": {
+            "default": "README.md",
+            "description": "The content path.",
+            "in": "path",
+            "name": "path",
+            "required": true,
+            "type": "string"
+        },
+        "github-repositories.ref": {
+            "default": "master",
+            "description": "The name of the commit/branch/tag. Default: the repository’s default branch (usually master).",
+            "in": "query",
+            "name": "ref",
+            "type": "string"
+        },
+        "github-repositories.sha": {
+            "default": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
+            "description": "The blob SHA of the file being replaced.",
+            "in": "query",
+            "name": "sha",
+            "required": true,
+            "type": "string"
+        }
+    },
+    "paths": {
+        "/orgs/{org}/migrations": {
+            "get": {
+                "description": "Migrations - Get a list of migrations. Lists the most recent migrations.\n\nhttps://developer.github.com/v3/migration/migrations/#get-a-list-of-migrations",
+                "operationId": "_2Forgs_2F_7Borg_7D_2Fmigrations_20GET",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/github-all.key"
+                    },
+                    {
+                        "$ref": "#/parameters/github-all.user-agent"
+                    },
+                    {
+                        "$ref": "#/parameters/github-migrations-migrations.accept"
+                    },
+                    {
+                        "$ref": "#/parameters/github-all.org"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "default response"
+                    }
+                },
+                "tags": [
+                    "github-migrations"
+                ],
+                "x-swgg-host": "api.github.com",
+                "x-swgg-tags0": "github-migrations"
+            },
+            "post": {
+                "description": "Migrations - Start a migration. Initiates the generation of a migration archive.\n\nhttps://developer.github.com/v3/migration/migrations/#start-a-migration",
+                "operationId": "_2Forgs_2F_7Borg_7D_2Fmigrations_20POST",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/github-all.key"
+                    },
+                    {
+                        "$ref": "#/parameters/github-all.user-agent"
+                    },
+                    {
+                        "$ref": "#/parameters/github-migrations-migrations.accept"
+                    },
+                    {
+                        "$ref": "#/parameters/github-all.org"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/github-migrations.OrgOrgMigrations.POST"
+                        }
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "default response"
+                    }
+                },
+                "tags": [
+                    "github-migrations"
+                ],
+                "x-swgg-host": "api.github.com",
+                "x-swgg-tags0": "github-migrations"
+            }
+        },
+        "/orgs/{org}/migrations/{migration_id}": {
+            "get": {
+                "description": "Migrations - Get the status of a migration. Fetches the status of a migration.\n\nhttps://developer.github.com/v3/migration/migrations/#get-the-status-of-a-migration",
+                "operationId": "_2Forgs_2F_7Borg_7D_2Fmigrations_2F_7Bmigration_id_7D_20GET",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/github-all.key"
+                    },
+                    {
+                        "$ref": "#/parameters/github-all.user-agent"
+                    },
+                    {
+                        "$ref": "#/parameters/github-migrations-migrations.accept"
+                    },
+                    {
+                        "$ref": "#/parameters/github-all.org"
+                    },
+                    {
+                        "$ref": "#/parameters/github-migrations.migration_id"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "default response"
+                    }
+                },
+                "tags": [
+                    "github-migrations"
+                ],
+                "x-swgg-host": "api.github.com",
+                "x-swgg-tags0": "github-migrations"
+            }
+        },
+        "/orgs/{org}/migrations/{migration_id}/archive": {
+            "delete": {
+                "description": "Migrations - Delete a migration archive. Deletes a previous migration archive. Migration archives are automatically deleted after seven days.\n\nhttps://developer.github.com/v3/migration/migrations/#delete-a-migration-archive",
+                "operationId": "_2Forgs_2F_7Borg_7D_2Fmigrations_2F_7Bmigration_id_7D_2Farchive_20DELETE",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/github-all.key"
+                    },
+                    {
+                        "$ref": "#/parameters/github-all.user-agent"
+                    },
+                    {
+                        "$ref": "#/parameters/github-migrations-migrations.accept"
+                    },
+                    {
+                        "$ref": "#/parameters/github-all.org"
+                    },
+                    {
+                        "$ref": "#/parameters/github-migrations.migration_id"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "default response"
+                    }
+                },
+                "tags": [
+                    "github-migrations"
+                ],
+                "x-swgg-host": "api.github.com",
+                "x-swgg-tags0": "github-migrations"
+            },
+            "get": {
+                "description": "Migrations - Download a migration archive. Fetches the URL to a migration archive.\n\nhttps://developer.github.com/v3/migration/migrations/#download-a-migration-archive",
+                "operationId": "_2Forgs_2F_7Borg_7D_2Fmigrations_2F_7Bmigration_id_7D_2Farchive_20GET",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/github-all.key"
+                    },
+                    {
+                        "$ref": "#/parameters/github-all.user-agent"
+                    },
+                    {
+                        "$ref": "#/parameters/github-migrations-migrations.accept"
+                    },
+                    {
+                        "$ref": "#/parameters/github-all.org"
+                    },
+                    {
+                        "$ref": "#/parameters/github-migrations.migration_id"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "default response"
+                    }
+                },
+                "tags": [
+                    "github-migrations"
+                ],
+                "x-swgg-host": "api.github.com",
+                "x-swgg-tags0": "github-migrations"
+            }
+        },
+        "/orgs/{org}/migrations/{migration_id}/repos/{repo_name}/lock": {
+            "delete": {
+                "description": "Migrations - Unlock a repository. Unlocks a repository that was locked for migration. You should unlock each migrated repository and delete them when the migration is complete and you no longer need the source data.\n\nhttps://developer.github.com/v3/migration/migrations/#unlock-a-repository",
+                "operationId": "_2Forgs_2F_7Borg_7D_2Fmigrations_2F_7Bmigration_id_7D_2Frepos_2F_7Brepo_name_7D_2Flock_20DELETE",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/github-all.key"
+                    },
+                    {
+                        "$ref": "#/parameters/github-all.user-agent"
+                    },
+                    {
+                        "$ref": "#/parameters/github-migrations-migrations.accept"
+                    },
+                    {
+                        "$ref": "#/parameters/github-all.org"
+                    },
+                    {
+                        "$ref": "#/parameters/github-migrations.migration_id"
+                    },
+                    {
+                        "$ref": "#/parameters/github-all.repo_name"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "default response"
+                    }
+                },
+                "tags": [
+                    "github-migrations"
+                ],
+                "x-swgg-host": "api.github.com",
+                "x-swgg-tags0": "github-migrations"
+            }
+        },
+        "/repos/{owner}/{repo}/import": {
+            "delete": {
+                "description": "Source Imports - Cancel an import. Stop an import for a repository.\n\nhttps://developer.github.com/v3/migration/source_imports/#cancel-an-import",
+                "operationId": "_2Frepos_2F_7Bowner_7D_2F_7Brepo_7D_2Fimport_20DELETE",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/github-all.key"
+                    },
+                    {
+                        "$ref": "#/parameters/github-all.user-agent"
+                    },
+                    {
+                        "$ref": "#/parameters/github-migrations-source-imports.accept"
+                    },
+                    {
+                        "$ref": "#/parameters/github-all.owner"
+                    },
+                    {
+                        "$ref": "#/parameters/github-all.repo"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "default response"
+                    }
+                },
+                "tags": [
+                    "github-migrations"
+                ],
+                "x-swgg-host": "api.github.com",
+                "x-swgg-tags0": "github-migrations"
+            },
+            "get": {
+                "description": "Source Imports - Get import progress. View the progress of an import.\n\nhttps://developer.github.com/v3/migration/source_imports/#get-import-progress",
+                "operationId": "_2Frepos_2F_7Bowner_7D_2F_7Brepo_7D_2Fimport_20GET",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/github-all.key"
+                    },
+                    {
+                        "$ref": "#/parameters/github-all.user-agent"
+                    },
+                    {
+                        "$ref": "#/parameters/github-migrations-source-imports.accept"
+                    },
+                    {
+                        "$ref": "#/parameters/github-all.owner"
+                    },
+                    {
+                        "$ref": "#/parameters/github-all.repo"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "default response"
+                    }
+                },
+                "tags": [
+                    "github-migrations"
+                ],
+                "x-swgg-host": "api.github.com",
+                "x-swgg-tags0": "github-migrations"
+            },
+            "patch": {
+                "description": "Source Imports - Update existing import. An import can be updated with credentials or a project choice by passing in the appropriate parameters in this API request. If no parameters are provided, the import will be restarted.\n\nhttps://developer.github.com/v3/migration/source_imports/#update-existing-import",
+                "operationId": "_2Frepos_2F_7Bowner_7D_2F_7Brepo_7D_2Fimport_20PATCH",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/github-all.key"
+                    },
+                    {
+                        "$ref": "#/parameters/github-all.user-agent"
+                    },
+                    {
+                        "$ref": "#/parameters/github-migrations-source-imports.accept"
+                    },
+                    {
+                        "$ref": "#/parameters/github-all.owner"
+                    },
+                    {
+                        "$ref": "#/parameters/github-all.repo"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/github-migrations.ReposOwnerRepoImport.PATCH"
+                        }
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "default response"
+                    }
+                },
+                "tags": [
+                    "github-migrations"
+                ],
+                "x-swgg-host": "api.github.com",
+                "x-swgg-tags0": "github-migrations"
+            },
+            "put": {
+                "description": "Source Imports - Start an import. Start a source import to a GitHub repository using GitHub Importer.\n\nhttps://developer.github.com/v3/migration/source_imports/#start-an-import",
+                "operationId": "_2Frepos_2F_7Bowner_7D_2F_7Brepo_7D_2Fimport_20PUT",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/github-all.key"
+                    },
+                    {
+                        "$ref": "#/parameters/github-all.user-agent"
+                    },
+                    {
+                        "$ref": "#/parameters/github-migrations-source-imports.accept"
+                    },
+                    {
+                        "$ref": "#/parameters/github-all.owner"
+                    },
+                    {
+                        "$ref": "#/parameters/github-all.repo"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/github-migrations.ReposOwnerRepoImport.PUT"
+                        }
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "default response"
+                    }
+                },
+                "tags": [
+                    "github-migrations"
+                ],
+                "x-swgg-host": "api.github.com",
+                "x-swgg-tags0": "github-migrations"
+            }
+        },
+        "/repos/{owner}/{repo}/import/authors": {
+            "get": {
+                "description": "Source Imports - Get commit authors. Each type of source control system represents authors in a different way. For example, a Git commit author has a display name and an email address, but a Subversion commit author just has a username. The GitHub Importer will make the author information valid, but the author might not be correct. For example, it will change the bare Subversion username hubot into something like hubot <hubot@12341234-abab-fefe-8787-fedcba987654>. This API method and the \"Map a commit author\" method allow you to provide correct Git author information.\n\nhttps://developer.github.com/v3/migration/source_imports/#get-commit-authors",
+                "operationId": "_2Frepos_2F_7Bowner_7D_2F_7Brepo_7D_2Fimport_2Fauthors_20GET",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/github-all.key"
+                    },
+                    {
+                        "$ref": "#/parameters/github-all.user-agent"
+                    },
+                    {
+                        "$ref": "#/parameters/github-migrations-source-imports.accept"
+                    },
+                    {
+                        "$ref": "#/parameters/github-all.owner"
+                    },
+                    {
+                        "$ref": "#/parameters/github-all.repo"
+                    },
+                    {
+                        "description": "Only authors found after this id are returned. Provide the highest author ID you've seen so far. New authors may be added to the list at any point while the importer is performing the raw step.",
+                        "format": "date-time",
+                        "in": "query",
+                        "name": "since",
+                        "type": "string",
+                        "x-swgg-tags0": "github-migrations"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "default response"
+                    }
+                },
+                "tags": [
+                    "github-migrations"
+                ],
+                "x-swgg-host": "api.github.com",
+                "x-swgg-tags0": "github-migrations"
+            }
+        },
+        "/repos/{owner}/{repo}/import/authors/{author_id}": {
+            "patch": {
+                "description": "Source Imports - Map a commit author. Update an author's identity for the import. Your application can continue updating authors any time before you push new commits to the repository.\n\nhttps://developer.github.com/v3/migration/source_imports/#map-a-commit-author",
+                "operationId": "_2Frepos_2F_7Bowner_7D_2F_7Brepo_7D_2Fimport_2Fauthors_2F_7Bauthor_id_7D_20PATCH",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/github-all.key"
+                    },
+                    {
+                        "$ref": "#/parameters/github-all.user-agent"
+                    },
+                    {
+                        "$ref": "#/parameters/github-migrations-source-imports.accept"
+                    },
+                    {
+                        "$ref": "#/parameters/github-all.owner"
+                    },
+                    {
+                        "$ref": "#/parameters/github-all.repo"
+                    },
+                    {
+                        "$ref": "#/parameters/github-all.author_id"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/github-migrations.ReposOwnerRepoImportAuthorsAuthorId.PATCH"
+                        }
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "default response"
+                    }
+                },
+                "tags": [
+                    "github-migrations"
+                ],
+                "x-swgg-host": "api.github.com",
+                "x-swgg-tags0": "github-migrations"
+            }
+        },
+        "/repos/{owner}/{repo}/import/large_files": {
+            "get": {
+                "description": "Source Imports - Get large files. List files larger than 100MB found during the import.\n\nhttps://developer.github.com/v3/migration/source_imports/#get-large-files",
+                "operationId": "_2Frepos_2F_7Bowner_7D_2F_7Brepo_7D_2Fimport_2Flarge_files_20GET",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/github-all.key"
+                    },
+                    {
+                        "$ref": "#/parameters/github-all.user-agent"
+                    },
+                    {
+                        "$ref": "#/parameters/github-migrations-source-imports.accept"
+                    },
+                    {
+                        "$ref": "#/parameters/github-all.owner"
+                    },
+                    {
+                        "$ref": "#/parameters/github-all.repo"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "default response"
+                    }
+                },
+                "tags": [
+                    "github-migrations"
+                ],
+                "x-swgg-host": "api.github.com",
+                "x-swgg-tags0": "github-migrations"
+            }
+        },
+        "/repos/{owner}/{repo}/import/lfs": {
+            "patch": {
+                "description": "Source Imports - Set Git LFS preference. You can import repositories from Subversion, Mercurial, and TFS that include files larger than 100MB. This ability is powered by Git LFS. You can learn more about our LFS feature and working with large files on our help site.\n\nhttps://developer.github.com/v3/migration/source_imports/#set-git-lfs-preference",
+                "operationId": "_2Frepos_2F_7Bowner_7D_2F_7Brepo_7D_2Fimport_2Flfs_20PATCH",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/github-all.key"
+                    },
+                    {
+                        "$ref": "#/parameters/github-all.user-agent"
+                    },
+                    {
+                        "$ref": "#/parameters/github-migrations-source-imports.accept"
+                    },
+                    {
+                        "$ref": "#/parameters/github-all.owner"
+                    },
+                    {
+                        "$ref": "#/parameters/github-all.repo"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/github-migrations.ReposOwnerRepoImportLfs.PATCH"
+                        }
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "default response"
+                    }
+                },
+                "tags": [
+                    "github-migrations"
+                ],
+                "x-swgg-host": "api.github.com",
+                "x-swgg-tags0": "github-migrations"
+            }
+        }
+    },
+    "schemes": [
+        "https"
+    ],
+    "swagger": "2.0",
+    "tags": [
+        {
+            "description": "These APIs help you move projects to or from GitHub.\n\nEnterprise Migrations. The Enterprise Migrations API (https://developer.github.com/v3/migration/migrations/) lets you move a repository from GitHub to GitHub Enterprise.\n\nSource Imports. The Source Imports API (https://developer.github.com/v3/migration/source_imports/) lets you import a source repository to GitHub.\n\nhttps://developer.github.com/v3/migration/",
+            "name": "github-migrations"
+        }
+    ],
+    "x-swgg-operationIdFromPath": true,
+    "x-swgg-tags0-override": {
+        "github-activity": {
+            "externalDocs": {
+                "description": "Serving up the 'social' in Social Coding, the Activity APIs provide access to notifications, subscriptions, and timelines.\n\nEvents. The Events API (https://developer.github.com/v3/activity/events/) is a read-only interface to all the event types (https://developer.github.com/v3/activity/events/types/) that power the various activity streams on GitHub.\n\nFeeds. List of Atom feeds (https://developer.github.com/v3/activity/feeds/) available for the authenticated user.\n\nNotifications. Notifications of new comments are delivered to users. The Notifications API (https://developer.github.com/v3/activity/notifications/) lets you view these notifications and mark them as read.\n\nStarring. Repository Starring (https://developer.github.com/v3/activity/starring/) is a feature that lets users bookmark repositories. Stars are shown next to repositories to show an approximate level of interest. Stars have no effect on notifications or the activity feed.\n\nWatching. Watching a Repository (https://developer.github.com/v3/activity/watching/) registers the user to receive notifications on new discussions, as well as events in the user's activity feed.",
+                "url": "https://developer.github.com/v3/activity/"
+            }
+        },
+        "github-gists": {
+            "externalDocs": {
+                "description": "Authentication. You can read public gists and create them for anonymous users without a token; however, to read or write gists on a user's behalf the gist OAuth scope (https://developer.github.com/apps/building-integrations/setting-up-and-registering-oauth-apps/about-scopes-for-oauth-apps/) is required.\n\nTruncation. The Gist API provides up to one megabyte of content for each file in the gist. Each file returned for a gist through the API has a key called truncated. If truncated is true, the file is too large and only a portion of the contents were returned in content. If you need the full contents of the file, you can make a GET request to the URL specified by raw_url. Be aware that for files larger than ten megabytes, you'll need to clone the gist via the URL provided by git_pull_url. In addition to a specific file's contents being truncated, the entire files list may be truncated if the total number exceeds 300 files. If the top level truncated key is true, only the first 300 files have been returned in the files list. If you need to fetch all of the gist's files, you'll need to clone the gist via the URL provided by git_pull_url.\n\nComments. Gist Comments use these custom media types (https://developer.github.com/v3/gists/comments/#custom-media-types). You can read more about the use of media types in the API here (https://developer.github.com/v3/media/).",
+                "url": "https://developer.github.com/v3/gists/"
+            }
+        },
+        "github-migrations": {
+            "externalDocs": {
+                "description": "These APIs help you move projects to or from GitHub.\n\nEnterprise Migrations. The Enterprise Migrations API (https://developer.github.com/v3/migration/migrations/) lets you move a repository from GitHub to GitHub Enterprise.\n\nSource Imports. The Source Imports API (https://developer.github.com/v3/migration/source_imports/) lets you import a source repository to GitHub.",
+                "url": "https://developer.github.com/v3/migration/"
+            }
+        },
+        "github-repositories": {
+            "externalDocs": {
+                "description": "find out more about github-repositories's web-apis",
+                "url": "https://developer.github.com/v3/repos/"
+            }
+        }
+    }
+}
