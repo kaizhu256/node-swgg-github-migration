@@ -97,27 +97,27 @@
 
 
 
-
 /*
 example.js
 
-this script will run a web-demo of swgg-github-migrations
+this script will run a web-demo of swgg-github-migration
 
 instruction
     1. save this script as example.js
     2. run the shell command:
-        $ npm install swgg-github-migrations && PORT=8081 node example.js
+        $ npm install swgg-github-migration && PORT=8081 node example.js
     3. open a browser to http://127.0.0.1:8081 and play with the web-demo
     4. edit this script to suit your needs
 */
 
 
 
-/* istanbul instrument in package swgg_github_migrations */
+/* istanbul instrument in package swgg_github_migration */
+/* jslint-utility2 */
 /*jslint
     bitwise: true,
     browser: true,
-    maxerr: 8,
+    maxerr: 4,
     maxlen: 100,
     node: true,
     nomen: true,
@@ -154,7 +154,7 @@ instruction
             : global;
         // init utility2_rollup
         local = local.global.utility2_rollup || (local.modeJs === 'browser'
-            ? local.global.utility2_swgg_github_migrations
+            ? local.global.utility2_swgg_github_migration
             : global.utility2_moduleExports);
         // init exports
         local.global.local = local;
@@ -179,7 +179,7 @@ instruction
         module.exports = local;
         // require builtins
         Object.keys(process.binding('natives')).forEach(function (key) {
-            if (!local[key] && !(/\/|^_|^sys$/).test(key)) {
+            if (!local[key] && !(/\/|^_|^assert|^sys$/).test(key)) {
                 local[key] = require(key);
             }
         });
@@ -200,19 +200,18 @@ instruction
                 );
             }
         });
+/* validateLineSortedReset */
         local.assetsDict['/'] =
             local.assetsDict['/assets.example.html'] =
             local.assetsDict['/assets.index.template.html']
             .replace((/\{\{env\.(\w+?)\}\}/g), function (match0, match1) {
-                // jslint-hack
-                String(match0);
                 switch (match1) {
                 case 'npm_package_description':
                     return 'the greatest app in the world!';
                 case 'npm_package_name':
-                    return 'swgg-github-migrations';
+                    return 'swgg-github-migration';
                 case 'npm_package_nameLib':
-                    return 'swgg_github_migrations';
+                    return 'swgg_github_migration';
                 case 'npm_package_version':
                     return '0.0.1';
                 default:
@@ -228,10 +227,10 @@ instruction
             local.fs.readFileSync(__filename, 'utf8');
         // bug-workaround - long $npm_package_buildCustomOrg
         /* jslint-ignore-begin */
-        local.assetsDict['/assets.swgg_github_migrations.js'] =
-            local.assetsDict['/assets.swgg_github_migrations.js'] ||
+        local.assetsDict['/assets.swgg_github_migration.js'] =
+            local.assetsDict['/assets.swgg_github_migration.js'] ||
             local.fs.readFileSync(
-                local.__dirname + '/lib.swgg_github_migrations.js',
+                local.__dirname + '/lib.swgg_github_migration.js',
                 'utf8'
             ).replace((/^#!/), '//');
         /* jslint-ignore-end */

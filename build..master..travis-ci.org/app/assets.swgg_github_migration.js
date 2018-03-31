@@ -1,8 +1,9 @@
-/* istanbul instrument in package swgg_github_migrations */
+/* istanbul instrument in package swgg_github_migration */
+/* jslint-utility2 */
 /*jslint
     bitwise: true,
     browser: true,
-    maxerr: 8,
+    maxerr: 4,
     maxlen: 100,
     node: true,
     nomen: true,
@@ -48,11 +49,11 @@
         }
         // init exports
         if (local.modeJs === 'browser') {
-            local.global.utility2_swgg_github_migrations = local;
+            local.global.utility2_swgg_github_migration = local;
         } else {
             // require builtins
             Object.keys(process.binding('natives')).forEach(function (key) {
-                if (!local[key] && !(/\/|^_|^sys$/).test(key)) {
+                if (!local[key] && !(/\/|^_|^assert|^sys$/).test(key)) {
                     local[key] = require(key);
                 }
             });
@@ -60,6 +61,6 @@
             module.exports.__dirname = __dirname;
         }
         // init lib
-        local.local = local.swgg_github_migrations = local;
+        local.local = local.swgg_github_migration = local;
     }());
 }());
