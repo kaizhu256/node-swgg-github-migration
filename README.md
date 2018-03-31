@@ -8,7 +8,7 @@ this zero-dependency package will provide a swagger-client for github-migration'
 
 
 
-[![travis-ci.org build-status](https://api.travis-ci.org/kaizhu256/node-swgg-github-migration.svg)](https://travis-ci.org/kaizhu256/node-swgg-github-migration) [![coverage](https://kaizhu256.github.io/node-swgg-github-migration/build/coverage.badge.svg)](https://kaizhu256.github.io/node-swgg-github-migration/build/coverage.html/index.html) [![snyk.io vulnerabilities](https://snyk.io/test/github/kaizhu256/node-swgg-github-migration/badge.svg)](https://snyk.io/test/github/kaizhu256/node-swgg-github-migration)
+[![travis-ci.org build-status](https://api.travis-ci.org/kaizhu256/node-swgg-github-migration.svg)](https://travis-ci.org/kaizhu256/node-swgg-github-migration) [![coverage](https://kaizhu256.github.io/node-swgg-github-migration/build/coverage.badge.svg)](https://kaizhu256.github.io/node-swgg-github-migration/build/coverage.html/index.html)
 
 [![NPM](https://nodei.co/npm/swgg-github-migration.png?downloads=true)](https://www.npmjs.com/package/swgg-github-migration)
 
@@ -57,11 +57,9 @@ this zero-dependency package will provide a swagger-client for github-migration'
 #### todo
 - none
 
-#### changelog for v2018.2.14
-- npm publish v2018.2.14
-- fix ascii-diagrams in descriptions
-- rename package swgg-github-migrations -> swgg-github-migration
-- revamp documentation with markdown
+#### changelog for v2018.3.31
+- npm publish v2018.3.31
+- update build
 - none
 
 #### this package requires
@@ -115,10 +113,11 @@ instruction
 
 
 /* istanbul instrument in package swgg_github_migration */
+/* jslint-utility2 */
 /*jslint
     bitwise: true,
     browser: true,
-    maxerr: 8,
+    maxerr: 4,
     maxlen: 100,
     node: true,
     nomen: true,
@@ -180,7 +179,7 @@ instruction
         module.exports = local;
         // require builtins
         Object.keys(process.binding('natives')).forEach(function (key) {
-            if (!local[key] && !(/\/|^_|^sys$/).test(key)) {
+            if (!local[key] && !(/\/|^_|^assert|^sys$/).test(key)) {
                 local[key] = require(key);
             }
         });
@@ -201,12 +200,11 @@ instruction
                 );
             }
         });
+/* validateLineSortedReset */
         local.assetsDict['/'] =
             local.assetsDict['/assets.example.html'] =
             local.assetsDict['/assets.index.template.html']
             .replace((/\{\{env\.(\w+?)\}\}/g), function (match0, match1) {
-                // jslint-hack
-                String(match0);
                 switch (match1) {
                 case 'npm_package_description':
                     return 'the greatest app in the world!';
@@ -289,6 +287,8 @@ instruction
 1. [https://kaizhu256.github.io/node-swgg-github-migration/build/screenshot.deployGithubTest.browser.%252Fnode-swgg-github-migration%252Fbuild%252Fapp.png](https://kaizhu256.github.io/node-swgg-github-migration/build/screenshot.deployGithubTest.browser.%252Fnode-swgg-github-migration%252Fbuild%252Fapp.png)
 [![screenshot](https://kaizhu256.github.io/node-swgg-github-migration/build/screenshot.deployGithubTest.browser.%252Fnode-swgg-github-migration%252Fbuild%252Fapp.png)](https://kaizhu256.github.io/node-swgg-github-migration/build/screenshot.deployGithubTest.browser.%252Fnode-swgg-github-migration%252Fbuild%252Fapp.png)
 
+
+
 1. [https://kaizhu256.github.io/node-swgg-github-migration/build/screenshot.npmTest.browser.%252F.png](https://kaizhu256.github.io/node-swgg-github-migration/build/screenshot.npmTest.browser.%252F.png)
 [![screenshot](https://kaizhu256.github.io/node-swgg-github-migration/build/screenshot.npmTest.browser.%252F.png)](https://kaizhu256.github.io/node-swgg-github-migration/build/screenshot.npmTest.browser.%252F.png)
 
@@ -345,7 +345,7 @@ instruction
     },
     "swggAll": "github-all",
     "swggTags0": "github-migration",
-    "version": "2018.2.14"
+    "version": "2018.3.31"
 }
 ```
 
