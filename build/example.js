@@ -14,10 +14,11 @@ instruction
 
 
 /* istanbul instrument in package swgg_github_migration */
+/* jslint-utility2 */
 /*jslint
     bitwise: true,
     browser: true,
-    maxerr: 8,
+    maxerr: 4,
     maxlen: 100,
     node: true,
     nomen: true,
@@ -79,7 +80,7 @@ instruction
         module.exports = local;
         // require builtins
         Object.keys(process.binding('natives')).forEach(function (key) {
-            if (!local[key] && !(/\/|^_|^sys$/).test(key)) {
+            if (!local[key] && !(/\/|^_|^assert|^sys$/).test(key)) {
                 local[key] = require(key);
             }
         });
@@ -100,12 +101,11 @@ instruction
                 );
             }
         });
+/* validateLineSortedReset */
         local.assetsDict['/'] =
             local.assetsDict['/assets.example.html'] =
             local.assetsDict['/assets.index.template.html']
             .replace((/\{\{env\.(\w+?)\}\}/g), function (match0, match1) {
-                // jslint-hack
-                String(match0);
                 switch (match1) {
                 case 'npm_package_description':
                     return 'the greatest app in the world!';
