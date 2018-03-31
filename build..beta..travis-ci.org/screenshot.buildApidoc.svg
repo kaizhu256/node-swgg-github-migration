@@ -3,7 +3,7 @@
 <text fill="#7f7" font-family="Courier New" font-size="12" xml:space="preserve">
 <tspan x="10" y="26"></tspan>
 
-<tspan x="10" y="42">[MODE_BUILD=buildApidoc] - 2018-02-15T06:01:05.198Z - npm-testing /home/travis/build/kaizhu256/n\</tspan>
+<tspan x="10" y="42">[MODE_BUILD=buildApidoc] - 2018-03-31T18:18:11.621Z - npm-testing /home/travis/build/kaizhu256/n\</tspan>
 <tspan x="10" y="58">ode-swgg-github-migration</tspan>
 
 <tspan x="10" y="74"></tspan>
@@ -15,7 +15,7 @@
 
 <tspan x="10" y="138">override assets assets.swgg.swagger.json</tspan>
 
-<tspan x="10" y="154">&gt; server listening on http-port 50281</tspan>
+<tspan x="10" y="154">&gt; server listening on http-port 63623</tspan>
 
 <tspan x="10" y="170">apidocCreate - readExample /home/travis/build/kaizhu256/node-swgg-github-migration/package.json</tspan>
 
@@ -57,37 +57,37 @@
 
 <tspan x="10" y="506">-------------------------------------------------------</tspan>
 
-<tspan x="10" y="522">| test-report - buildApidoc - node - linux v6.13.0 - 2018-02-15T06:01:05.425Z</tspan>
+<tspan x="10" y="522">| test-report - buildApidoc - node - linux v6.14.1 - 2018-03-31T18:18:11.846Z</tspan>
 
-<tspan x="10" y="538">|     191 ms            0 failed        1 passed      |</tspan>
+<tspan x="10" y="538">|     185 ms            0 failed        1 passed      |</tspan>
 
 <tspan x="10" y="554">-------------------------------------------------------</tspan>
 
 <tspan x="10" y="570">| test-report - npmTest - browser - /index.default.html - Mozilla/5.0 (X11; Linux x86_64) AppleW\</tspan>
-<tspan x="10" y="586">ebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Electron/1.6.15 Safari/537.36 - 2018-02-15T\</tspan>
-<tspan x="10" y="602">06:00:47.726Z</tspan>
+<tspan x="10" y="586">ebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Electron/1.7.13 Safari/537.36 - 2018-03-31\</tspan>
+<tspan x="10" y="602">T18:17:54.318Z</tspan>
 
-<tspan x="10" y="618">|      26 ms            0 failed        8 passed      |</tspan>
+<tspan x="10" y="618">|      14 ms            0 failed        8 passed      |</tspan>
 
 <tspan x="10" y="634">-------------------------------------------------------</tspan>
 
-<tspan x="10" y="650">| test-report - npmTest - node - linux v6.13.0 - 2018-02-15T06:00:45.531Z</tspan>
+<tspan x="10" y="650">| test-report - npmTest - node - linux v6.14.1 - 2018-03-31T18:17:52.099Z</tspan>
 
-<tspan x="10" y="666">|   16583 ms            0 failed        8 passed      |</tspan>
+<tspan x="10" y="666">|   16803 ms            0 failed        8 passed      |</tspan>
 
 <tspan x="10" y="682">-------------------------------------------------------</tspan>
 
 <tspan x="10" y="698">| test-report - npmTestPublished - browser - /index.default.html - Mozilla/5.0 (X11; Linux x86_6\</tspan>
-<tspan x="10" y="714">4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Electron/1.6.15 Safari/537.36 - 20\</tspan>
-<tspan x="10" y="730">18-02-15T05:59:41.092Z</tspan>
+<tspan x="10" y="714">4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Electron/1.7.13 Safari/537.36 - 2\</tspan>
+<tspan x="10" y="730">018-03-31T18:16:47.845Z</tspan>
 
 <tspan x="10" y="746">|      16 ms            0 failed        8 passed      |</tspan>
 
 <tspan x="10" y="762">-------------------------------------------------------</tspan>
 
-<tspan x="10" y="778">| test-report - npmTestPublished - node - linux v6.13.0 - 2018-02-15T05:59:38.182Z</tspan>
+<tspan x="10" y="778">| test-report - npmTestPublished - node - linux v6.14.1 - 2018-03-31T18:16:45.318Z</tspan>
 
-<tspan x="10" y="794">|   17190 ms            0 failed        8 passed      |</tspan>
+<tspan x="10" y="794">|   17101 ms            0 failed        8 passed      |</tspan>
 
 <tspan x="10" y="810">-------------------------------------------------------</tspan>
 
@@ -106,7 +106,7 @@
 
 <tspan x="10" y="938"></tspan>
 
-<tspan x="10" y="954">[MODE_BUILD=buildApidoc] - 2018-02-15T06:01:07.454Z - EXIT_CODE - 0</tspan>
+<tspan x="10" y="954">[MODE_BUILD=buildApidoc] - 2018-03-31T18:18:13.602Z - EXIT_CODE - 0</tspan>
 
 </text>
 </svg>
